@@ -5,9 +5,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-		<title>Electro - HTML Ecommerce Template</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -27,6 +28,8 @@
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="./js/index.js"></script>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -98,9 +101,9 @@
 																	<p>
 																		<img src="./img/usuario.png" alt="">
 																	   <br>
-																	   <strong>Usuario: nombre 1</strong> 
+																	   <strong id="user">Usuario: </strong> 
 																	   <br>
-																	   <strong>Correo: nombre1@alumno.ipn.mx</strong> 
+																	   <strong id ="email">Correo: </strong> 
 																	   
 																	   <br>
 																	</br>
@@ -109,6 +112,7 @@
 															</div>
 														</div>
 												</div>
+												<li><p id="logout" style="color: white;"> Iniciar Sesión</p></li>
 					</ul>
 				</div>
 			</div>
@@ -154,7 +158,7 @@
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
 								<!-- Wishlist -->
-								<div>
+								<div style="display: none;">
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Deseos</span>
@@ -168,47 +172,16 @@
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Ver carrito</span>
-										<div class="qty">3</div>
+										<div class="qty" id="qty">0</div>
 									</a>
 									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/chamarraipn.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">Poli BOMBER</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/gorra.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">GorraB.B</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/unoclasico.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">uno clásico</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
+										<div class="cart-list" id="cart-list">
+											
 										</div>
 									
 										<div class="cart-summary">
-											<small>3 Articulos</small>
-											<h5>SUBTOTAL: $1,340.00</h5>
+											<small id="qty-total">0 Articulos</small>
+											<h5 id="subtotal">SUBTOTAL: $0.00</h5>
 										</div>
 										<div class="cart-btns">
 											<a href="#">Eliminar</a>
@@ -347,164 +320,8 @@
 							<div class="products-tabs">
 								<!-- tab -->
 								<div id="tab1" class="tab-pane active">
-									<div class="products-slick" data-nav="#slick-nav-1">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/mateb.jpg" alt="">
-												<div class="product-label">
-													<span class="new">Novedades</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Tecnología </p>
-													<h3 class="product-name">Huawei</h3>
-												<h3 class="product-name">Matebook D14</h3>
-									
-												<h4 class="product-price">$18,000.00</h4>
-												<div class="product-rating">
-													
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													
-													
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a deseos</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Añadir al carrito</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/audifonos.jpg" alt="">
-												<div class="product-label">
-													<span class="new">Descuento</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Tecnología</p>
-													<h3 class="product-name">Skullcandy</h3>
-												<h3 class="product-name">Audifonos 2BBW-M715</h3>
-												<h4 class="product-price">$1280.00 <del class="product-old-price">$1990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a deseos</span></button>
-
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/chamarraipn.png" alt="">
-												<div class="product-label">
-													
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Espíritu IPN</p>
-												<h3 class="product-name">POLI BOMBER</h3>
-												<h3 class="product-name">GUINDA</h3>
-												<h4 class="product-price">$680.00 <del class="product-old-price">$990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/gorra.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Espíritu IPN</p>
-												<h3 class="product-name">Gorra edición especial</h3>
-												<h3 class="product-name">Burros blancos</h3>
-												<h4 class="product-price">$580.00</h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a lista</span></button>
-													
-													<a href="producto.html" ><i class="fa fa-eye"></i></a>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<a href="checkout.html" ><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Comprar</button></a>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/proto.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Electrónica</p>
-												<h3 class="product-name">Kit Protoboard</h3>
-												<h3 class="product-name">OEM ARD-K005</h3>
-												<h4 class="product-price">$180.00 <del class="product-old-price">$290.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a lista</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
-											</div>
-										</div>
-										<!-- /product -->
+									<div class="products-slick" id="product_container" data-nav="#slick-nav-1" >
+										
 									</div>
 									<div id="slick-nav-1" class="products-slick-nav"></div>
 								</div>
@@ -720,7 +537,7 @@
 		<!-- /SECTION -->
 
 		<!-- SECTION -->
-		<div class="section">
+		<div class="section" style="display: none;">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->

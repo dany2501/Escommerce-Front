@@ -27,6 +27,9 @@
 
  		<!-- Custom stlylesheet -->
  		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="./js/product.js"></script>
+		<script src="./js/productDetail.js"></script>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,29 +88,31 @@
 						<!-- Header Modal -->
 						<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal"> Mi perfil</a></li>
 						<div class="modal fade" id="deseos">
-								<div class="modal_dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Perfil											
-											</h4>
-										</div>
-										<!-- Header Body -->
-										<div class="modal-body">
-											<p>
-											 <img src="./img/usuario.png" alt="">
+							<div class="modal_dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										<h4 class="modal-title">Perfil											
+										</h4>
+									</div>
+									<!-- Header Body -->
+									<div class="modal-body">
+										
+										<p>
+											<img src="./img/usuario.png" alt="">
 											<br>
-											<strong>Usuario: nombre 1</strong> 
+											<strong id="user">Usuario: </strong> 
 											<br>
-											<strong>Correo: nombre1@alumno.ipn.mx</strong> 
-											<br>
+											<strong id ="email">Correo: </strong> 
 											
-											</br>
-											</p>
-										</div>
+											<br>
+										</br>
+										</p>
 									</div>
 								</div>
+							</div>
 						</div>
+						<li><p id="logout" style="color: white;"> Iniciar Sesión</p></li>
 					</ul>
 				</div>
 			</div>
@@ -153,7 +158,7 @@
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
 								<!-- Wishlist -->
-								<div>
+								<div style="display: none;">
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Deseos</span>
@@ -167,47 +172,16 @@
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Ver carrito</span>
-										<div class="qty">3</div>
+										<div class="qty" id="qty">0</div>
 									</a>
 									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/chamarraipn.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">Poli BOMBER</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/gorra.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">GorraB.B</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/unoclasico.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">uno clásico</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
+										<div class="cart-list" id="cart-list">
+											
 										</div>
 									
 										<div class="cart-summary">
-											<small>3 Articulos</small>
-											<h5>SUBTOTAL: $1,340.00</h5>
+											<small id="qty-total">0 Articulos</small>
+											<h5 id="subtotal">SUBTOTAL: $0.00</h5>
 										</div>
 										<div class="cart-btns">
 											<a href="#">Eliminar</a>
@@ -287,22 +261,7 @@
 					<div class="col-md-5 col-md-push-2">
 						<div id="product-main-img">
 							<div class="product-preview">
-								<img src="./img/gorraproduct.jpg" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/gorraproduct1.jpg" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/gorraproduct2.jpg" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/gorraproduct3.jpg" alt="">
-							</div>
-							<div class="product-preview">
-								<img src="./img/gorraproduct4.jpg" alt="">
+								<img id="img" alt="">
 							</div>
 
 						</div>
@@ -313,22 +272,7 @@
 					<div class="col-md-2  col-md-pull-5">
 						<div id="product-imgs">
 							<div class="product-preview">
-								<img src="./img/gorraproduct.jpg" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/gorraproduct1.jpg" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/gorraproduct2.jpg" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/gorraproduct3.jpg" alt="">
-							</div>
-							<div class="product-preview">
-								<img src="./img/gorraproduct4.jpg" alt="">
+								<img src="./img/gorraproduct.jpg" id="img2" alt="">
 							</div>
 						</div>
 					</div>
@@ -337,7 +281,7 @@
 					<!-- Product details -->
 					<div class="col-md-5">
 						<div class="product-details">
-							<h2 class="product-name">Gorra Burros Blancos IPN Colección</h2>
+							<h2 class="product-name" id="product_name">Gorra Burros Blancos IPN Colección</h2>
 							<div>
 								<div class="product-rating">
 									<i class="fa fa-star"></i>
@@ -349,12 +293,12 @@
 								<a class="review-link" href="#">7 opiniones | añade la tuya</a>
 							</div>
 							<div>
-								<h3 class="product-price">$580.00</h3>
-								<span class="product-available">In Stock</span>
+								<h3 class="product-price" id="product_price">$580.00</h3>
+								<span class="product-available" id="product_stock">In Stock</span>
 							</div>
-							<p>Esta gorra es ser cool y hacerse notar. Cómprala y refleja a donde quiera que vayas tu identidad universitaria. Lleva siempre contigo los colores de los Burros Blancos del IPN. ¡Huelum!</p>
+							<p id="product_description">Esta gorra es ser cool y hacerse notar. Cómprala y refleja a donde quiera que vayas tu identidad universitaria. Lleva siempre contigo los colores de los Burros Blancos del IPN. ¡Huelum!</p>
 
-							<div class="product-options">
+							<div class="product-options" style="display: none;">
 								<label>
 									Tamaño
 									<select class="input-select">
@@ -373,7 +317,7 @@
 								<div class="qty-label">
 									PZAS
 									<div class="input-number">
-										<input type="number">
+										<input type="number" id="qty-picker">
 										<span class="qty-up">+</span>
 										<span class="qty-down">-</span>
 									</div>
@@ -406,20 +350,20 @@
 							
 						<br>
 								<!-- Header Modal -->
-						<li><a href="#carrito" class="fa fa-shopping-cart" data-toggle="modal">Agregar al carrito  </a></li>
+						<li><a href="#carrito" class="fa fa-shopping-cart" data-toggle="modal" id="add-to-cart">Agregar al carrito  </a></li>
 						<div class="modal fade" id="carrito">
 								<div class="modal_dialog">
 									<div class="modal-content">
 										<div class="modal-header">
 											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Confirmación											
+											<h4 class="modal-title" id="title">Confirmación											
 											</h4>
 										</div>
 										<!-- Header Body -->
 										<div class="modal-body">
 											<p>
 											<br>
-											Se ha agregado correctamente. Gracias por ser cool y hacerte notar.
+											<p id="copy">Se ha agregado correctamente. Gracias por ser cool y hacerte notar.</p>
 											</br>
 											</p>
 										</div>

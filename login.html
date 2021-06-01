@@ -47,6 +47,8 @@
 		<link rel="stylesheet" type="text/css" href="csslogin/util.css">
 		<link rel="stylesheet" type="text/css" href="csslogin/main.css">
 	<!--===============================================================================================-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="./js/login.js"></script>
 
     </head>
 	<body>
@@ -93,62 +95,30 @@
 								</div>
 						</div>
 					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i>MXN</a></li>
-							<!-- Header Modal -->
-							<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal"> Mi perfil</a></li>
-							<div class="modal fade" id="deseos">
-									<div class="modal_dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title">Confirmación											
-												</h4>
-											</div>
-											<!-- Header Body -->
-											<div class="modal-body">
-												<p>
-													<img src="./img/usuario.png" alt="">
-													<br>
-													<strong>Usuario: nombre 1</strong> 
-													<br>
-													<strong>Correo: nombre1@alumno.ipn.mx</strong> 
-													<br>
-												</br>
-												</p>
-											</div>
-										</div>
-									</div>
-							</div>
-					</ul>
 				</div>
 			</div>
 			<!-- /TOP HEADER -->
 			<div class="container-login100" style="background-image: url('img/escom1.jpeg');">
 				<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-					<form class="login100-form validate-form">
 						<span class="login100-form-title p-b-37">
 							Iniciar sesión
 						</span>
 		
 						<div class="wrap-input100 validate-input m-b-20" data-validate="email">
-							<input class="input100" type="text" name="username" placeholder="Correo institucional">
+							<input id="email" class="input100" type="text" name="username" placeholder="Correo institucional">
 							<span class="focus-input100"></span>
 						</div>
 		
 						<div class="wrap-input100 validate-input m-b-25" data-validate = "password">
-							<input class="input100" type="password" name="pass" placeholder="Contraseña">
+							<input id="password" class="input100" type="password" name="pass" placeholder="Contraseña">
 							<span class="focus-input100"></span>
 						</div>
+
 						<div class="container-login100-form-btn">
-							<button class="login100-form-btn">
-								<a href="Metododepag.html"><i class="fa fa-user-o"></i> Iniciar sesión </a>
+							<button id="button" class="login100-form-btn">
+								<i class="fa fa-user-o"></i>Iniciar Sesión
 							</button>
 						</div>
-
-						
-							
-								
 							
 						<div text-center>
 							<br> <a href="Recuperar.html">Recuperar contraseña </a> 
