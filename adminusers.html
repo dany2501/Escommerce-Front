@@ -81,8 +81,6 @@
 						</div>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="productregister.html"><i class="fa fa-dollar"></i>Agregar producto</a></li>
-						<li><a href="deleteproduct.html"><i class="fa fa-dollar"></i>Eliminar/Modificar producto</a></li>
 												<!-- Header Modal -->
 												<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal"> Mi perfil</a></li>
 												<div class="modal fade" id="deseos">
@@ -134,13 +132,9 @@
 							<div class="header-search">
 								<form>
 									<select class="input-select">
-										<option value="0">Categorias</option>
-										<option value="1">Comida</option>
-										<option value="1">Electrónica</option>
-										<option value="1">Tecnología</option>
-										<option value="1">Juegos de mesa</option>
-										<option value="1">Papelería</option>
-										<option value="1">Espiritu IPN</option>
+										<option value="0">Usuarios</option>
+										<option value="1">Clientes</option>
+										<option value="1">Vendedores</option>
 									</select>
 									<input class="input" placeholder="Buscar">
 									<button class="search-btn">Buscar</button>
@@ -149,72 +143,8 @@
 						</div>
 						<!-- /SEARCH BAR -->
 
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-								<!-- Wishlist -->
-								<div>
-									<a href="#">
-										<i class="fa fa-heart-o"></i>
-										<span>Deseos</span>
-										<div class="qty">2</div>
-									</a>
-								</div>
-								<!-- /Wishlist -->
-
-								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Ver carrito</span>
-										<div class="qty">3</div>
-									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/chamarraipn.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">Poli BOMBER</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/gorra.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">GorraB.B</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/unoclasico.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">uno clásico</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									
-										<div class="cart-summary">
-											<small>3 Articulos</small>
-											<h5>SUBTOTAL: $1,340.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">Eliminar</a>
-											<a href="checkout.html"hrer href="#">Comprar<i class="fa fa-arrow-circle-right"></i></a>
-										</div>
-									</div>
-								</div>
+						
+							
 						<!-- /ACCOUNT -->
 					</div>
 					<!-- row -->
@@ -233,13 +163,9 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="index.html" href="#">Inicio</a></li>
-						<li><a href="comida.html" href="#">Comida</a></li>
-						<li><a href="electronica.html" href="#">Electrónica</a></li>
-						<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-						<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-						<li><a href="papeleria.html" href="#">Papelería</a></li>
-						<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
+						<li class="active"><a href="index.html" href="#">Usuarios</a></li>
+						<li><a href="deleteproduct.html" href="#">Clientes</a></li>
+						<li><a href="deleteproduct.html" href="#">Vendedores</a></li>
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -257,8 +183,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul class="breadcrumb-tree">
-							<li><a href="index.html">Inicio</a></li>
-							<li><a href="deleteproduct.html">Eliminar/Modificar producto</a></li>
+							<li><a href="index.html">Usuarios</a></li>
+							<li><a href="deleteproduct.html">Clientes</a></li>
 						</ul>
 					</div>
 				</div>
@@ -285,7 +211,7 @@
 									<input type="checkbox" id="category-1">
 									<label for="category-1">
 										<span></span>
-										Comida
+										Pendientes
 									</label>
 								</div>
 
@@ -293,7 +219,7 @@
 									<input type="checkbox" id="category-2">
 									<label for="category-2">
 										<span></span>
-										Electrónica
+										Mala reputación
 									</label>
 								</div>
 
@@ -301,7 +227,7 @@
 									<input type="checkbox" id="category-3">
 									<label for="category-3">
 										<span></span>
-										Tecnología
+										Reportados
 									</label>
 								</div>
 
@@ -309,7 +235,7 @@
 									<input type="checkbox" id="category-4">
 									<label for="category-4">
 										<span></span>
-										Juegos de Mesa
+										Mayor venta
 									</label>
 								</div>
 
@@ -317,7 +243,7 @@
 									<input type="checkbox" id="category-5">
 									<label for="category-5">
 										<span></span>
-										Papelería
+										Menor venta
 									</label>
 								</div>
 
@@ -325,7 +251,7 @@
 									<input type="checkbox" id="category-6">
 									<label for="category-6">
 										<span></span>
-										Espiritu IPN
+										Mejores compradores
 									</label>
 								</div>
 							</div>
@@ -361,20 +287,23 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/pape1.jpg" alt="">
+										<img src="./img/usuarios2.jpg" alt="">
 										<div class="product-label">
 										</div>
 									</div>
 									<div class="product-body">
-										<p class="product-category">Útiles</p>
-										<h3 class="product-name"><a href="#">Kit Útiles Básico 1</a></h3>
-										<h4 class="product-price">$180.00</h4>
+										<p class="product-category">Jessica Guerrero</p>
+										<h3 class="product-name"><a href="#">Vendedor</a></h3>
+										
 										<div class="product-rating">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
+										</div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Informe</span></button>
 										</div>
 									</div>
 									<div class="add-to-cart">
@@ -391,21 +320,18 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/pape2.jpg" alt="">
+										<img src="./img/usuarios.jpg" alt="">
 										<div class="product-label">
-											
 										</div>
 									</div>
 									<div class="product-body">
-										<p class="product-category">Útiles</p>
-										<h3 class="product-name"><a href="#">kit Útiles 2</a></h3>
-										<h4 class="product-price">$290.00</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+										<p class="product-category">Daniel Hernandez</p>
+										<h3 class="product-name"><a href="#">Cliente</a></h3>
+										<h4 class="product-price"></h4>
+										<!--No quitar div-->
+										<div class="product-rating"></div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Informe</span></button>
 										</div>
 									</div>
 									<div class="add-to-cart">
@@ -424,18 +350,20 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/pape3.png" alt="">
+										<img src="./img/usuarios.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Útiles</p>
-										<h3 class="product-name"><a href="#">Kit Útiles Básico2</a></h3>
-										<h4 class="product-price">$100.00 </h4>
+										<p class="product-category">Iván Martínez</p>
+										<h3 class="product-name"><a href="#">Vendedor</a></h3>
 										<div class="product-rating">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
+										</div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Informe</span></button>
 										</div>
 									</div>
 									<div class="add-to-cart">
@@ -454,18 +382,15 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/pape4.jpg" alt="">
+										<img src="./img/usuarios2.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Calculadoras</p>
-										<h3 class="product-name"><a href="#">Graficadora TEXAS</a></h3>
-										<h4 class="product-price">$280.00 </h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+										<p class="product-category">Jaqueline Escobar</p>
+										<h3 class="product-name"><a href="#">Cliente</a></h3>
+											<!--No quitar div-->
+											<div class="product-rating"></div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Informe</span></button>
 										</div>
 									</div>
 									<div class="add-to-cart">
@@ -484,18 +409,20 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/pape5.png" alt="">
+										<img src="./img/usuarios.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Calculadoras</p>
-										<h3 class="product-name"><a href="#">Cienfífica CASIO</a></h3>
-										<h4 class="product-price">$120.00 </h4>
+										<p class="product-category">Miguel Medina</p>
+										<h3 class="product-name"><a href="#">Vendedor</a></h3>
 										<div class="product-rating">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
+										</div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Informe</span></button>
 										</div>
 									</div>
 									<div class="add-to-cart">
@@ -512,21 +439,18 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/pape2.jpg" alt="">
+										<img src="./img/usuarios.jpg" alt="">
 										<div class="product-label">
 											
 										</div>
 									</div>
 									<div class="product-body">
-										<p class="product-category">Útiles</p>
-										<h3 class="product-name"><a href="#">kit Útiles 4</a></h3>
-										<h4 class="product-price">$200.00</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+										<p class="product-category">Johan Hernández</p>
+										<h3 class="product-name"><a href="#">Cliente</a></h3>
+											<!--No quitar div-->
+											<div class="product-rating"></div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Informe</span></button>
 										</div>
 									</div>
 									<div class="add-to-cart">
@@ -545,20 +469,21 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/pape1.jpg" alt="">
+										<img src="./img/usuarios.jpg" alt="">
 										<div class="product-label">
 										</div>
 									</div>
 									<div class="product-body">
-										<p class="product-category">Útiles</p>
-										<h3 class="product-name"><a href="#">Kit Útiles Básico 2</a></h3>
-										<h4 class="product-price">$198.00</h4>
+										<p class="product-category">Daniel Garcia</p>
+										<h3 class="product-name"><a href="#">Vendedor</a></h3>
 										<div class="product-rating">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+										</div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Informe</span></button>
 										</div>
 									</div>
 									<div class="add-to-cart">
@@ -576,18 +501,15 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/pape4.jpg" alt="">
+										<img src="./img/usuarios.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Calculadoras</p>
-										<h3 class="product-name"><a href="#">Graficadora TEXAS</a></h3>
-										<h4 class="product-price">$280.00 </h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+										<p class="product-category">Jafeth Mendoza</p>
+										<h3 class="product-name"><a href="#">Cliente</a></h3>
+											<!--No quitar div-->
+											<div class="product-rating"></div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Informe</span></button>
 										</div>
 									</div>
 									<div class="add-to-cart">
@@ -603,31 +525,6 @@
 							<div class="clearfix visible-sm visible-xs"></div>
 
 							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/pape5.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Calculadoras</p>
-										<h3 class="product-name"><a href="#">Cienfífica CASIO</a></h3>
-										<h4 class="product-price">$120.00 </h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"> Eliminar</button>
-										<br>
-										<br>
-										<button class="add-to-cart-btn">Modificar</button>
-									</div>
-								</div>
-							</div>
 							<!-- /product -->
 							<!-- /product -->
 						</div>
