@@ -1,0 +1,67 @@
+$(document).ready(() => {
+    var user = $("#user");
+    var email = $("#email");
+    var logout = $("#logout");
+    var token = localStorage.getItem('tokenSession');
+    var flag = false;
+    if (token == null || token.length == 4) {
+        flag = false;
+    } else {
+        flag = true;
+    }
+    getDataClient(token).then((data) => {
+        client = data.client
+        user.append(client.name)
+        email.append(client.email)
+    });
+    logout.text("Cerrar Sesión");
+
+    logout.click(() => {
+        if (flag) {
+            closeSession(token).then((data) => {
+                if (data) {
+                    localStorage.removeItem('tokenSession');
+                    localStorage.removeItem('productId')
+                    user.val("")
+                    email.val("")
+                    alert("Haz cerrado sesión")
+                    window.location.href="./index.html"
+                }
+            });
+        } else {
+            window.location.href= "./login.html"
+        }
+    });
+    
+
+});
+
+const getDataClient = (token) => {
+    return $.ajax({
+        method: "GET",
+        url: 'http://localhost:5001/login',
+        dataType: 'json',
+        headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
+        accepts: 'application/json',
+        success: (data, status) => {
+
+        console.log(data)
+            return data;
+        }
+    });
+}
+
+const closeSession = (token) => {
+    return $.ajax({
+        method: "GET",
+        url: 'http://localhost:5001/logout',
+        dataType: 'json',
+        headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
+        accepts: 'application/json',
+        success: (data, status) => {
+            if (data) {
+                return data;
+            }
+        }
+    })
+}

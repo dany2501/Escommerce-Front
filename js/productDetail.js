@@ -11,6 +11,8 @@ $(document).ready(()=>{
     var subtotal =$("#subtotal");
     var qtyTotal =$("#qty-total");
     var qtyCart = $("#qty");
+    var desc_prod =$("#desc_prod");
+
     var stock =0;
     productId = parseInt(localStorage.getItem('productId'));
     token = localStorage.getItem('tokenSession');
@@ -20,6 +22,7 @@ $(document).ready(()=>{
         productName.text(product.name);
         productPrice.text("$"+product.price+".00");
         stock = product.stock
+        desc_prod.text(product.description)
         productStock.text(product.stock+" disponibles");
         productDes.text(product.description);
         img.attr('src',product.image)
@@ -46,8 +49,8 @@ $(document).ready(()=>{
                     if (response.success){
                         response.products.forEach(element => {
                             qtyProds +=element.qty
-                            toPay +=parseInt(element.product.price)
-                            cart += cardCart(element.product.name,element.product.price,element.qty,element.image);
+                            toPay +=parseInt(element.product.price)*parseInt(element.qty)
+                            cart += cardCart(element.product.name,element.product.price,element.qty,element.product.image);
                         });
                         if (qtyProds>1){
                             qtyTotal.text(qtyProds+" Artículos");

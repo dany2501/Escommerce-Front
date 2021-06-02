@@ -7,9 +7,11 @@ $(document).ready(()=>{
 
     button.click(()=>{
         createAccount(email.val(),password.val(),confirmPass.val(),name.val()).then(((data)=>{
-            if (data){
+            if (data.success){
                 localStorage.setItem('tokenSession',data.token)
-                window.location.replace('./index.html')
+                window.location.href=('./index.html')
+            }else{
+                alert("Correo invalido")
             }
         }));
     });

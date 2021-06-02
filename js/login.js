@@ -12,7 +12,7 @@ $(document).ready(()=>{
             login(e,pass).then((response)=>{
                 if(response.success){
                     localStorage.setItem('tokenSession',response.client.token)
-                    window.location.replace("./index.html")
+                    window.location.href=("./index.html")
                 }
 
             });
