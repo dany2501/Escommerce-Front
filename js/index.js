@@ -1,42 +1,28 @@
+const token = localStorage.getItem('tokenSession');
+
 $(document).ready(() => {
     var user = $("#user");
     var email = $("#email");
     var logout = $("#logout");
-
-    var qtyCart = $("#qty");
-    var subtotal = $("#subtotal");
-    var qtyTotal = $("#qty-total");
+    var signup = $("#signup");
     var profile = $("#profile");
+    var summary = $("#summary");
+    var no_products = $("#no_products");
+
     var flag = false;
-    token = localStorage.getItem('tokenSession');
 
     if (token == null || token.length == 4) {
-        profile.css({"display":"none"})
-        flag = false
-
+        profile.css({ "display": "none" });
+        flag = false;
+        summary.css({ "display": "none" });
+        $("#cart_buttons").css({ "display": "none" });
     } else {
         flag = true
-        getDataClient(token).then((data) => {
-        });
+        no_products.css({ "display": "none" })
+        getDataClient(token);
+        signup.text("")
         logout.text("Cerrar Sesión");
-        var cart = "";
-        var qtyProds = 0;
-        var toPay = 0;
-        getCart(token).then((response) => {
-            response.products.forEach(element => {
-                qtyProds += element.qty
-                toPay +=parseInt(element.product.price)*parseInt(element.qty)
-                cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image);
-            });
-            if (qtyProds > 1) {
-                qtyTotal.text(qtyProds + " Artículos");
-            } else {
-                qtyTotal.text(qtyProds + " Artículo");
-            }
-            subtotal.text("Subtotal: $" + toPay + " .00")
-            qtyCart.text(response.products.length)
-            cartList.html(cart);
-        });
+        
     }
 
     logout.click(() => {
@@ -47,28 +33,21 @@ $(document).ready(() => {
                     user.val("")
                     email.val("")
                     alert("Haz cerrado sesión")
-                    window.location.href="./index.html"
+                    window.location.href = "./index.html"
                 }
             });
         } else {
-            window.location.href="./login.html"
+            window.location.href = "./login.html"
+        }
+    });
+
+    signup.click(() => {
+        if (!flag) {
+            window.location.href = "./Crearcuenta.html"
         }
     });
 
 })
-
-const getCart = (token) => {
-    return $.ajax({
-        method: "GET",
-        url: 'http://localhost:5001/cart',
-        dataType: 'json',
-        headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        accepts: 'application/json',
-        success: (data, status) => {
-            return data;
-        }
-    });
-}
 
 const addToCart = (token, productId, qty) => {
     return $.ajax({
@@ -114,5 +93,6 @@ const getDataClient = (token) => {
         }
     });
 }
+
 
 

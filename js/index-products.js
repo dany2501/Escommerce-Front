@@ -1,17 +1,15 @@
 $(document).ready(() => {
     var container = $("#product_container");
     var container2 = $("#product_container_2");
-    var cartList = $("#cart-list");
-    token = localStorage.getItem('tokenSession');
-
+    var qtyTotal = $("#qty-total");
+    var subtotal = $("#subtotal");
+    var qtyCart = $("#qty");
     if (token == null || token.length == 4) {
         flag = false
 
     } else {
         flag = true
     }
-
-
     getProducts().then((data) => {
         if (data.success) {
             var prods = ""
@@ -20,6 +18,37 @@ $(document).ready(() => {
             });
             container.html(prods)
             container2.html(prods)
+            // Products Slick
+            $('.products-slick').each(function() {
+                var $this = $(this),
+                        $nav = $this.attr('data-nav');
+        
+                $this.slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    infinite: true,
+                    speed: 300,
+                    dots: false,
+                    arrows: true,
+                    appendArrows: $nav ? $nav : false,
+                    responsive: [{
+                    breakpoint: 991,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 1,
+                    }
+                  },
+                  {
+                    breakpoint: 480,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                    }
+                  },
+                ]
+                });
+            });
         }
 
     });
@@ -36,7 +65,7 @@ $(document).ready(() => {
                 var toPay = 0;
                 addToCart(token, action[1], 1).then((response) => {
                     if (response.success) {
-                        alert("Producto Agregado al carrito")
+                        alert("Producto agregado al carrito")
                         response.products.forEach(element => {
                             qtyProds += element.qty
                             toPay +=parseInt(element.product.price)*parseInt(element.qty)
@@ -71,7 +100,7 @@ $(document).ready(() => {
                 var toPay = 0;
                 addToCart(token, action[1], 1).then((response) => {
                     if (response.success) {
-                        alert("Producto Agregado al carrito")
+                        alert("Producto agregado al carrito")
                         response.products.forEach(element => {
                             qtyProds += element.qty
                             toPay +=parseInt(element.product.price)*parseInt(element.qty)
@@ -147,18 +176,4 @@ const card = (id, name, description, price, sku, stock, categoryId, image) => {
         </div>
     </div>
     <!-- /product -->`)
-}
-
-const cardCart = (name, price, qty, img) => {
-    finalPrice = parseInt(price) * parseInt(qty)
-    return (`<div class="product-widget">
-        <div class="product-img">
-            <img src=${img} style="width:50; height:50;" alt="">
-        </div>
-        <div class="product-body">
-            <h3 class="product-name">${name}</h3>
-            <h4 class="product-price"><span class="qty">${qty}x</span>$${finalPrice}.00</h4>
-        </div>
-        <button class="delete"><i class="fa fa-close"></i></button>
-    </div>`)
 }

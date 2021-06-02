@@ -31,6 +31,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="./js/product.js"></script>
 	<script src="./js/productDetail.js"></script>
+	<script src="./js/cart.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -155,7 +156,7 @@
 									<option value="1">Papelería</option>
 									<option value="1">Espiritu IPN</option>
 								</select>
-								<input class="input" placeholder="¿Qué quieres buscar?">
+								<input class="input" placeholder="Buscar">
 								<button class="search-btn">Buscar</button>
 							</form>
 						</div>
@@ -184,15 +185,15 @@
 								</a>
 								<div class="cart-dropdown">
 									<div class="cart-list" id="cart-list">
-
+										<h5 id="no_products">¡Inicia sesión para agregar productos!</h5>
 									</div>
 
-									<div class="cart-summary">
+									<div class="cart-summary" id="summary">
 										<small id="qty-total">0 Articulos</small>
 										<h5 id="subtotal">SUBTOTAL: $0.00</h5>
 									</div>
-									<div class="cart-btns">
-										<a href="#">Eliminar</a>
+									<div class="cart-btns" id="cart_buttons">
+										<a href="#" id="delete">Eliminar</a>
 										<a href="checkout.html" hrer href="#">Comprar<i
 												class="fa fa-arrow-circle-right"></i></a>
 									</div>
@@ -200,7 +201,14 @@
 							</div>
 							<!-- /Cart -->
 
-
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
 						</div>
 					</div>
 					<!-- /ACCOUNT -->
@@ -491,7 +499,8 @@
 							<div id="tab1" class="tab-pane fade in active">
 								<div class="row">
 									<div class="col-md-12">
-										<p id="desc_prod">Burros Blancos IPN Colección Universidades 9Fifty Of Snapback "COLECCIÓN
+										<p id="desc_prod">Burros Blancos IPN Colección Universidades 9Fifty Of Snapback
+											"COLECCIÓN
 											UNIVERSIDADES" Septiembre 2019</p>
 									</div>
 								</div>

@@ -13,6 +13,14 @@ $(document).ready(()=>{
                 if(response.success){
                     localStorage.setItem('tokenSession',response.client.token)
                     window.location.href=("./index.html")
+                }else{
+                    switch(response.error.code){
+                        case 5001:
+                            alert(response.error.message)
+                            email.val("")
+                            password.val("")
+                            email.focus()
+                    }
                 }
 
             });
@@ -32,7 +40,6 @@ const login = (email,password)=>{
         data:{password:password,email:email},
         accepts:'application/json',
         success:(data,status)=>{
-            console.log("response")
             return data;
         }
     })

@@ -32,6 +32,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="./js/index.js"></script>
 	<script src="./js/index-products.js"></script>
+	<script src="./js/cart.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -123,7 +124,7 @@
 						<p id="logout" style="color: white;"> Iniciar Sesión</p>
 					</li>
 					<li>
-						<p id="logout" style="color: white;"> Crear Cuenta</p>
+						<p id="signup" style="color: white;"> Crear Cuenta</p>
 					</li>
 				</ul>
 			</div>
@@ -188,15 +189,15 @@
 								</a>
 								<div class="cart-dropdown">
 									<div class="cart-list" id="cart-list">
-
+										<h5 id="no_products">¡Inicia sesión para agregar productos!</h5>
 									</div>
 
-									<div class="cart-summary">
+									<div class="cart-summary" id="summary">
 										<small id="qty-total">0 Articulos</small>
 										<h5 id="subtotal">SUBTOTAL: $0.00</h5>
 									</div>
-									<div class="cart-btns">
-										<a href="#">Eliminar</a>
+									<div class="cart-btns" id="cart_buttons">
+										<a href="#" id ="delete">Eliminar</a>
 										<a href="checkout.html" hrer href="#">Comprar<i
 												class="fa fa-arrow-circle-right"></i></a>
 									</div>

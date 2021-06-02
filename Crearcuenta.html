@@ -60,29 +60,29 @@
 					Crear cuenta
 				</span>
 
-				<div class="wrap-input100 validate-input m-b-20" data-validate="email">
-					<input id="name" class="input100" type="text" name="username" placeholder="Nombre">
+				<div class="wrap-input100 validate-input m-b-20" data-validate = "Ingresa un nombre válido ">
+					<input id="name" class="input100" type="text" autocomplete="off" name="username" placeholder="Nombre">
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input m-b-20" data-validate="email">
-					<input id="email" class="input100" type="text" name="username" placeholder="Correo institucional">
+				<div class="wrap-input100 validate-input m-b-20" data-validate = "Ingresa un correo válido: ex@alumno.ipn.mx">
+						<input class="input100" type="text" autocomplete="off" name="email" placeholder="Correo">
+						<span class="focus-input100"></span>
+					</div>
+
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Ingresa una contraseña válida">
+					<input id="password" class="input100" autocomplete="off" type="password" name="pass" minlength="8" placeholder="Contraseña (8 caracteres mínimo)">
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input m-b-25" data-validate = "password">
-					<input id="password" class="input100" type="password" name="pass" placeholder="contraseña (8 caracteres mínimo)">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input m-b-25" data-validate = "password">
-					<input id="confirmPass" class="input100" type="password" name="pass" placeholder="Inserte de nuevo la contraseña">
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Ingresa una contraseña válida">
+					<input id="confirmPass" class="input100" autocomplete="off" type="password" name="pass" minlength="8" placeholder="Inserte de nuevo la contraseña">
 					<span class="focus-input100"></span>
 				</div>
 																		
 				<div class="container-login100-form-btn">
 					<button id="button" class="login100-form-btn">
-						Login
+						Crear cuenta
 					</button>
 				</div>
 	
