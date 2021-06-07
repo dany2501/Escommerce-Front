@@ -1,781 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>ESCOMMERCE</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>ADOO</title>
+<head>
+	<title>ESCOMMERCE</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
- 		<!-- Google font -->
- 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	<title>ADOO</title>
 
- 		<!-- Bootstrap -->
- 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
- 		<!-- Slick -->
- 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
- 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
- 		<!-- nouislider -->
- 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
 
- 		<!-- Font Awesome Icon -->
- 		<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
 
- 		<!-- Custom stlylesheet -->
- 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/cart.js"></script>
+	<script src="./js/category.js"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
-    </head>
-	<body>
-		<!-- HEADER -->
-		<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i>555555555</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> ayudaescommerce@gmail.com</a></li>
-						<!-- Header Modal -->
-						<li><a href="#escom" class="fa fa-map-marker" data-toggle="modal"> ESCOM</a></li>
-						<div class="modal fade" id="escom">
-								<div class="modal_dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Confirmación											
-											</h4>
-										</div>
-										<!-- Header Body -->
-										<div class="modal-body">
-											<p>
-											
-											Dirección: ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX
-										<br>	Horas: 
-										<br>martes	7:00–9:30
-										<br>miércoles	7:00–9:30
-										<br>jueves	7:00–9:30
-										<br>viernes	7:00–9:30
-										<br>sábado	Cerrado
-										<br>domingo	Cerrado
-										<br>lunes	7:00–9:30
+</head>
+
+<body>
+	<!-- HEADER -->
+	<header>
+		<!-- TOP HEADER -->
+		<div id="top-header">
+			<div class="container">
+				<ul class="header-links pull-left">
+					<li><a href="#"><i class="fa fa-phone"></i>555555555</a></li>
+					<li><a href="#"><i class="fa fa-envelope-o"></i> ayudaescommerce@gmail.com</a></li>
+					<!-- Header Modal -->
+					<li><a href="#escom" class="fa fa-map-marker" data-toggle="modal"> ESCOM</a></li>
+					<div class="modal fade" id="escom">
+						<div class="modal_dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button tyle="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Confirmación
+									</h4>
+								</div>
+								<!-- Header Body -->
+								<div class="modal-body">
+									<p>
+
+										Dirección: ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de
+										México, CDMX
+										<br> Horas:
+										<br>martes 7:00–9:30
+										<br>miércoles 7:00–9:30
+										<br>jueves 7:00–9:30
+										<br>viernes 7:00–9:30
+										<br>sábado Cerrado
+										<br>domingo Cerrado
+										<br>lunes 7:00–9:30
 										<br>Estudiantes: 3,000​ (aproximadamente)</br>
 										<br>Director: Andrés Ortigoza Campos</br>
 										<br>Fundación: 13 de agosto de 1993</br>
 										<br>Decano: Ignacio Ríos de la Torre</br>
 										<br>Tipo: Pública</br>
-											</br>
-											</p>
-										</div>
-									</div>
+										</br>
+									</p>
 								</div>
+							</div>
 						</div>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i>MXN</a></li>
-												<!-- Header Modal -->
-												<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal"> Mi perfil</a></li>
-												<div class="modal fade" id="deseos">
-														<div class="modal_dialog">
-															<div class="modal-content">
-																<div class="modal-header">
-																	<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-																	<h4 class="modal-title">Confirmación											
-																	</h4>
-																</div>
-																<!-- Header Body -->
-																<div class="modal-body">
-																	<p>
-																		<img src="./img/usuario.png" alt="">
-																	   <br>
-																	   <strong>Usuario: nombre 1</strong> 
-																	   <br>
-																	   <strong>Correo: nombre1@alumno.ipn.mx</strong> 
-																	   <br>
-																	</br>
-																	</p>
-																</div>
-															</div>
-														</div>
-												</div>
-					</ul>
-				</div>
-			</div>
-			<!-- /TOP HEADER -->
+					</div>
+				</ul>
+				<ul class="header-links pull-right">
+					<!--<li><a href="productregister.html"><i class="fa fa-dollar"></i>Agregar producto</a></li>
+							<li><a href="deleteproduct.html"><i class="fa fa-dollar"></i>Eliminar/Modificar producto</a></li>
+													<!-- Header Modal -->
+					<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal" id="profile"> Mi perfil</a></li>
+					<div class="modal fade" id="deseos">
+						<div class="modal_dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button tyle="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Perfil
+									</h4>
+								</div>
+								<!-- Header Body -->
+								<div class="modal-body">
 
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<!-- LOGO -->
-						<div class="col-md-2">
-							<div class="header-logo">
-								<a href="#" class="logo">
-									<a href="index.html"><img src="./img/escommerce 170por70.jpg" alt=""></a>
+									<p>
+										<img src="./img/usuario.png" alt="">
+										<br>
+										<strong id="user">Usuario: </strong>
+										<br>
+										<strong id="email">Correo: </strong>
+
+										<br>
+										</br>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<li>
+						<p id="logout" style="color: white;"> Iniciar Sesión</p>
+					</li>
+					<li>
+						<p id="signup" style="color: white;"> Crear Cuenta</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /TOP HEADER -->
+
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-2">
+						<div class="header-logo">
+							<a href="#" class="logo">
+								<a href="index.html"><img src="./img/escommerce 170por70.jpg" alt=""></a>
+							</a>
+						</div>
+					</div>
+					<!-- /LOGO -->
+
+					<!-- SEARCH BAR -->
+					<div class="col-md-6">
+						<div class="header-search">
+							<form>
+								<select class="input-select">
+									<option value="1">Categorias</option>
+									<option value="1">Comida</option>
+									<option value="1">Electrónica</option>
+									<option value="1">Tecnología</option>
+									<option value="1">Juegos de mesa</option>
+									<option value="1">Papelería</option>
+									<option value="1">Espiritu IPN</option>
+								</select>
+								<input class="input" placeholder="Buscar">
+								<button class="search-btn">Buscar</button>
+							</form>
+						</div>
+					</div>
+					<!-- /SEARCH BAR -->
+
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<!-- Wishlist -->
+							<div style="display: none;">
+								<a href="#">
+									<i class="fa fa-heart-o"></i>
+									<span>Deseos</span>
+									<div class="qty">2</div>
 								</a>
 							</div>
-						</div>
-						<!-- /LOGO -->
+							<!-- /Wishlist -->
 
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="0">Categorias</option>
-										<option value="1">Comida</option>
-										<option value="1">Electrónica</option>
-										<option value="1">Tecnología</option>
-										<option value="1">Juegos de mesa</option>
-										<option value="1">Papelería</option>
-										<option value="1">Espiritu IPN</option>
-									</select>
-									<input class="input" placeholder="Buscar">
-									<button class="search-btn">Buscar</button>
-								</form>
-							</div>
-						</div>
-						<!-- /SEARCH BAR -->
+							<!-- Cart -->
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<i class="fa fa-shopping-cart"></i>
+									<span>Ver carrito</span>
+									<div class="qty" id="qty">0</div>
+								</a>
+								<div class="cart-dropdown">
+									<div class="cart-list" id="cart-list">
+										<h5 id="no_products">¡Inicia sesión para agregar productos!</h5>
+									</div>
 
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-								<!-- Wishlist -->
-								<div>
-									<a href="#">
-										<i class="fa fa-heart-o"></i>
-										<span>Deseos</span>
-										<div class="qty">2</div>
-									</a>
-								</div>
-								<!-- /Wishlist -->
-
-								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Ver carrito</span>
-										<div class="qty">3</div>
-									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/chamarraipn.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">Poli BOMBER</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/gorra.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">GorraB.B</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/unoclasico.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">uno clásico</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									
-										<div class="cart-summary">
-											<small>3 Articulos</small>
-											<h5>SUBTOTAL: $1,340.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">Eliminar</a>
-											<a href="checkout.html"hrer href="#">Comprar<i class="fa fa-arrow-circle-right"></i></a>
-										</div>
+									<div class="cart-summary" id="summary">
+										<small id="qty-total">0 Articulos</small>
+										<h5 id="subtotal">SUBTOTAL: $0.00</h5>
+									</div>
+									<div class="cart-btns" id="cart_buttons">
+										<a href="#" id="delete">Eliminar</a>
+										<a href="checkout.html" hrer href="#">Comprar<i
+												class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
-						<!-- /ACCOUNT -->
+							</div>
+							<!-- /Cart -->
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
+						</div>
 					</div>
-					<!-- row -->
+					<!-- /ACCOUNT -->
 				</div>
-				<!-- container -->
-			</div>
-			<!-- /MAIN HEADER -->
-		</header>
-		<!-- /HEADER -->
-
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="index.html" href="#">Inicio</a></li>
-						<li><a href="comida.html" href="#">Comida</a></li>
-						<li><a href="electronica.html" href="#">Electrónica</a></li>
-						<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-						<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-						<li><a href="papeleria.html" href="#">Papelería</a></li>
-						<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-					</ul>
-					<!-- /NAV -->
-				</div>
-				<!-- /responsive-nav -->
-			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
-
-		<!-- BREADCRUMB -->
-		<div id="breadcrumb" class="section">
-			<!-- container -->
-			<div class="container">
 				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<ul class="breadcrumb-tree">
-							<li><a href="#">Inicio</a></li>
-							<li><a href="#">Categorias</a></li>
-							<li><a href="#">Tecnología</a></li>
-							<li class="active">Todo (590 Resultados)</li>
+			</div>
+			<!-- container -->
+		</div>
+		<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
+
+	<!-- NAVIGATION -->
+	<nav id="navigation">
+		<!-- container -->
+		<div class="container">
+			<!-- responsive-nav -->
+			<div id="responsive-nav">
+				<!-- NAV -->
+				<ul class="main-nav nav navbar-nav">
+					<li class="active"><a href="index.html" href="#">Inicio</a></li>
+					<li><a href="comida.html" href="#">Comida</a></li>
+					<li><a href="electronica.html" href="#">Electrónica</a></li>
+					<li><a href="tecnologia.html" href="#">Tecnología</a></li>
+					<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
+					<li><a href="papeleria.html" href="#">Papelería</a></li>
+					<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
+				</ul>
+				<!-- /NAV -->
+			</div>
+			<!-- /responsive-nav -->
+		</div>
+		<!-- /container -->
+	</nav>
+	<!-- /NAVIGATION -->
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="breadcrumb-tree">
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#">Categorias</a></li>
+						<li><a href="#">Tecnología</a></li>
+						<li class="active">Todo (590 Resultados)</li>
+					</ul>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- ASIDE -->
+				<div id="aside" class="col-md-3">
+					<!-- aside Widget -->
+					<div class="aside">
+						<h3 class="aside-title">Categorias</h3>
+						<div class="checkbox-filter">
+
+							<div class="input-checkbox">
+								<input type="checkbox" id="category-1">
+								<label for="category-1">
+									<span></span>
+									Laptops
+									<small>(120)</small>
+								</label>
+							</div>
+
+							<div class="input-checkbox">
+								<input type="checkbox" id="category-2">
+								<label for="category-2">
+									<span></span>
+									Smartphones
+									<small>(120)</small>
+								</label>
+							</div>
+
+							<div class="input-checkbox">
+								<input type="checkbox" id="category-3">
+								<label for="category-3">
+									<span></span>
+									Camáras
+									<small>(50)</small>
+								</label>
+							</div>
+
+							<div class="input-checkbox">
+								<input type="checkbox" id="category-4">
+								<label for="category-4">
+									<span></span>
+									Accesorios
+									<small>(100)</small>
+								</label>
+							</div>
+
+							<div class="input-checkbox">
+								<input type="checkbox" id="category-5">
+								<label for="category-5">
+									<span></span>
+									Videojuegos
+									<small>(120)</small>
+								</label>
+							</div>
+
+							<div class="input-checkbox">
+								<input type="checkbox" id="category-6">
+								<label for="category-6">
+									<span></span>
+									Audifonos
+									<small>(80)</small>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- /aside Widget -->
+
+					<!-- aside Widget -->
+					<div class="aside">
+						<h3 class="aside-title">Precios</h3>
+						<div class="price-filter">
+							<div id="price-slider"></div>
+							<div class="input-number price-min">
+								<input id="price-min" type="number">
+								<span class="qty-up">+</span>
+								<span class="qty-down">-</span>
+							</div>
+							<span>-</span>
+							<div class="input-number price-max">
+								<input id="price-max" type="number">
+								<span class="qty-up">+</span>
+								<span class="qty-down">-</span>
+							</div>
+						</div>
+					</div>
+					<!-- /aside Widget -->
+
+					<!-- aside Widget -->
+					<div class="aside">
+						<h3 class="aside-title">Marcas</h3>
+						<div class="checkbox-filter">
+							<div class="input-checkbox">
+								<input type="checkbox" id="brand-1">
+								<label for="brand-1">
+									<span></span>
+									SAMSUNG
+									<small>(578)</small>
+								</label>
+							</div>
+							<div class="input-checkbox">
+								<input type="checkbox" id="brand-2">
+								<label for="brand-2">
+									<span></span>
+									HUAWEI
+									<small>(125)</small>
+								</label>
+							</div>
+							<div class="input-checkbox">
+								<input type="checkbox" id="brand-3">
+								<label for="brand-3">
+									<span></span>
+									SONY
+									<small>(755)</small>
+								</label>
+							</div>
+							<div class="input-checkbox">
+								<input type="checkbox" id="brand-4">
+								<label for="brand-4">
+									<span></span>
+									XIOMI
+									<small>(578)</small>
+								</label>
+							</div>
+							<div class="input-checkbox">
+								<input type="checkbox" id="brand-5">
+								<label for="brand-5">
+									<span></span>
+									Motorola
+									<small>(125)</small>
+								</label>
+							</div>
+							<div class="input-checkbox">
+								<input type="checkbox" id="brand-6">
+								<label for="brand-6">
+									<span></span>
+									Iphone
+									<small>(755)</small>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- /aside Widget -->
+
+					<!-- aside Widget -->
+					<div class="aside">
+						<h3 class="aside-title">Más vendido</h3>
+						<div class="product-widget">
+							<div class="product-img">
+								<img src="./img/product01.png" alt="">
+							</div>
+							<div class="product-body">
+								<p class="product-category">Categoria</p>
+								<h3 class="product-name"><a href="#">producto</a></h3>
+								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+							</div>
+						</div>
+
+						<div class="product-widget">
+							<div class="product-img">
+								<img src="./img/product02.png" alt="">
+							</div>
+							<div class="product-body">
+								<p class="product-category">Categoria</p>
+								<h3 class="product-name"><a href="#">producto</a></h3>
+								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+							</div>
+						</div>
+
+						<div class="product-widget">
+							<div class="product-img">
+								<img src="./img/product03.png" alt="">
+							</div>
+							<div class="product-body">
+								<p class="product-category">Categoria</p>
+								<h3 class="product-name"><a href="#">producto</a></h3>
+								<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+							</div>
+						</div>
+					</div>
+					<!-- /aside Widget -->
+				</div>
+				<!-- /ASIDE -->
+
+				<!-- STORE -->
+				<div id="store" class="col-md-9">
+					<!-- store top filter -->
+					<div class="store-filter clearfix">
+						<div class="store-sort">
+							<label>
+								Ordenar por:
+								<select class="input-select">
+									<option value="0">Popular</option>
+									<option value="1">Position</option>
+								</select>
+							</label>
+
+							<label>
+								Mostrar:
+								<select class="input-select">
+									<option value="0">20</option>
+									<option value="1">50</option>
+								</select>
+							</label>
+						</div>
+						<ul class="store-grid">
+							<li class="active"><i class="fa fa-th"></i></li>
+							<li><a href="#"><i class="fa fa-th-list"></i></a></li>
 						</ul>
 					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /BREADCRUMB -->
+					<!-- /store top filter -->
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<!-- ASIDE -->
-					<div id="aside" class="col-md-3">
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Categorias</h3>
-							<div class="checkbox-filter">
+					<!-- store products -->
+					<div class="row" id="product-container">
+						<!-- product -->
 
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-1">
-									<label for="category-1">
-										<span></span>
-										Laptops
-										<small>(120)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-2">
-									<label for="category-2">
-										<span></span>
-										Smartphones
-										<small>(120)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-3">
-									<label for="category-3">
-										<span></span>
-										Camáras
-										<small>(50)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-4">
-									<label for="category-4">
-										<span></span>
-										Accesorios
-										<small>(100)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-5">
-									<label for="category-5">
-										<span></span>
-										Videojuegos
-										<small>(120)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-6">
-									<label for="category-6">
-										<span></span>
-										Audifonos
-										<small>(80)</small>
-									</label>
-								</div>
-							</div>
-						</div>
-						<!-- /aside Widget -->
-
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Precios</h3>
-							<div class="price-filter">
-								<div id="price-slider"></div>
-								<div class="input-number price-min">
-									<input id="price-min" type="number">
-									<span class="qty-up">+</span>
-									<span class="qty-down">-</span>
-								</div>
-								<span>-</span>
-								<div class="input-number price-max">
-									<input id="price-max" type="number">
-									<span class="qty-up">+</span>
-									<span class="qty-down">-</span>
-								</div>
-							</div>
-						</div>
-						<!-- /aside Widget -->
-
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Marcas</h3>
-							<div class="checkbox-filter">
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-1">
-									<label for="brand-1">
-										<span></span>
-										SAMSUNG
-										<small>(578)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-2">
-									<label for="brand-2">
-										<span></span>
-										HUAWEI
-										<small>(125)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-3">
-									<label for="brand-3">
-										<span></span>
-										SONY
-										<small>(755)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-4">
-									<label for="brand-4">
-										<span></span>
-										XIOMI
-										<small>(578)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-5">
-									<label for="brand-5">
-										<span></span>
-										Motorola
-										<small>(125)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-6">
-									<label for="brand-6">
-										<span></span>
-										Iphone
-										<small>(755)</small>
-									</label>
-								</div>
-							</div>
-						</div>
-						<!-- /aside Widget -->
-
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Más vendido</h3>
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product01.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Categoria</p>
-									<h3 class="product-name"><a href="#">producto</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product02.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Categoria</p>
-									<h3 class="product-name"><a href="#">producto</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product03.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Categoria</p>
-									<h3 class="product-name"><a href="#">producto</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-						</div>
-						<!-- /aside Widget -->
-					</div>
-					<!-- /ASIDE -->
-
-					<!-- STORE -->
-					<div id="store" class="col-md-9">
-						<!-- store top filter -->
-						<div class="store-filter clearfix">
-							<div class="store-sort">
-								<label>
-									Ordenar por:
-									<select class="input-select">
-										<option value="0">Popular</option>
-										<option value="1">Position</option>
-									</select>
-								</label>
-
-								<label>
-									Mostrar:
-									<select class="input-select">
-										<option value="0">20</option>
-										<option value="1">50</option>
-									</select>
-								</label>
-							</div>
-							<ul class="store-grid">
-								<li class="active"><i class="fa fa-th"></i></li>
-								<li><a href="#"><i class="fa fa-th-list"></i></a></li>
-							</ul>
-						</div>
-						<!-- /store top filter -->
-
-						<!-- store products -->
-						<div class="row">
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/laphuawei2.jpg" alt="">
-										<div class="product-label">
-											
-											<span class="new">NUEVO</span>
-										</div>
-									</div>
-									<div class="product-body">
-										<p class="product-category">Laptops</p>
-										<h3 class="product-name"><a href="#">Huawei MATEBOOK</a></h3>
-										<h4 class="product-price">$13,800.00 </h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a lista</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/huaweilap1.jpg" alt="">
-										<div class="product-label">
-											<span class="new">NUEVO</span>
-										</div>
-									</div>
-									<div class="product-body">
-										<p class="product-category">Laptops	</p>
-										<h3 class="product-name"><a href="#">Huawei D14</a></h3>
-										<h4 class="product-price">$12,400.00 </h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a lista</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<div class="clearfix visible-sm visible-xs"></div>
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/hppavilion1.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Laptops</p>
-										<h3 class="product-name"><a href="#">HP Pavilion15-C</a></h3>
-										<h4 class="product-price">$12,000.00</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<div class="clearfix visible-lg visible-md"></div>
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/audifsam1.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Audifonos</p>
-										<h3 class="product-name"><a href="#">Gear Icon X</a></h3>
-										<h4 class="product-price">$2,800.00</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<div class="clearfix visible-sm visible-xs"></div>
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/auidifonosLG.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">audifonos</p>
-										<h3 class="product-name"><a href="#">LG TONE</a></h3>
-										<h4 class="product-price">$980.00</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/audifonosbeats.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Audifonos</p>
-										<h3 class="product-name"><a href="#">Beats 5DL</a></h3>
-										<h4 class="product-price">$990.00</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/oppo1.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Celulares</p>
-										<h3 class="product-name"><a href="#">OPPO RENO</a></h3>
-										<h4 class="product-price">$5,680.00 </h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/redmi1.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Celulares</p>
-										<h3 class="product-name"><a href="#">Redmi</a></h3>
-										<h4 class="product-price">$6980.00</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<div class="clearfix visible-sm visible-xs"></div>
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/oppo2.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Celulares</p>
-										<h3 class="product-name"><a href="#">OPPO</a></h3>
-										<h4 class="product-price">$7980.00 </h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-									</div>
-								</div>
-							</div>
-							<!-- /product -->
-						</div>
-						<!-- /store products -->
-
-						<!-- store bottom filter -->
-						<div class="store-filter clearfix">
-							
-							<ul class="store-pagination">
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-							</ul>
-						</div>
 						<!-- /store bottom filter -->
 					</div>
 					<!-- /STORE -->
@@ -864,5 +575,6 @@
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
 
-	</body>
+</body>
+
 </html>

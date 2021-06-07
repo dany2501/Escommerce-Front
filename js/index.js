@@ -1,5 +1,3 @@
-const token = localStorage.getItem('tokenSession');
-
 $(document).ready(() => {
     var user = $("#user");
     var email = $("#email");
@@ -7,18 +5,15 @@ $(document).ready(() => {
     var signup = $("#signup");
     var profile = $("#profile");
     var summary = $("#summary");
-    var no_products = $("#no_products");
-
+    var token = localStorage.getItem('tokenSession');
     var flag = false;
 
     if (token == null || token.length == 4) {
         profile.css({ "display": "none" });
         flag = false;
         summary.css({ "display": "none" });
-        $("#cart_buttons").css({ "display": "none" });
     } else {
         flag = true
-        no_products.css({ "display": "none" })
         getDataClient(token);
         signup.text("")
         logout.text("Cerrar Sesión");
@@ -48,20 +43,6 @@ $(document).ready(() => {
     });
 
 })
-
-const addToCart = (token, productId, qty) => {
-    return $.ajax({
-        method: "POST",
-        url: 'http://localhost:5001/cart',
-        dataType: 'json',
-        headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        data: { productId: productId, qty: qty },
-        accepts: 'application/json',
-        success: (data, status) => {
-            return data;
-        }
-    });
-}
 
 const closeSession = (token) => {
     return $.ajax({

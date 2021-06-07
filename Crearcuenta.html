@@ -61,12 +61,22 @@
 				</span>
 
 				<div class="wrap-input100 validate-input m-b-20" data-validate = "Ingresa un nombre válido ">
-					<input id="name" class="input100" type="text" autocomplete="off" name="username" placeholder="Nombre">
+					<input id="name" class="input100" type="text" onkeypress="return /[a-z]/i.test(event.key)" autocomplete="off" name="username" placeholder="Nombre">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-20" data-validate = "Ingresa tu apellido ">
+					<input id="lastName" class="input100" type="text" onkeypress="return /[a-z]/i.test(event.key)" autocomplete="off" name="app" placeholder="Apellido Paterno">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 m-b-20">
+					<input id="secondLastName" class="input100" type="text" onkeypress="return /[a-z]/i.test(event.key)" autocomplete="off" name="apm" placeholder="Apellido Materno (Opcional)">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-20" data-validate = "Ingresa un correo válido: ex@alumno.ipn.mx">
-						<input class="input100" type="text" autocomplete="off" name="email" placeholder="Correo">
+						<input id="email"class="input100" type="email" autocomplete="off" name="email" placeholder="Correo">
 						<span class="focus-input100"></span>
 					</div>
 

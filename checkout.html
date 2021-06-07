@@ -28,6 +28,7 @@
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src="./js/cart.js"></script>
 	<script src="./js/pedido.js"></script>
 	<script src="./js/accountInfo.js"></script>
 	<script src="./js/address.js"></script>
@@ -45,7 +46,6 @@
 				<ul class="header-links pull-left">
 					<li><a href="#"><i class="fa fa-phone"></i>555555555</a></li>
 					<li><a href="#"><i class="fa fa-envelope-o"></i> ayudaescommerce@gmail.com</a></li>
-
 					<!-- Header Modal -->
 					<li><a href="#escom" class="fa fa-map-marker" data-toggle="modal"> ESCOM</a></li>
 					<div class="modal fade" id="escom">
@@ -84,26 +84,29 @@
 					</div>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="#"><i class="fa fa-dollar"></i>MXN</a></li>
-					<!-- Header Modal -->
-					<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal"> Mi perfil</a></li>
+					<!--<li><a href="productregister.html"><i class="fa fa-dollar"></i>Agregar producto</a></li>
+							<li><a href="deleteproduct.html"><i class="fa fa-dollar"></i>Eliminar/Modificar producto</a></li>
+													<!-- Header Modal -->
+					<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal" id="profile"> Mi perfil</a></li>
 					<div class="modal fade" id="deseos">
 						<div class="modal_dialog">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button tyle="button" class="close" data-dismiss="modal"
 										aria-hidden="true">&times;</button>
-									<h4 class="modal-title">Confirmación
+									<h4 class="modal-title">Perfil
 									</h4>
 								</div>
 								<!-- Header Body -->
 								<div class="modal-body">
+
 									<p>
 										<img src="./img/usuario.png" alt="">
 										<br>
 										<strong id="user">Usuario: </strong>
 										<br>
 										<strong id="email">Correo: </strong>
+
 										<br>
 										</br>
 									</p>
@@ -113,6 +116,9 @@
 					</div>
 					<li>
 						<p id="logout" style="color: white;"> Iniciar Sesión</p>
+					</li>
+					<li>
+						<p id="signup" style="color: white;"> Crear Cuenta</p>
 					</li>
 				</ul>
 			</div>
@@ -159,14 +165,14 @@
 					<div class="col-md-3 clearfix">
 						<div class="header-ctn">
 							<!-- Wishlist -->
-							<!--<div>
-									<a href="#">
-										<i class="fa fa-heart-o"></i>
-										<span>Deseos</span>
-										<div class="qty">2</div>
-									</a>
-								</div>
-								<!-- /Wishlist -->
+							<div style="display: none;">
+								<a href="#">
+									<i class="fa fa-heart-o"></i>
+									<span>Deseos</span>
+									<div class="qty">2</div>
+								</a>
+							</div>
+							<!-- /Wishlist -->
 
 							<!-- Cart -->
 							<div class="dropdown">
@@ -177,54 +183,42 @@
 								</a>
 								<div class="cart-dropdown">
 									<div class="cart-list" id="cart-list">
-
+										<h5 id="no_products">¡Inicia sesión para agregar productos!</h5>
 									</div>
 
-									<div class="cart-summary">
+									<div class="cart-summary" id="summary">
 										<small id="qty-total">0 Articulos</small>
 										<h5 id="subtotal">SUBTOTAL: $0.00</h5>
 									</div>
-									<div class="cart-btns">
-										<a href="#">Eliminar</a>
+									<div class="cart-btns" id="cart_buttons">
+										<a href="#" id="delete">Eliminar</a>
 										<a href="checkout.html" hrer href="#">Comprar<i
 												class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
 							</div>
+							<!-- /Cart -->
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
 						</div>
-						<!-- /ACCOUNT -->
 					</div>
-					<!-- row -->
+					<!-- /ACCOUNT -->
 				</div>
-				<!-- container -->
+				<!-- row -->
 			</div>
-			<!-- /MAIN HEADER -->
+			<!-- container -->
+		</div>
+		<!-- /MAIN HEADER -->
 	</header>
 	<!-- /HEADER -->
 
-	<!-- NAVIGATION -->
-	<nav id="navigation">
-		<!-- container -->
-		<div class="container">
-			<!-- responsive-nav -->
-			<div id="responsive-nav">
-				<!-- NAV -->
-				<ul class="main-nav nav navbar-nav">
-					<li class="active"><a href="index.html" href="#">Inicio</a></li>
-					<li><a href="comida.html" href="#">Comida</a></li>
-					<li><a href="electronica.html" href="#">Electrónica</a></li>
-					<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-					<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-					<li><a href="papeleria.html" href="#">Papelería</a></li>
-					<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-				</ul>
-				<!-- /NAV -->
-			</div>
-			<!-- /responsive-nav -->
-		</div>
-		<!-- /container -->
-	</nav>
-	<!-- /NAVIGATION -->
 
 	<!-- BREADCRUMB -->
 	<div id="breadcrumb" class="section">
@@ -236,7 +230,6 @@
 					<h3 class="breadcrumb-header">INGRESA TUS DATOS</h3>
 					<ul class="breadcrumb-tree">
 						<br>
-						<li><a href="#">INICIO</a></li>
 					</ul></br>
 
 					</ul>

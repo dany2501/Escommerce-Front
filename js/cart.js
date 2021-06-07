@@ -4,6 +4,8 @@ var toPay = 0;
 
 $(document).ready(() => {
 
+    token = localStorage.getItem('tokenSession');
+    productId = localStorage.getItem('productId');
     var cartList = $("#cart-list");
     var qtyCart = $("#qty");
     var subtotal = $("#subtotal");
@@ -12,18 +14,24 @@ $(document).ready(() => {
 
     if (token == null || token.length == 4) {
         flag = false
+        $("#no_products").text("Inicia sesión para agregar productos")
+        $("#cart_buttons").css({ "display": "none" });
 
     } else {
         flag = true
+        $("#no_products").text("Parece que no hay nada por aquí. ¡Agrega productos!")
     }
 
     getCart(token).then((response) => {
         if (response.success && response.products != null && response.products != 0) {
 
             response.products.forEach(element => {
+                if (productId == element.product.id) {
+                    $("#qty-picker").val(element.qty)
+                }
                 qtyProds += element.qty
                 toPay += parseInt(element.product.price) * parseInt(element.qty)
-                cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image);
+                cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image,element.product.id);
             });
             if (qtyProds > 1) {
                 qtyTotal.text(qtyProds + " Artículos");
@@ -34,36 +42,49 @@ $(document).ready(() => {
             qtyCart.text(qtyProds)
             cartList.html(cart);
         } else {
-            $("#cart_buttons").css({ "display": "none" })
+            $("#summary").css({ "display": "none" });
+            $("#cart_buttons").css({ "display": "none" });
         }
     });
 
-    deleteProd.click(()=>{
-        console.log("Delete")
-        deleteCart(token).then((response)=>{
-            if (response.success){
+    deleteProd.click(() => {
+        deleteCart(token).then((response) => {
+            if (response.success) {
                 alert("Carrito vaciado!")
                 window.location.reload()
             }
         })
     });
 
+
+    $("#buy").click(() => {
+        if (flag) {
+            window.location.href = "checkout.html"
+        } else {
+            alert("Para comprar este producto debes iniciar sesión primero.")
+        }
+
+    });
+
+    document.querySelector('#cart-list').addEventListener('click',e =>{
+        action = e.target
+        if(action.id != "" && action.id != null){
+            deleteProductCart(token,action.id).then((response)=>{
+                console.log(response)
+                if (response != null){
+                    if(response.success){
+                        alert("Producto eliminado")
+                        window.location.reload()
+                    }else{
+                        alert(response.error.message)
+                    }
+                }
+            });
+        }
+    });
+
 });
 
-
-const cardCart = (name, price, qty, img) => {
-    finalPrice = parseInt(price) * parseInt(qty)
-    return (`<div class="product-widget">
-        <div class="product-img">
-            <img src=${img} style="width:50; height:50;" alt="">
-        </div>
-        <div class="product-body">
-            <h3 class="product-name">${name}</h3>
-            <h4 class="product-price"><span class="qty">${qty}x</span>$${finalPrice}.00</h4>
-        </div>
-        <button class="delete"><i class="fa fa-close"></i></button>
-    </div>`)
-}
 
 const getCart = (token) => {
     return $.ajax({
@@ -73,13 +94,13 @@ const getCart = (token) => {
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
         success: (data, status) => {
-            console.log(data)
             return data;
         }
     });
 }
 
-const deleteCart = (token)=>{
+
+const deleteCart = (token) => {
     return $.ajax({
         method: "DELETE",
         url: 'http://localhost:5001/cart',
@@ -90,4 +111,49 @@ const deleteCart = (token)=>{
             return data;
         }
     });
+}
+
+const deleteProductCart = (token,productId) => {
+    return $.ajax({
+        method: "PUT",
+        url: 'http://localhost:5001/cart',
+        dataType: 'json',
+        headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
+        data:{productId:productId},
+        accepts: 'application/json',
+        success: (data, status) => {
+            return data;
+        }
+    });
+}
+
+
+
+
+const addToCart = (token, productId, qty) => {
+    return $.ajax({
+        method: "POST",
+        url: 'http://localhost:5001/cart',
+        dataType: 'json',
+        headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
+        data: { productId: productId, qty: qty },
+        accepts: 'application/json',
+        success: (data, status) => {
+            return data;
+        }
+    });
+}
+
+const cardCart = (name, price, qty, img,productId) => {
+    finalPrice = parseInt(price) * parseInt(qty)
+    return (`<div class="product-widget">
+        <div class="product-img">
+            <img src=${img} alt="">
+        </div>
+        <div class="product-body">
+            <h3 class="product-name">${name}</h3>
+            <h4 class="product-price"><span class="qty">${qty}x</span>$${finalPrice}.00</h4>
+        </div>
+        <button class="delete"><i class="fa fa-close" id=${productId}></i></button>
+    </div>`)
 }

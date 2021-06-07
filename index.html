@@ -31,8 +31,9 @@
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="./js/index.js"></script>
-	<script src="./js/index-products.js"></script>
 	<script src="./js/cart.js"></script>
+	<script src="./js/index-products.js"></script>
+	<script src="./js/index-categories.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -233,13 +234,10 @@
 			<div id="responsive-nav">
 				<!-- NAV -->
 				<ul class="main-nav nav navbar-nav">
-					<li class="active"><a href="index.html" href="#">Inicio</a></li>
-					<li><a href="comida.html" href="#">Comida</a></li>
-					<li><a href="electronica.html" href="#">Electrónica</a></li>
-					<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-					<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-					<li><a href="papeleria.html" href="#">Papelería</a></li>
-					<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
+					<li class="active"><a href="index.html">Inicio</a></li>
+					<li><a id="e">Electrónica</a></li>
+					<li><a id="t">Tecnología</a></li>
+					<li><a id="i">Espiritu IPN</a></li>
 				</ul>
 				<!-- /NAV -->
 			</div>
@@ -257,13 +255,13 @@
 			<div class="row">
 				<!-- shop -->
 				<div class="col-md-4 col-xs-6">
-					<div class="shop">
+					<div class="shop"  id="tecnologia">
 						<div class="shop-img">
 							<img src="./img/mateb.jpg" alt="">
 						</div>
 						<div class="shop-body">
 							<h3>Tecnología</h3>
-							<a href="tecnologia.html" href="#" class="cta-btn">Comprar ahora <i
+							<a class="cta-btn">Comprar ahora <i
 									class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
@@ -271,14 +269,14 @@
 				<!-- /shop -->
 
 				<!-- shop -->
-				<div class="col-md-4 col-xs-6">
-					<div class="shop">
+				<div class="col-md-4 col-xs-6" >
+					<div class="shop" id="electronica">
 						<div class="shop-img">
 							<img src="./img/electronic.jpg" alt="">
 						</div>
 						<div class="shop-body">
 							<h3>Electrónica<br></h3>
-							<a href="electronica.html" href="#" class="cta-btn">Comprar ahora <i
+							<a class="cta-btn" >Comprar ahora <i
 									class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
@@ -286,14 +284,14 @@
 				<!-- /shop -->
 
 				<!-- shop -->
-				<div class="col-md-4 col-xs-6">
-					<div class="shop">
+				<div class="col-md-4 col-xs-6" >
+					<div class="shop" id="ipn">
 						<div class="shop-img">
 							<img src="./img/ipnp.jpg" alt="">
 						</div>
 						<div class="shop-body">
 							<h3>Espiritu IPN<br></h3>
-							<a href="IPN.html" href="#" class="cta-btn">Comprar ahora<i
+							<a href="IPN.html" href="#" class="cta-btn" >Comprar ahora<i
 									class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
