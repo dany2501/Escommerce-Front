@@ -1,929 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>ESCOMMERCE</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+	<script src="./js/cart.js"></script>
+	<script src="./js/index-products.js"></script>
+	<script src="./js/index-categories.js"></script>
 
-		<title>Electro - HTML Ecommerce Template</title>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+</head>
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+<body>
+	<!-- HEADER -->
+	<header>
+		<!-- TOP HEADER -->
+		<div id="top-header">
+			<div class="container">
+				<ul class="header-links pull-left">
+					<li><a href="#"><i class="fa fa-phone"></i>555555555</a></li>
+					<li><a href="#"><i class="fa fa-envelope-o"></i> ayudaescommerce@gmail.com</a></li>
+					<!-- Header Modal -->
+					<li><a href="#escom" class="fa fa-map-marker" data-toggle="modal"> ESCOM</a></li>
+					<div class="modal fade" id="escom">
+						<div class="modal_dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button tyle="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Confirmación
+									</h4>
+								</div>
+								<!-- Header Body -->
+								<div class="modal-body">
+									<p>
 
-		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
-		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
-
-		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
-
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="css/style.css"/>
-
-		
-
-    </head>
-	<body>
-		<!-- HEADER -->
-		<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i>555555555</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> ayudaescommerce@gmail.com</a></li>
-						<!-- Header Modal -->
-						<li><a href="#escom" class="fa fa-map-marker" data-toggle="modal"> ESCOM</a></li>
-						<div class="modal fade" id="escom">
-								<div class="modal_dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Confirmación											
-											</h4>
-										</div>
-										<!-- Header Body -->
-										<div class="modal-body">
-											<p>
-											
-											Dirección: ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX
-										<br>	Horas: 
-										<br>martes	7:00–9:30
-										<br>miércoles	7:00–9:30
-										<br>jueves	7:00–9:30
-										<br>viernes	7:00–9:30
-										<br>sábado	Cerrado
-										<br>domingo	Cerrado
-										<br>lunes	7:00–9:30
+										Dirección: ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de
+										México, CDMX
+										<br> Horas:
+										<br>martes 7:00–9:30
+										<br>jueves 7:00–9:30
+										<br>viernes 7:00–9:30
+										<br>sábado Cerrado
+										<br>domingo Cerrado
+										<br>lunes 7:00–9:30
 										<br>Estudiantes: 3,000​ (aproximadamente)</br>
 										<br>Director: Andrés Ortigoza Campos</br>
 										<br>Fundación: 13 de agosto de 1993</br>
 										<br>Decano: Ignacio Ríos de la Torre</br>
 										<br>Tipo: Pública</br>
-											</br>
-											</p>
-										</div>
-									</div>
+										</br>
+									</p>
 								</div>
+							</div>
 						</div>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a  href="loginvendedor.html" href="#"><i class="fa fa-dollar"></i>¿Quieres vender?</a></li>
-						<li><a href="perfil.html" href="#"><i class="fa fa-user-o"></i>Mi perfil</li></a>
-					</ul>
-				</div>
+					</div>
+				</ul>
+				<ul class="header-links pull-right">
+					<!--<li><a href="productregister.html"><i class="fa fa-dollar"></i>Agregar producto</a></li>
+						<li><a href="deleteproduct.html"><i class="fa fa-dollar"></i>Eliminar/Modificar producto</a></li>
+												<!-- Header Modal -->
+					<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal" id="profile"> Mi perfil</a></li>
+					<div class="modal fade" id="deseos">
+						<div class="modal_dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button tyle="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Perfil
+									</h4>
+								</div>
+								<!-- Header Body -->
+								<div class="modal-body">
+
+									<p>
+										<img src="./img/usuario.png" alt="">
+										<br>
+										<strong id="user">Usuario: </strong>
+										<br>
+										<strong id="email">Correo: </strong>
+
+										<br>
+										</br>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<li>
+						<p id="logout" style="color: white;"> Iniciar Sesión</p>
+					</li>
+					<li>
+						<p id="signup" style="color: white;"> Crear Cuenta</p>
+					</li>
+				</ul>
 			</div>
-			<!-- /TOP HEADER -->
+		</div>
+		<!-- /TOP HEADER -->
 
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<!-- LOGO -->
-						<div class="col-md-2">
-							<div class="header-logo">
-								<a href="#" class="logo">
-									<a href="index.html"><img src="./img/escommerce 170por70.jpg" alt=""></a>
-								</a>
-							</div>
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-2">
+						<div class="header-logo">
+							<a href="#" class="logo">
+								<a href="index.html"><img src="./img/escommerce 170por70.jpg" alt=""></a>
+							</a>
 						</div>
-						<!-- /LOGO -->
+					</div>
+					<!-- /LOGO -->
 
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="1">Categorias</option>
-										<option value="1">Comida</option>
-										<option value="1">Electrónica</option>
-										<option value="1">Tecnología</option>
-										<option value="1">Juegos de mesa</option>
-										<option value="1">Papelería</option>
-										<option value="1">Espiritu IPN</option>
-									</select>
-									<input class="input" placeholder="Buscar">
-									<button class="search-btn">Buscar</button>
-								</form>
-							</div>
+					<!-- SEARCH BAR -->
+					<div class="col-md-6">
+						<div class="header-search">
+							<form>
+								<select class="input-select">
+									<option value="1">Categorias</option>
+									<option value="1">Comida</option>
+									<option value="1">Electrónica</option>
+									<option value="1">Tecnología</option>
+									<option value="1">Juegos de mesa</option>
+									<option value="1">Papelería</option>
+									<option value="1">Espiritu IPN</option>
+								</select>
+								<input class="input" placeholder="Buscar">
+								<button class="search-btn">Buscar</button>
+							</form>
 						</div>
-						<!-- /SEARCH BAR -->
+					</div>
+					<!-- /SEARCH BAR -->
 
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-											<!-- Wishlist -->
-							<div class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<!-- Wishlist -->
+							<div style="display: none;">
+								<a href="#">
 									<i class="fa fa-heart-o"></i>
 									<span>Deseos</span>
-									<div class="qty">3</div>
+									<div class="qty">2</div>
 								</a>
-								<div class="cart-dropdown">
-									<div class="cart-list">
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/chamarraipn.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">Poli BOMBER</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-											</div>
-											
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/gorra.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">GorraB.B</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									</div>
-
-									<div class="product-widget">
-										<div class="product-img">
-											<img src="./img/unoclasico.jpg" alt="">
-										</div>
-										<div class="product-body">
-											<h3 class="product-name">uno clásico</h3>
-											<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-										</div>
-										<button class="delete"><i class="fa fa-close"></i></button>
-									</div>
-								
-									<div class="cart-summary">
-										<small>3 Articulos</small>
-										<h5>SUBTOTAL: $1,340.00</h5>
-									</div>
-									<div class="cart-btns">
-										<a href="#">Eliminar</a>
-										<a href="checkout.html" href="#">Comprar<i class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
 							</div>
 							<!-- /Wishlist -->
 
-								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Ver carrito</span>
-										<div class="qty">3</div>
-									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/chamarraipn.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">Poli BOMBER</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
+							<!-- Cart -->
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<i class="fa fa-shopping-cart"></i>
+									<span>Ver carrito</span>
+									<div class="qty" id="qty">0</div>
+								</a>
+								<div class="cart-dropdown">
+									<div class="cart-list" id="cart-list">
+										<h5 id="no_products">¡Inicia sesión para agregar productos!</h5>
+									</div>
 
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/gorra.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">GorraB.B</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/unoclasico.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">uno clásico</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									
-										<div class="cart-summary">
-											<small>3 Articulos</small>
-											<h5>SUBTOTAL: $1,340.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">Eliminar</a>
-											<a href="checkout.html"hrer href="#">Comprar<i class="fa fa-arrow-circle-right"></i></a>
-										</div>
+									<div class="cart-summary" id="summary">
+										<small id="qty-total">0 Articulos</small>
+										<h5 id="subtotal">SUBTOTAL: $0.00</h5>
+									</div>
+									<div class="cart-btns" id="cart_buttons">
+										<a href="#" id ="delete">Eliminar</a>
+										<a href="checkout.html" hrer href="#">Comprar<i
+												class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
-								<!-- /Cart -->
-
-								<!-- Menu Toogle -->
-								<div class="menu-toggle">
-									<a href="#">
-										<i class="fa fa-bars"></i>
-										<span>Menu</span>
-									</a>
-								</div>
-								<!-- /Menu Toogle -->
 							</div>
+							<!-- /Cart -->
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
 						</div>
-						<!-- /ACCOUNT -->
 					</div>
-					<!-- row -->
+					<!-- /ACCOUNT -->
 				</div>
-				<!-- container -->
-			</div>
-			<!-- /MAIN HEADER -->
-		</header>
-		<!-- /HEADER -->
-
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="index.html" href="#">Inicio</a></li>
-						<li><a href="comida.html" href="#">Comida</a></li>
-						<li><a href="electronica.html" href="#">Electrónica</a></li>
-						<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-						<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-						<li><a href="papeleria.html" href="#">Papelería</a></li>
-						<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-					</ul>
-					<!-- /NAV -->
-				</div>
-				<!-- /responsive-nav -->
-			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
-
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
 				<!-- row -->
-				<div class="row">
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/mateb.jpg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Tecnología</h3>
-								<a href="tecnologia.html" href="#" class="cta-btn">Comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/electronic.jpg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Electrónica<br></h3>
-								<a href="electronica.html" href="#" class="cta-btn">Comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/ipnp.jpg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Espiritu IPN<br></h3>
-								<a href="IPN.html" href="#" class="cta-btn">Comprar ahora<i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-				</div>
-				<!-- /row -->
 			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-
-		<!-- SECTION -->
-		<div class="section">
 			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
+		</div>
+		<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
 
-					<!-- section title -->
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 class="title">Nuevos productos</h3>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li><a href="comida.html" href="#">Comida</a></li>
-									<li><a href="electronica.html" href="#">Electrónica</a></li>
-									<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-									<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-									<li><a href="papeleria.html" href="#">Papelería</a></li>
-									<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-								</ul>
-							</div>
+	<!-- NAVIGATION -->
+	<nav id="navigation">
+		<!-- container -->
+		<div class="container">
+			<!-- responsive-nav -->
+			<div id="responsive-nav">
+				<!-- NAV -->
+				<ul class="main-nav nav navbar-nav">
+					<li class="active"><a href="index.html">Inicio</a></li>
+					<li><a id="e">Electrónica</a></li>
+					<li><a id="t">Tecnología</a></li>
+					<li><a id="i">Espiritu IPN</a></li>
+				</ul>
+				<!-- /NAV -->
+			</div>
+			<!-- /responsive-nav -->
+		</div>
+		<!-- /container -->
+	</nav>
+	<!-- /NAVIGATION -->
+
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- shop -->
+				<div class="col-md-4 col-xs-6">
+					<div class="shop"  id="tecnologia">
+						<div class="shop-img">
+							<img src="./img/mateb.jpg" alt="">
+						</div>
+						<div class="shop-body">
+							<h3>Tecnología</h3>
+							<a class="cta-btn">Comprar ahora <i
+									class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
-					<!-- /section title -->
-
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab1" class="tab-pane active">
-									<div class="products-slick" data-nav="#slick-nav-1">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/mateb.jpg" alt="">
-												<div class="product-label">
-													<span class="new">Novedades</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Tecnología </p>
-													<h3 class="product-name">Huawei</h3>
-												<h3 class="product-name">Matebook D14</h3>
-									
-												<h4 class="product-price">$18,000.00</h4>
-												<div class="product-rating">
-													
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													
-													
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a deseos</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Añadir al carrito</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/audifonos.jpg" alt="">
-												<div class="product-label">
-													<span class="new">Descuento</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Tecnología</p>
-													<h3 class="product-name">Skullcandy</h3>
-												<h3 class="product-name">Audifonos 2BBW-M715</h3>
-												<h4 class="product-price">$1280.00 <del class="product-old-price">$1990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a deseos</span></button>
-
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/chamarraipn.png" alt="">
-												<div class="product-label">
-													
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Espíritu IPN</p>
-												<h3 class="product-name">POLI BOMBER</h3>
-												<h3 class="product-name">GUINDA</h3>
-												<h4 class="product-price">$680.00 <del class="product-old-price">$990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-											a<img src="./img/gorra.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Espíritu IPN</p>
-												<h3 class="product-name">Gorra edición especial</h3>
-												<h3 class="product-name">Burros blancos</h3>
-												<h4 class="product-price">$580.00</h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a lista</span></button>
-													
-													<a href="producto.html" ><i class="fa fa-eye"></i></a>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<a href="checkout.html" ><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Comprar</button></a>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/proto.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Electrónica</p>
-												<h3 class="product-name">Kit Protoboard</h3>
-												<h3 class="product-name">OEM ARD-K005</h3>
-												<h4 class="product-price">$180.00 <del class="product-old-price">$290.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a lista</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> añadir al carrito</button>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-1" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- Products tab & slick -->
 				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+				<!-- /shop -->
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-
-					<!-- section title -->
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 class="title">Populares</h3>
-							
+				<!-- shop -->
+				<div class="col-md-4 col-xs-6" >
+					<div class="shop" id="electronica">
+						<div class="shop-img">
+							<img src="./img/electronic.jpg" alt="">
+						</div>
+						<div class="shop-body">
+							<h3>Electrónica<br></h3>
+							<a class="cta-btn" >Comprar ahora <i
+									class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
-					<!-- /section title -->
-
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab2" class="tab-pane fade in active">
-									<div class="products-slick" data-nav="#slick-nav-2">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/proto.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">-62%</span>
-													<span class="new">PROMOCIÓN</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Electrónica</p>
-												<h3 class="product-name">Kit Protoboard</h3>
-												<h3 class="product-name">OEM ARD-K005</h3>
-												<h4 class="product-price">$180.00 <del class="product-old-price">$290.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/cargador.jpg" alt="">
-												<div class="product-label">
-													
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Tecnología</p>
-												<h3 class="product-name">Cargador Tipo C</h3>
-												<h3 class="product-name">Genérico</h3>
-												<h4 class="product-price">$140.00 </h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/parche.jpg" alt="">
-												<div class="product-label">
-													
-													<span class="new">NUEVO</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Espíritu IPN</p>
-												<h3 class="product-name">Parche 7cm-5cm</h3>
-												<h3 class="product-name">Escudo IPN</h3>
-												<h4 class="product-price">$20.00 </h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o"></i>
-													<i class="fa fa-star-half-o"></i>
-												<i class="fa fa-star-half-o"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">comparar</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/uno.jpg" alt="">
-												<div class="product-label">
-													
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Juegos de mesa</p>
-												<h3 class="product-name">UNO</h3>
-												<h3 class="product-name">MINIMALISTA</h3>
-												<h4 class="product-price">$299.00</h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> comprar</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/plumas.jpg" alt="">
-												
-											</div>
-											<div class="product-body">
-												<p class="product-category"></p>Papeleria</p>
-												<h3 class="product-name">Plumas pinpoint punto fino</h3>
-												<h3 class="product-name">Caja de 12pzas</h3>
-												<h4 class="product-price">$60.00 </h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a deseos</span></button>
-													
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">ver</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<a href="checkout.html"hrer href="#">Comprar<i class="fa fa-arrow-circle-right"></i></a>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-2" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- /Products tab & slick -->
 				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+				<!-- /shop -->
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-4 col-xs-6">
-						<div class="section-title">
-							<h4 class="title">Recientemente vendido</h4>
-							<div class="section-nav">
-								<div id="slick-nav-3" class="products-slick-nav"></div>
-							</div>
+				<!-- shop -->
+				<div class="col-md-4 col-xs-6" >
+					<div class="shop" id="ipn">
+						<div class="shop-img">
+							<img src="./img/ipnp.jpg" alt="">
 						</div>
-
-						<div class="products-widget-slick" data-nav="#slick-nav-3">
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/monopolyzelda.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Juegos de mesa</p>
-										<h3 class="product-name"><a href="#">Monopoly Zelda</a></h3>
-										<h4 class="product-price">$980.00 </h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/unoclasico.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Juegos de mesa</p>
-										<h3 class="product-name"><a href="#">Uno clásico</a></h3>
-										<h4 class="product-price">$80.00</h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/unohp.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Juegos de mesa</p>
-										<h3 class="product-name"><a href="#">Uno Harry Potter</a></h3>
-										<h4 class="product-price">$180.00</h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
-
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/voting.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Juegos de mesa</p>
-										<h3 class="product-name"><a href="#">The voting</a></h3>
-										<h4 class="product-price">$240.00</h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/ajedrezrm.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Juegos de mesa</p>
-										<h3 class="product-name"><a href="#">Ajedrez Rick and Morty</a></h3>
-										<h4 class="product-price">$1180.00</h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/calabozosydragones.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Juegos de mesa</p>
-										<h3 class="product-name"><a href="#">Calabozos y Dragones</a></h3>
-										<h4 class="product-price">$760.00</h4>
-									</div>
-								</div>
-								<!-- product widget -->
-
-								
-								</div>
-								<!-- product widget -->
-
-								
-							</div>
-						
+						<div class="shop-body">
+							<h3>Espiritu IPN<br></h3>
+							<a href="IPN.html" href="#" class="cta-btn" >Comprar ahora<i
+									class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
-
-					
-
-					
-				<!-- /row -->
+				</div>
+				<!-- /shop -->
 			</div>
-			<!-- /container -->
+			<!-- /row -->
 		</div>
-		<!-- /SECTION -->
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
 
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
 
-		<!-- FOOTER -->
-		<footer id="footer">
-			<!-- top footer -->
-			<div class="section">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
+				<!-- section title -->
+				<div class="col-md-12">
+					<div class="section-title">
+						<h3 class="title">Nuevos productos</h3>
+						<div class="section-nav">
+							<ul class="section-tab-nav tab-nav">
+								<li><a href="comida.html" href="#">Comida</a></li>
+								<li><a href="electronica.html" href="#">Electrónica</a></li>
+								<li><a href="tecnologia.html" href="#">Tecnología</a></li>
+								<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
+								<li><a href="papeleria.html" href="#">Papelería</a></li>
+								<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /section title -->
+
+				<!-- Products tab & slick -->
+				<div class="col-md-12">
 					<div class="row">
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Sobre nosotros</h3>
-								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>ESCOM</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>5555555</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>ayudaescommerce@gmail.com</a></li>
-								</ul>
-							</div>
-						</div>
+						<div class="products-tabs">
+							<!-- tab -->
+							<div id="tab1" class="tab-pane active">
+								<div class="products-slick" id="product_container" data-nav="#slick-nav-1">
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Categorias</h3>
-								<ul class="footer-links">
-									<li><a href="comida.html" href="#">Comida</a></li>
-									<li><a href="electronica.html" href="#">Electrónica</a></li>
-									<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-									<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-									<li><a href="papeleria.html" href="#">Papelería</a></li>
-									<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-								</ul>
+								</div>
+								<div id="slick-nav-1" class="products-slick-nav"></div>
 							</div>
-						</div>
-
-						<div class="clearfix visible-xs"></div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Información</h3>
-								<ul class="footer-links">
-									<li><a href="#">Sobre nosotros</a></li>
-									<li><a href="#">Contacto</a></li>
-									<li><a href="#">Politicas</a></li>
-									<li><a href="#">Pedidos y devoluciones</a></li>
-									<li><a href="#">Terminós y condiciones</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Servicio</h3>
-								<ul class="footer-links">
-									<li><a href="#">Mi cuenta</a></li>
-									<li><a href="#">Ver carrito</a></li>
-									<li><a href="#">Lista de deseos</a></li>
-									<li><a href="#">Rastrear</a></li>
-									<li><a href="#">Ayuda</a></li>
-								</ul>
-							</div>
+							<!-- /tab -->
 						</div>
 					</div>
-					<!-- /row -->
 				</div>
-				<!-- /container -->
+				<!-- Products tab & slick -->
 			</div>
-			<!-- /top footer -->
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
 
-		</footer>
-		<!-- /FOOTER -->
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
 
-		<!-- jQuery Plugins -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slick.min.js"></script>
-		<script src="js/nouislider.min.js"></script>
-		<script src="js/jquery.zoom.min.js"></script>
-		<script src="js/main.js"></script>
+				<!-- section title -->
+				<div class="col-md-12">
+					<div class="section-title">
+						<h3 class="title">Populares</h3>
 
-	</body>
+					</div>
+				</div>
+				<!-- /section title -->
+
+				<!-- Products tab & slick -->
+				<div class="col-md-12">
+					<div class="row">
+						<div class="products-tabs">
+							<!-- tab -->
+							<div id="tab2" class="tab-pane fade in active">
+								<div class="products-slick" data-nav="#slick-nav-2" id="product_container_2">
+
+									<!-- /product -->
+								</div>
+								<div id="slick-nav-2" class="products-slick-nav"></div>
+							</div>
+							<!-- /tab -->
+						</div>
+					</div>
+				</div>
+				<!-- /Products tab & slick -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
+
+	<!-- SECTION -->
+	<div class="section" style="display: none;">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-4 col-xs-6">
+					<div class="section-title">
+						<h4 class="title">Recientemente vendido</h4>
+						<div class="section-nav">
+							<div id="slick-nav-3" class="products-slick-nav"></div>
+						</div>
+					</div>
+
+					<div class="products-widget-slick" data-nav="#slick-nav-3">
+						<div>
+							<!-- product widget -->
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="./img/monopolyzelda.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">Juegos de mesa</p>
+									<h3 class="product-name"><a href="#">Monopoly Zelda</a></h3>
+									<h4 class="product-price">$980.00 </h4>
+								</div>
+							</div>
+							<!-- /product widget -->
+
+							<!-- product widget -->
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="./img/unoclasico.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">Juegos de mesa</p>
+									<h3 class="product-name"><a href="#">Uno clásico</a></h3>
+									<h4 class="product-price">$80.00</h4>
+								</div>
+							</div>
+							<!-- /product widget -->
+
+							<!-- product widget -->
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="./img/unohp.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">Juegos de mesa</p>
+									<h3 class="product-name"><a href="#">Uno Harry Potter</a></h3>
+									<h4 class="product-price">$180.00</h4>
+								</div>
+							</div>
+							<!-- product widget -->
+						</div>
+
+						<div>
+							<!-- product widget -->
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="./img/voting.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">Juegos de mesa</p>
+									<h3 class="product-name"><a href="#">The voting</a></h3>
+									<h4 class="product-price">$240.00</h4>
+								</div>
+							</div>
+							<!-- /product widget -->
+
+							<!-- product widget -->
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="./img/ajedrezrm.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">Juegos de mesa</p>
+									<h3 class="product-name"><a href="#">Ajedrez Rick and Morty</a></h3>
+									<h4 class="product-price">$1180.00</h4>
+								</div>
+							</div>
+							<!-- /product widget -->
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="./img/calabozosydragones.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">Juegos de mesa</p>
+									<h3 class="product-name"><a href="#">Calabozos y Dragones</a></h3>
+									<h4 class="product-price">$760.00</h4>
+								</div>
+							</div>
+							<!-- product widget -->
+
+
+						</div>
+						<!-- product widget -->
+
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
+
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<!-- top footer -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Sobre nosotros</h3>
+							<ul class="footer-links">
+								<li><a href="#"><i class="fa fa-map-marker"></i>ESCOM</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>5555555</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>ayudaescommerce@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Categorias</h3>
+							<ul class="footer-links">
+								<li><a href="comida.html" href="#">Comida</a></li>
+								<li><a href="electronica.html" href="#">Electrónica</a></li>
+								<li><a href="tecnologia.html" href="#">Tecnología</a></li>
+								<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
+								<li><a href="papeleria.html" href="#">Papelería</a></li>
+								<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="clearfix visible-xs"></div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Información</h3>
+							<ul class="footer-links">
+								<li><a href="#">Sobre nosotros</a></li>
+								<li><a href="#">Contacto</a></li>
+								<li><a href="#">Politicas</a></li>
+								<li><a href="#">Pedidos y devoluciones</a></li>
+								<li><a href="#">Terminós y condiciones</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Servicio</h3>
+							<ul class="footer-links">
+								<li><a href="#">Mi cuenta</a></li>
+								<li><a href="#">Ver carrito</a></li>
+								<li><a href="#">Lista de deseos</a></li>
+								<li><a href="#">Rastrear</a></li>
+								<li><a href="#">Ayuda</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /top footer -->
+
+	</footer>
+	<!-- /FOOTER -->
+
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
 </html>

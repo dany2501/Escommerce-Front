@@ -5,6 +5,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Electro - HTML Ecommerce Template</title>
 
  		<!-- Google font -->
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -25,7 +28,12 @@
  		<!-- Custom stlylesheet -->
  		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
-
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
     </head>
 	<body>
@@ -76,7 +84,31 @@
 						<li><a href="productregister.html"><i class="fa fa-dollar"></i>Agregar producto</a></li>
 						<li><a href="deleteproduct.html"><i class="fa fa-dollar"></i>Eliminar/Modificar producto</a></li>
 						<!-- Header Modal -->
-						<li><a href="perfil.html" href="#"><i class="fa fa-user-o"></i>Mi perfil</li></a>
+						<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal"> Mi perfil</a></li>
+						<div class="modal fade" id="deseos">
+								<div class="modal_dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title">Perfil											
+											</h4>
+										</div>
+										<!-- Header Body -->
+										<div class="modal-body">
+											<p>
+											 <img src="./img/usuario.png" alt="">
+											<br>
+											<strong>Usuario: nombre 1</strong> 
+											<br>
+											<strong>Correo: nombre1@alumno.ipn.mx</strong> 
+											<br>
+											
+											</br>
+											</p>
+										</div>
+									</div>
+								</div>
+						</div>
 					</ul>
 				</div>
 			</div>
@@ -121,7 +153,71 @@
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
-								
+								<!-- Wishlist -->
+								<div>
+									<a href="#">
+										<i class="fa fa-heart-o"></i>
+										<span>Deseos</span>
+										<div class="qty">2</div>
+									</a>
+								</div>
+								<!-- /Wishlist -->
+
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Ver carrito</span>
+										<div class="qty">3</div>
+									</a>
+									<div class="cart-dropdown">
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/chamarraipn.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name">Poli BOMBER</h3>
+													<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/gorra.jpg" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name">GorraB.B</h3>
+													<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+										</div>
+
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/unoclasico.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name">uno clásico</h3>
+												<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
+											</div>
+											<button class="delete"><i class="fa fa-close"></i></button>
+										</div>
+									
+										<div class="cart-summary">
+											<small>3 Articulos</small>
+											<h5>SUBTOTAL: $1,340.00</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="#">Eliminar</a>
+											<a href="checkout.html"hrer href="#">Comprar<i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
+
 								
 							</div>
 						</div>
@@ -244,11 +340,11 @@
 							<div class="checkbox-filter">
 									<label>
 										<input type="checkbox" id="category-1">
-										<label for="category-1">
+										<label for="category-3">
 											Comida
 										</label>
 										<input type="checkbox" id="category-2">
-										<label for="category-2">
+										<label for="category-3">
 											<span></span>
 											Electrónica 
 										</label>
@@ -260,20 +356,18 @@
 										</label>
 										<br>
 										<input type="checkbox" id="category-4">
-										<label for="category-4">
+										<label for="category-3">
 											<span></span>
 											Juegos de Mesa
 										</label>
 										<input type="checkbox" id="category-5">
-										<label for="category-5">
+										<label for="category-3">
 											<span></span>
-											<br>
 											Papelería
 										</label>
 										<input type="checkbox" id="category-6">
-										<label for="category-6">
+										<label for="category-3">
 											<span></span>
-											
 											Espiritu IPN 
 										</label>
 										
@@ -282,15 +376,12 @@
 							</div>
 						</div>
 						<div class="product-details">
-							<br>
 							<h2 class="product-name">Descripción</h2>
 							<div class="form-group">
-								<br>
 								<input class="input" type="text" name="Descripcionproduct" placeholder="Ingresa la descripcion de tu producto">
 							</div>
-							<br><br>
 							<div class="form-group">
-								<input class="input" type="text" name="Caractproduct" placeholder="Ingresa las especificaciones">
+								<input class="input" type="text" name="Caractproduct" placeholder="Ingresa las caracteristicas">
 							</div>
 							<div class="product-options">
 								<h2 class="details">Otras caracteristicas</h2>
@@ -308,56 +399,55 @@
 									<br>
 									Color disponible
 									<br>
-									<input type="checkbox" id="category-19">
-									<label for="category-19">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Blanco
 									</label>
-									<input type="checkbox" id="category-7">
-									<label for="category-7">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Negro 
 									</label>
 									
-									<input type="checkbox" id="category-8">
-									<label for="category-8">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Rojo 
 									</label>
-									<input type="checkbox" id="category-9">
-									<label for="category-9">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Azul
 									</label>
-									<input type="checkbox" id="category-10">
-									<label for="category-10">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Rosa
 									</label>
 									<br>
-									<input type="checkbox" id="category-11">
-									<label for="category-11">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Verde 
 									</label>
-									<input type="checkbox" id="category-12">
-									<label for="category-12">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Morado
 									</label>
-									<input type="checkbox" id="category-13">
-									<label for="category-13">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
-										Café
-										<br>
+										Azul
 									</label>
-									<input type="checkbox" id="category-14">
-									<label for="category-14">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Guinda
 									</label>
-									<input type="checkbox" id="category-15">
-									<label for="category-15">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
 										<span></span>
 										Amarillo
 									</label>
@@ -365,7 +455,6 @@
 							</div>
 
 							<div class="add-to-cart">
-								<br>
 								<div class="qty-label">
 									Pzas disponibles
 									<div class="input-number">
@@ -375,7 +464,6 @@
 									</div>
 								</div>
 								<div class="qty-label">
-									<br>
 									Precio
 									<div class="input-number">
 										<input type="number">
@@ -386,11 +474,8 @@
 								<br>
 								<br>
 								<br>
-								</a><button class="add-to-cart-btn"> Agregar fotos</button></a>
-
-							</a><button class="add-to-cart-btn"> Agregar producto</button></a>
-
-								<br><button class="add-to-cart-btn">Eliminar</button>
+								</a><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Agregar fotos</button></a>
+								<a href="index.html" ></a><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Agregar producto</button></a>
 							</div>
 
 							

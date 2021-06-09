@@ -1,442 +1,350 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>ESCOMMERCE</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
- 		<!-- Google font -->
- 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	<title>ESCOMMERCE</title>
 
- 		<!-- Bootstrap -->
- 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
- 		<!-- Slick -->
- 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
- 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
- 		<!-- nouislider -->
- 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
 
- 		<!-- Font Awesome Icon -->
- 		<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
 
- 		<!-- Custom stlylesheet -->
- 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src="./js/cart.js"></script>
+	<script src="./js/pedido.js"></script>
+	<script src="./js/accountInfo.js"></script>
+	<script src="./js/address.js"></script>
 
 
 
-    </head>
-	<body>
-		<!-- HEADER -->
-		<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i>555555555</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> ayudaescommerce@gmail.com</a></li>
-						
-						<!-- Header Modal -->
-						<li><a href="#escom" class="fa fa-map-marker" data-toggle="modal"> ESCOM</a></li>
-						<div class="modal fade" id="escom">
-								<div class="modal_dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Confirmación											
-											</h4>
-										</div>
-										<!-- Header Body -->
-										<div class="modal-body">
-											<p>
-											
-											Dirección: ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX
-										<br>	Horas: 
-										<br>martes	7:00–9:30
-										<br>miércoles	7:00–9:30
-										<br>jueves	7:00–9:30
-										<br>viernes	7:00–9:30
-										<br>sábado	Cerrado
-										<br>domingo	Cerrado
-										<br>lunes	7:00–9:30
+</head>
+
+<body>
+	<!-- HEADER -->
+	<header>
+		<!-- TOP HEADER -->
+		<div id="top-header">
+			<div class="container">
+				<ul class="header-links pull-left">
+					<li><a href="#"><i class="fa fa-phone"></i>555555555</a></li>
+					<li><a href="#"><i class="fa fa-envelope-o"></i> ayudaescommerce@gmail.com</a></li>
+					<!-- Header Modal -->
+					<li><a href="#escom" class="fa fa-map-marker" data-toggle="modal"> ESCOM</a></li>
+					<div class="modal fade" id="escom">
+						<div class="modal_dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button tyle="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Confirmación
+									</h4>
+								</div>
+								<!-- Header Body -->
+								<div class="modal-body">
+									<p>
+
+										Dirección: ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de
+										México, CDMX
+										<br> Horas:
+										<br>martes 7:00–9:30
+										<br>miércoles 7:00–9:30
+										<br>jueves 7:00–9:30
+										<br>viernes 7:00–9:30
+										<br>sábado Cerrado
+										<br>domingo Cerrado
+										<br>lunes 7:00–9:30
 										<br>Estudiantes: 3,000​ (aproximadamente)</br>
 										<br>Director: Andrés Ortigoza Campos</br>
 										<br>Fundación: 13 de agosto de 1993</br>
 										<br>Decano: Ignacio Ríos de la Torre</br>
 										<br>Tipo: Pública</br>
-											</br>
-											</p>
-										</div>
-									</div>
+										</br>
+									</p>
 								</div>
+							</div>
 						</div>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i>MXN</a></li>
-						<!-- Header Modal -->
-						<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal"> Mi perfil</a></li>
-						<div class="modal fade" id="deseos">
-								<div class="modal_dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Confirmación											
-											</h4>
-										</div>
-										<!-- Header Body -->
-										<div class="modal-body">
-											<p>
-												<img src="./img/usuario.png" alt="">
-												<br>
-												<strong>Usuario: nombre 1</strong> 
-												<br>
-												<strong>Correo: nombre1@alumno.ipn.mx</strong> 
-												<br>
-											</br>
-											</p>
-										</div>
-									</div>
+					</div>
+				</ul>
+				<ul class="header-links pull-right">
+					<!--<li><a href="productregister.html"><i class="fa fa-dollar"></i>Agregar producto</a></li>
+							<li><a href="deleteproduct.html"><i class="fa fa-dollar"></i>Eliminar/Modificar producto</a></li>
+													<!-- Header Modal -->
+					<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal" id="profile"> Mi perfil</a></li>
+					<div class="modal fade" id="deseos">
+						<div class="modal_dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button tyle="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Perfil
+									</h4>
 								</div>
+								<!-- Header Body -->
+								<div class="modal-body">
+
+									<p>
+										<img src="./img/usuario.png" alt="">
+										<br>
+										<strong id="user">Usuario: </strong>
+										<br>
+										<strong id="email">Correo: </strong>
+
+										<br>
+										</br>
+									</p>
+								</div>
+							</div>
 						</div>
-					</ul>
-				</div>
+					</div>
+					<li>
+						<p id="logout" style="color: white;"> Iniciar Sesión</p>
+					</li>
+					<li>
+						<p id="signup" style="color: white;"> Crear Cuenta</p>
+					</li>
+				</ul>
 			</div>
-			<!-- /TOP HEADER -->
+		</div>
+		<!-- /TOP HEADER -->
 
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<!-- LOGO -->
-						<div class="col-md-2">
-							<div class="header-logo">
-								<a href="#" class="logo">
-									<a href="index.html"><img src="./img/escommerce 170por70.jpg" alt=""></a>
-								</a>
-							</div>
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-2">
+						<div class="header-logo">
+							<a href="#" class="logo">
+								<a href="index.html"><img src="./img/escommerce 170por70.jpg" alt=""></a>
+							</a>
 						</div>
-						<!-- /LOGO -->
+					</div>
+					<!-- /LOGO -->
 
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="1">Categorias</option>
-										<option value="1">Comida</option>
-										<option value="1">Electrónica</option>
-										<option value="1">Tecnología</option>
-										<option value="1">Juegos de mesa</option>
-										<option value="1">Papelería</option>
-										<option value="1">Espiritu IPN</option>
-									</select>
-									<input class="input" placeholder="Buscar">
-									<button class="search-btn">Buscar</button>
-								</form>
-							</div>
+					<!-- SEARCH BAR -->
+					<div class="col-md-6">
+						<div class="header-search">
+							<form>
+								<select class="input-select">
+									<option value="1">Categorias</option>
+									<option value="1">Comida</option>
+									<option value="1">Electrónica</option>
+									<option value="1">Tecnología</option>
+									<option value="1">Juegos de mesa</option>
+									<option value="1">Papelería</option>
+									<option value="1">Espiritu IPN</option>
+								</select>
+								<input class="input" placeholder="Buscar">
+								<button class="search-btn">Buscar</button>
+							</form>
 						</div>
-						<!-- /SEARCH BAR -->
+					</div>
+					<!-- /SEARCH BAR -->
 
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-								<!-- Wishlist -->
-							<div class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<!-- Wishlist -->
+							<div style="display: none;">
+								<a href="#">
 									<i class="fa fa-heart-o"></i>
 									<span>Deseos</span>
-									<div class="qty">3</div>
+									<div class="qty">2</div>
 								</a>
-								<div class="cart-dropdown">
-									<div class="cart-list">
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/chamarraipn.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">Poli BOMBER</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-											</div>
-											
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/gorra.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">GorraB.B</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									</div>
-
-									<div class="product-widget">
-										<div class="product-img">
-											<img src="./img/unoclasico.jpg" alt="">
-										</div>
-										<div class="product-body">
-											<h3 class="product-name">uno clásico</h3>
-											<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-										</div>
-										<button class="delete"><i class="fa fa-close"></i></button>
-									</div>
-								
-									<div class="cart-summary">
-										<small>3 Articulos</small>
-										<h5>SUBTOTAL: $1,340.00</h5>
-									</div>
-									<div class="cart-btns">
-										<a href="#">Eliminar</a>
-										<a href="checkout.html" href="#">Comprar<i class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
 							</div>
 							<!-- /Wishlist -->
 
+							<!-- Cart -->
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<i class="fa fa-shopping-cart"></i>
+									<span>Ver carrito</span>
+									<div class="qty" id="qty">0</div>
+								</a>
+								<div class="cart-dropdown">
+									<div class="cart-list" id="cart-list">
+										<h5 id="no_products">¡Inicia sesión para agregar productos!</h5>
+									</div>
 
-								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Ver carrito</span>
-										<div class="qty">3</div>
-									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/chamarraipn.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">Poli BOMBER</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/gorra.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">GorraB.B</h3>
-													<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/unoclasico.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">uno clásico</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									
-										<div class="cart-summary">
-											<small>3 Articulos</small>
-											<h5>SUBTOTAL: $1,340.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">Eliminar</a>
-											<a href="checkout.html"hrer href="#">Comprar<i class="fa fa-arrow-circle-right"></i></a>
-										</div>
+									<div class="cart-summary" id="summary">
+										<small id="qty-total">0 Articulos</small>
+										<h5 id="subtotal">SUBTOTAL: $0.00</h5>
+									</div>
+									<div class="cart-btns" id="cart_buttons">
+										<a href="#" id="delete">Eliminar</a>
+										<a href="checkout.html" hrer href="#">Comprar<i
+												class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
-								<!-- /Cart -->
-
-								
 							</div>
+							<!-- /Cart -->
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
 						</div>
-						<!-- /ACCOUNT -->
 					</div>
-					<!-- row -->
+					<!-- /ACCOUNT -->
 				</div>
-				<!-- container -->
-			</div>
-			<!-- /MAIN HEADER -->
-		</header>
-		<!-- /HEADER -->
-
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="index.html" href="#">Inicio</a></li>
-						<li><a href="comida.html" href="#">Comida</a></li>
-						<li><a href="electronica.html" href="#">Electrónica</a></li>
-						<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-						<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-						<li><a href="papeleria.html" href="#">Papelería</a></li>
-						<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-					</ul>
-					<!-- /NAV -->
-				</div>
-				<!-- /responsive-nav -->
-			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
-
-		<!-- BREADCRUMB -->
-		<div id="breadcrumb" class="section">
-			<!-- container -->
-			<div class="container">
 				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<h3 class="breadcrumb-header">INGRESA TUS DATOS</h3>
-						<ul class="breadcrumb-tree">
-							<br><li><a href="#">INICIO</a></li></ul></br>
-							
-						</ul>
-					</div>
-				</div>
-				<!-- /row -->
 			</div>
-			<!-- /container -->
+			<!-- container -->
 		</div>
-		<!-- /BREADCRUMB -->
-
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-
-					<div class="col-md-7">
-						<!-- Billing Details -->
-						<div class="billing-details">
-							<div class="section-title">
-								<h3 class="title">Dirección de envío</h3>
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="Nombre" placeholder="Nombre">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="Apellido" placeholder="Apellido">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="Dirección" placeholder="Dirección">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="Colonia" placeholder="Ciudad">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="Delegación" placeholder="Delegación">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="Código postal" placeholder="Codigopostal">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="Teléfono" placeholder="Telefono">
-							</div>
-							<div class="form-group">
-								
-								<label for="create-account">
-									<span></span>
-									<a href="login.html" href="#"><i class="fa fa-user-o"></i>Tienes cuenta?</a>
-								<br>	<a href="Crearcuenta.html" href="#"><i class="fa fa-user-o"></i>Crear cuenta</a>
-								
-									
+		<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
 
 
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="breadcrumb-header">INGRESA TUS DATOS</h3>
+					<ul class="breadcrumb-tree">
+						<br>
+					</ul></br>
+
+					</ul>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+				<div class="col-md-7">
+					<!-- Billing Details -->
+					<div class="billing-details">
+						<div class="section-title">
+							<h3 class="title">Dirección de envío</h3>
 						</div>
+						<div class="form-group">
+							<input class="input" id="name" type="text" name="Nombre" placeholder="Nombre">
 						</div>
-						<!-- /Billing Details -->
-
-						
-
-						<!-- Order notes -->
-						<div class="order-notes">
-							<textarea class="input" placeholder="Otras indicaciones"></textarea>
+						<div class="form-group">
+							<input class="input" id="lastName" type="text" name="Apellido" placeholder="Apellido">
 						</div>
-						<!-- /Order notes -->
-						<!-- Header Modal -->
-						<a href="#agregart" class="primary-btn order-submit" data-toggle="modal">Agregar</a>
-						<div class="modal fade" id="agregart">
-								<div class="modal_dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Confirmación 
-												
-
-											</h4>
-										</div>
-
-										<!-- Header Body -->
-										<div class="modal-body">
-											<p>
-											<br>
-												La dirección de envío ha sido agregado correctamente
-											</br>
-											
-												
-											</p>
-										</div>
-									</div>
-								</div>
+						<div class="form-group">
+							<input class="input" id="street" type="text" name="Dirección" placeholder="Calle ">
+						</div>
+						<div class="form-group">
+							<input class="input" id="extNum" type="text" name="Dirección" placeholder="Número Exterior">
+						</div>
+						<div class="form-group">
+							<input class="input" id="city" type="text" name="Colonia" placeholder="Ciudad">
+						</div>
+						<div class="form-group">
+							<input class="input" id="suburb" type="text" name="Delegación" placeholder="Delegación">
+						</div>
+						<div class="form-group">
+							<input class="input" id="zipCode" type="text" name="Código postal"
+								placeholder="Código postal">
+						</div>
+						<div class="form-group">
+							<input class="input" id="phone" type="tel" name="Teléfono" placeholder="Teléfono">
 						</div>
 					</div>
+					<!-- /Billing Details -->
 
-					<!-- Order Details -->
-					<div class="col-md-5 order-details">
-						<div class="section-title text-center">
-							<h3 class="title">PEDIDO</h3>
+
+
+					<!-- Order notes -->
+					<!--<div class="order-notes" id="notes">
+						<textarea class="input" placeholder="Otras indicaciones"></textarea>
+					</div>
+					
+					<!-- Header Modal -->
+					<a href="#agregart" class="primary-btn order-submit" data-toggle="modal" id="addAddress">Agregar</a>
+					<div class="modal fade" id="agregart">
+						<div class="modal_dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button tyle="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title" id="title">Confirmación
+
+
+									</h4>
+								</div>
+
+								<!-- Header Body -->
+								<div class="modal-body">
+									<p id="msg">
+										<br>
+										La dirección de envío ha sido agregado correctamente
+										</br>
+
+
+									</p>
+								</div>
+							</div>
 						</div>
-						<div class="order-summary">
-							<div class="order-col">
-								<div><strong>PRODUCTO (S)</strong></div>
-								<div><strong>TOTAL</strong></div>
-							</div>
-							<div class="order-products">
-								<div class="order-col">
-									<div>1x Poli Bomber Guinda</div>
-									<div>$680.00</div>
-								</div>
-								<div class="order-col">
-									<div>1x Gorra Burros Blancos</div>
-									<div>$580.00</div>
-								</div>
-							</div>
-							<div class="order-col">
-								<div>Costo de envío</div>
-								<div>$90</div>
-							</div>
-							<div class="order-col">
-								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">$1,350.00</strong></div>
-							</div>
+					</div>
+				</div>
+
+				<!-- Order Details -->
+				<div class="col-md-5 order-details">
+					<div class="section-title text-center">
+						<h3 class="title">PEDIDO</h3>
+					</div>
+					<div class="order-summary">
+						<div class="order-col">
+							<div><strong>PRODUCTO (S)</strong></div>
+							<div><strong>TOTAL</strong></div>
+						</div>
+						<div class="order-products" id="order_products">
+
 						</div>
 						<div class="payment-method">
 							<div class="input-radio">
 								<input type="radio" name="Método de pago" id="pago1">
 								<label for="pago1">
 									<span></span>
-									Tarjeta 
+									Tarjeta
 								</label>
 								<div class="caption">
-									<li><a href="Metododepag.html" href="#"><i class="fa fa-cc-mastercard"></i>Crédito</a></li>
+									<li><a href="Metododepag.html" href="#"><i
+												class="fa fa-cc-mastercard"></i>Crédito</a>
+									</li>
 									<li><a href="Metododepag.html" href="#"><i class="fa fa-cc-visa"></i>Débito</a></li>
-									<li><a href="Metododepag.html" href="#"><i class="fa fa-cc-paypal"></i>Paypal</a></li>
+									<li><a href="Metododepag.html" href="#"><i class="fa fa-cc-paypal"></i>Paypal</a>
+									</li>
 								</div>
 							</div>
 							<div class="input-radio">
@@ -446,67 +354,109 @@
 									Pago contra-entrega
 								</label>
 								<div class="caption">
-									<p>La entrega será realizada en ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX</p>
-									<br><p>Por favor llevar el monto justo</p></br>
+									<p>La entrega será realizada en ESCOM IPN, Unidad Profesional Adolfo López Mateos,
+										07320
+										Ciudad de México, CDMX</p>
+									<br>
+									<p>Por favor llevar el monto justo</p></br>
 								</div>
 							</div>
-							
+
 							<div class="input-checkbox">
 								<input type="checkbox" id="terminos">
 								<label for="terminos">
 									<span></span>
-									He leido y acepto los <a href="#term"data-toggle="modal"> términos y condiciones </a>
+									He leido y acepto los <a href="#term" data-toggle="modal"> términos y condiciones
+									</a>
 									<div class="modal fade" id="term">
 										<div class="modal_dialog">
 											<div class="modal-content">
 												<div class="modal-header">
-													<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+													<button tyle="button" class="close" data-dismiss="modal"
+														aria-hidden="true">&times;</button>
 													<h4 class="modal-title">Términos y condiciones
-														
-		
+
+
 													</h4>
 												</div>
 												<div class="modal-body">
 													<p>
-													<br>
-													Aviso legal
-	
-														En la medida máxima permitida por la ley aplicable, excluimos todas las representaciones, garantías y condiciones relacionadas con nuestro sitio web y el uso de este sitio web (incluyendo, sin limitación, cualquier garantía implícita por la ley con respecto a la calidad satisfactoria, idoneidad para el propósito y/o el uso de cuidado y habilidad razonables).Nada en este aviso legal:
-	
-														Limita o excluye nuestra o su responsabilidad por muerte o lesiones personales resultantes de negligencia.
-														Limita o excluye nuestra o su responsabilidad por fraude o tergiversación fraudulenta.	
-														Limita cualquiera de nuestras o sus responsabilidades de cualquier manera que no esté permitida por la ley aplicable.
-														Excluye cualquiera de nuestras o sus responsabilidades que no pueden ser excluidas bajo la ley aplicable.
-														Las limitaciones y exclusiones de responsabilidad establecidas en esta Sección y en otras partes de este aviso legal:
+														<br>
+														Aviso legal
+
+														En la medida máxima permitida por la ley aplicable, excluimos
+														todas
+														las representaciones, garantías y condiciones relacionadas con
+														nuestro sitio web y el uso de este sitio web (incluyendo, sin
+														limitación, cualquier garantía implícita por la ley con respecto
+														a
+														la calidad satisfactoria, idoneidad para el propósito y/o el uso
+														de
+														cuidado y habilidad razonables).Nada en este aviso legal:
+
+														Limita o excluye nuestra o su responsabilidad por muerte o
+														lesiones
+														personales resultantes de negligencia.
+														Limita o excluye nuestra o su responsabilidad por fraude o
+														tergiversación fraudulenta.
+														Limita cualquiera de nuestras o sus responsabilidades de
+														cualquier
+														manera que no esté permitida por la ley aplicable.
+														Excluye cualquiera de nuestras o sus responsabilidades que no
+														pueden
+														ser excluidas bajo la ley aplicable.
+														Las limitaciones y exclusiones de responsabilidad establecidas
+														en
+														esta Sección y en otras partes de este aviso legal:
 														1. están sujetas al párrafo anterior; y
-														2. rigen todas las responsabilidades que surjan bajo la exención de responsabilidad o en relación con el objeto de esta exención de responsabilidad, incluidas las responsabilidades que surjan en contrato, agravio (incluyendo negligencia) y por incumplimiento del deber legal.
-	
-														En la medida en que el sitio web y la información y los servicios en el sitio web se proporcionen de forma gratuita, no seremos responsables de ninguna pérdida o daño de ningún tipo.
+														2. rigen todas las responsabilidades que surjan bajo la exención
+														de
+														responsabilidad o en relación con el objeto de esta exención de
+														responsabilidad, incluidas las responsabilidades que surjan en
+														contrato, agravio (incluyendo negligencia) y por incumplimiento
+														del
+														deber legal.
+
+														En la medida en que el sitio web y la información y los
+														servicios en
+														el sitio web se proporcionen de forma gratuita, no seremos
+														responsables de ninguna pérdida o daño de ningún tipo.
 														Cookies
-	
-														Empleamos el uso de cookies. Al utilizar el sitio web de (ESCOMMERCE), usted acepta el uso de cookies de acuerdo con la política de privacidad de (ESCOMMERCE). La mayoría de los modernos sitios web interactivos de hoy en día usan cookies para permitirnos recuperar los detalles del usuario para cada visita.
-	
-														Las cookies se utilizan en algunas áreas de nuestro sitio para habilitar la funcionalidad de esta área y la facilidad de uso para las personas que lo visitan. Algunos de nuestros socios afiliados/publicitarios también pueden usar cookies.
-													</br>
+
+														Empleamos el uso de cookies. Al utilizar el sitio web de
+														(ESCOMMERCE), usted acepta el uso de cookies de acuerdo con la
+														política de privacidad de (ESCOMMERCE). La mayoría de los
+														modernos
+														sitios web interactivos de hoy en día usan cookies para
+														permitirnos
+														recuperar los detalles del usuario para cada visita.
+
+														Las cookies se utilizan en algunas áreas de nuestro sitio para
+														habilitar la funcionalidad de esta área y la facilidad de uso
+														para
+														las personas que lo visitan. Algunos de nuestros socios
+														afiliados/publicitarios también pueden usar cookies.
+														</br>
 													</p>
 												</div>
 											</div>
 										</div>
 									</div>
-	
+
 								</label>
-								
+
 							</div>
-						
+
 							<!-- Header Modal -->
-						<a href="#compra" class="primary-btn order-submit" data-toggle="modal">Realizar compra</a>
-						<div class="modal fade" id="compra">
+							<a href="#compra" class="primary-btn order-submit" data-toggle="modal">Realizar compra</a>
+							<div class="modal fade" id="compra">
 								<div class="modal_dialog">
 									<div class="modal-content">
 										<div class="modal-header">
-											<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<button tyle="button" class="close" data-dismiss="modal"
+												aria-hidden="true">&times;</button>
 											<h4 class="modal-title">CONFIRMACIÓN DE COMPRA
-												
+
 
 											</h4>
 										</div>
@@ -514,132 +464,134 @@
 										<!-- Header Body -->
 										<div class="modal-body">
 											<p>
-											<br>
+												<br>
 												La compra ha sido realizada con éxito
-											</br>
-											<br>
-													Id #34526787
 												</br>
-													<br>
-													Llegada: 25-05-2021
+												<br>
+												Id #34526787
 												</br>
-													<br>
-													Mostrar una identificación oficial al momento de la entrega
+												<br>
+												Llegada: 25-05-2021
 												</br>
-													<br>
-													Para aclaraciones comunicarse al 5555555
+												<br>
+												Mostrar una identificación oficial al momento de la entrega
 												</br>
-												
+												<br>
+												Para aclaraciones comunicarse al 5555555
+												</br>
+
 											</p>
 										</div>
 									</div>
 								</div>
-						</div>
-						
-						<br>
-						
-						
-					</br>
-					</div>
-					<!-- /Order Details -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /NEWSLETTER -->
-
-		<!-- FOOTER -->
-		<footer id="footer">
-			<!-- top footer -->
-			<div class="section">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Sobre nosotros</h3>
-								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>ESCOM</a></li>
-									
-									<li><a href="#"><i class="fa fa-phone"></i>5555555</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>ayudaescommerce@gmail.com</a></li>
-								</ul>
 							</div>
-						</div>
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Categorias</h3>
-								<ul class="footer-links">
-									<li><a href="comida.html" href="#">Comida</a></li>
-									<li><a href="electronica.html" href="#">Electrónica</a></li>
-									<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-									<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-									<li><a href="papeleria.html" href="#">Papelería</a></li>
-									<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-								</ul>
-							</div>
-						</div>
+							<br>
 
-						<div class="clearfix visible-xs"></div>
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Conocenos</h3>
-								<ul class="footer-links">
-									<li><a href="#">Más nosotros</a></li>
-									<li><a href="#">Contacto</a></li>
-									<li><a href="#">Politicas</a></li>
-									<li><a href="#">Pedidos y devoluciones</a></li>
-									<li><a href="#">Terminos y condiciones</a></li>
-
-								</ul>
-							</div>
+							</br>
 						</div>
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Servicio</h3>
-								<ul class="footer-links">
-									<li><a href="#">Mi perfil</a></li>
-									<li><a href="#">Ver carrito</a></li>
-									<li><a href="#">Lista de deseos</a></li>
-									<li><a href="#">Rastrear pedido</a></li>
-									<li><a href="#">Ayuda </a></li>
-								</ul>
-							</div>
-						</div>
+						<!-- /Order Details -->
 					</div>
 					<!-- /row -->
 				</div>
 				<!-- /container -->
 			</div>
-			<!-- /top footer -->
+			<!-- /SECTION -->
 
-			
-		</footer>
-		<!-- /FOOTER -->
+			<!-- NEWSLETTER -->
+			<div id="newsletter" class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
 
-		<!-- jQuery Plugins -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slick.min.js"></script>
-		<script src="js/nouislider.min.js"></script>
-		<script src="js/jquery.zoom.min.js"></script>
-		<script src="js/main.js"></script>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /NEWSLETTER -->
 
-	</body>
+			<!-- FOOTER -->
+			<footer id="footer">
+				<!-- top footer -->
+				<div class="section">
+					<!-- container -->
+					<div class="container">
+						<!-- row -->
+						<div class="row">
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Sobre nosotros</h3>
+									<ul class="footer-links">
+										<li><a href="#"><i class="fa fa-map-marker"></i>ESCOM</a></li>
+
+										<li><a href="#"><i class="fa fa-phone"></i>5555555</a></li>
+										<li><a href="#"><i class="fa fa-envelope-o"></i>ayudaescommerce@gmail.com</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Categorias</h3>
+									<ul class="footer-links">
+										<li><a href="comida.html" href="#">Comida</a></li>
+										<li><a href="electronica.html" href="#">Electrónica</a></li>
+										<li><a href="tecnologia.html" href="#">Tecnología</a></li>
+										<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
+										<li><a href="papeleria.html" href="#">Papelería</a></li>
+										<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="clearfix visible-xs"></div>
+
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Conocenos</h3>
+									<ul class="footer-links">
+										<li><a href="#">Más nosotros</a></li>
+										<li><a href="#">Contacto</a></li>
+										<li><a href="#">Politicas</a></li>
+										<li><a href="#">Pedidos y devoluciones</a></li>
+										<li><a href="#">Terminos y condiciones</a></li>
+
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Servicio</h3>
+									<ul class="footer-links">
+										<li><a href="#">Mi perfil</a></li>
+										<li><a href="#">Ver carrito</a></li>
+										<li><a href="#">Lista de deseos</a></li>
+										<li><a href="#">Rastrear pedido</a></li>
+										<li><a href="#">Ayuda </a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- /row -->
+					</div>
+					<!-- /container -->
+				</div>
+				<!-- /top footer -->
+
+
+			</footer>
+			<!-- /FOOTER -->
+
+			<!-- jQuery Plugins -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/slick.min.js"></script>
+			<script src="js/nouislider.min.js"></script>
+			<script src="js/jquery.zoom.min.js"></script>
+			<script src="js/main.js"></script>
+
+</body>
+
 </html>
