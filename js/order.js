@@ -24,7 +24,7 @@ $(document).ready(() => {
     });
 
 
-    $("#compra").modal("show")
+    //$("#compra").modal("show")
 
 });
 
