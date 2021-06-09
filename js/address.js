@@ -3,18 +3,21 @@ $(document).ready(() => {
     var add = $("#addAddress")
     var token = localStorage.getItem('tokenSession');
     getAddress(token).then((response) => {
-        if (response.success) {
-            console.log(response.address)
-            var address = response.address
-            $("#name").val(address.name);
-            $("#lastName").val(address.lastName);
-            $("#street").val(address.street);
-            $("#extNum").val(address.extNum);
-            $("#city").val(address.city);
-            $("#suburb").val(address.suburb);
-            $("#zipCode").val(address.zipCode);
-            $("#phone").val(address.phone);
-            add.text("Modificar")
+        if (response != null) {
+
+            if (response.success) {
+                var address = response.address
+                localStorage.setItem('addressId',address.id)
+                $("#name").val(address.name);
+                $("#lastName").val(address.lastName);
+                $("#street").val(address.street);
+                $("#extNum").val(address.extNum);
+                $("#city").val(address.city);
+                $("#suburb").val(address.suburb);
+                $("#zipCode").val(address.zipCode);
+                $("#phone").val(address.phone);
+                add.text("Modificar")
+            }
         }
     });
     add.click(() => {
@@ -27,17 +30,32 @@ $(document).ready(() => {
         var zipCode = $("#zipCode").val();
         var phone = $("#phone").val();
         var notes = $("#notes").val();
-        address(name + " " + lastName, street, extNum, city, suburb, zipCode, phone, token).then((response) => {
+        if (name != "" && lastName != "" && street != "" && extNum != "" && city != "" && suburb != "" && zipCode != "" && phone != "") {
 
-            if (response.success) {
-                $("#title").text("Confirmación")
-                $("#msg").text("La dirección de envío ha sido agregado correctamente")
-            } else {
-                $("#title").text("Lo sentimos :( ")
-                $("#msg").text("No se pudo guardar la dirección de envío. Intenta más tarde")
-            }
+            address(name + " " + lastName, street, extNum, city, suburb, zipCode, phone, token).then((response) => {
+                $('#agregart').modal('show');
+                if (response != null) {
 
-        })
+                    if (response.success) {
+                        $("#title").text("Confirmación")
+                        $("#msg").text("La dirección de envío ha sido agregado correctamente");
+                        add.text("Modificar")
+                        window.location.reload()
+                    } else {
+
+                        $("#title").text("Lo sentimos :( ")
+                        $("#msg").text("No se pudo guardar la dirección de envío. Intenta más tarde")
+                    }
+
+                }else{
+                    $("#title").text("Lo sentimos :( ")
+                    $("#msg").text("No se pudo guardar la dirección de envío. Intenta más tarde")
+                }
+
+            })
+        } else {
+            alert("Ingresa los datos correspondientes")
+        }
     });
 
 

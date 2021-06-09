@@ -32,6 +32,8 @@
 	<script src="./js/pedido.js"></script>
 	<script src="./js/accountInfo.js"></script>
 	<script src="./js/address.js"></script>
+	<script src="./js/paymentMethod.js"></script>
+	<script src="./js/order.js"></script>
 
 
 
@@ -273,11 +275,11 @@
 							<input class="input" id="suburb" type="text" name="Delegación" placeholder="Delegación">
 						</div>
 						<div class="form-group">
-							<input class="input" id="zipCode" type="text" name="Código postal"
+							<input class="input" id="zipCode" type="text" maxlength="5" name="Código postal"
 								placeholder="Código postal">
 						</div>
 						<div class="form-group">
-							<input class="input" id="phone" type="tel" name="Teléfono" placeholder="Teléfono">
+							<input class="input" id="phone" type="tel" maxlength="10" name="Teléfono" placeholder="Teléfono">
 						</div>
 					</div>
 					<!-- /Billing Details -->
@@ -290,7 +292,8 @@
 					</div>
 					
 					<!-- Header Modal -->
-					<a href="#agregart" class="primary-btn order-submit" data-toggle="modal" id="addAddress">Agregar</a>
+					<a class="primary-btn order-submit" data-toggle="modal" id="addAddress">Agregar</a>
+					
 					<div class="modal fade" id="agregart">
 						<div class="modal_dialog">
 							<div class="modal-content">
@@ -333,7 +336,7 @@
 						</div>
 						<div class="payment-method">
 							<div class="input-radio">
-								<input type="radio" name="Método de pago" id="pago1">
+								<input type="radio" name="payment" id="pago1">
 								<label for="pago1">
 									<span></span>
 									Tarjeta
@@ -343,13 +346,12 @@
 												class="fa fa-cc-mastercard"></i>Crédito</a>
 									</li>
 									<li><a href="Metododepag.html" href="#"><i class="fa fa-cc-visa"></i>Débito</a></li>
-									<li><a href="Metododepag.html" href="#"><i class="fa fa-cc-paypal"></i>Paypal</a>
 									</li>
 								</div>
 							</div>
 							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-2">
-								<label for="payment-2">
+								<input type="radio" name="payment" id="pago2">
+								<label for="pago2">
 									<span></span>
 									Pago contra-entrega
 								</label>
@@ -448,7 +450,7 @@
 							</div>
 
 							<!-- Header Modal -->
-							<a href="#compra" class="primary-btn order-submit" data-toggle="modal">Realizar compra</a>
+							<a class="primary-btn order-submit" id="order" data-toggle="modal">Realizar compra</a>
 							<div class="modal fade" id="compra">
 								<div class="modal_dialog">
 									<div class="modal-content">
