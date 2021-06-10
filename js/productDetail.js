@@ -91,7 +91,7 @@ $(document).ready(() => {
 const getProduct = (productId) => {
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/products',
+        url: 'http://143.244.156.198:5001/products',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*' },
         data: { productId: productId },
