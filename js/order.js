@@ -32,7 +32,7 @@ $(document).ready(() => {
 const createOrder = (token, addressId, paymentId) => {
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/order',
+        url: 'http://143.244.156.198:5001/order',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         data: { addressId: addressId, paymentId: paymentId },

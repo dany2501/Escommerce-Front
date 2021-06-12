@@ -51,7 +51,7 @@ const login = (email, password) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/login',
+        url: 'http://143.244.156.198:5001/login',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*' },
         data: { password: password, email: email },

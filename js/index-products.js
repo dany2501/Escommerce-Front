@@ -140,7 +140,7 @@ $(document).ready(() => {
 const getProducts = async () => {
     return await $.ajax({
         method: "GET",
-        url: 'http://localhost:5001/products',
+        url: 'http://143.244.156.198:5001/products',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*',"categoryId":0},
         accepts: 'application/json',
