@@ -1,60 +1,23 @@
-
 $(document).ready(() => {
     var container = $("#product-container")
-    var qtyTotal = $("#qty-total");
-    var subtotal = $("#subtotal");
-    var qtyCart = $("#qty");
-    var cartList = $("#cart-list");
-    var categoryId = localStorage.getItem('categoryId')
-    var token = localStorage.getItem('tokenSession')
-    if (token == null || token.length == 4) {
-        flag = false
+    var search = $("#search_string");
+    var toSearch = localStorage.getItem('toSearch');
 
-    } else {
-        flag = true
-    }
-    getProductsByCategoryId(categoryId).then((data) => {
-        console.log(data)
-        if (data.success) {
-            var prods = ""
-            data.products.forEach(element => {
-                console.log(element.image)
-                prods += cardProduct(element.id, element.name, element.description, element.price, element.sku, element.stock, element.image);
-            });
-            container.html(prods)
-            // Products Slick
-            $('.products-slick').each(function () {
-                var $this = $(this),
-                    $nav = $this.attr('data-nav');
-
-                $this.slick({
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    infinite: true,
-                    speed: 300,
-                    dots: false,
-                    arrows: true,
-                    appendArrows: $nav ? $nav : false,
-                    responsive: [{
-                        breakpoint: 991,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    ]
-                });
+    productsByDescription(toSearch).then((data) => {
+        printResult(data);
+    });
+    
+    $("#search-btn").click((e) => {
+        e.preventDefault();
+        var name = search.val();
+        if (name != "") {
+            localStorage.setItem('toSearch',name);
+            productsByDescription(name).then((data) => {
+                printResult(data);
             });
         }
     });
+
 
     document.querySelector('#product-container').addEventListener('click', e => {
         console.log("Click")
@@ -98,26 +61,77 @@ $(document).ready(() => {
     });
 
 
+
+
+const printResult = (data) =>{
+    if (data.success) {
+        var prods = ""
+        data.products.forEach(element => {
+            console.log(element.image)
+            prods += cardProduct(element.id, element.name, element.description, element.price, element.sku, element.stock, element.image);
+        });
+        container.html(prods)
+        // Products Slick
+        $('.products-slick').each(function () {
+            var $this = $(this),
+                $nav = $this.attr('data-nav');
+
+            $this.slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                infinite: true,
+                speed: 300,
+                dots: false,
+                arrows: true,
+                appendArrows: $nav ? $nav : false,
+                responsive: [{
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+                ]
+            });
+        });
+    }
+}
+
+
 });
 
 
-const getProductsByCategoryId = async (categoryId) => {
-    console.log(categoryId);
-    return await $.ajax({
+
+const productsByDescription = (name) => {
+
+
+
+    return $.ajax({
         method: "POST",
-        contentType: 'application/json',
         url: 'http://localhost:5001/products',
         dataType: 'json',
-        headers: { 'Access-Control-Allow-Origin': '*'},
-        data:JSON.stringify({"categoryId": categoryId}),
+        contentType: 'application/json',
+        headers: { 'Access-Control-Allow-Origin': '*' },
         accepts: 'application/json',
+        data: JSON.stringify({ "name": name }),
         success: (data, status) => {
-            if (data) {
-                return data;
-            }
+            console.log("response ", data);
+            return data;
         }
     });
+
+
+
 }
+
 
 const cardProduct = (id,name, description,price,sku,stock,img) => {
     return (

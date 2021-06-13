@@ -65,18 +65,19 @@ const address = (name, street, extNum, city, suburb, zipCode, phone, token) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/address',
+        url: 'http://localhost:5001/address',
+        contentType: 'application/json',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        data: {
-            name: name,
-            street: street,
-            extNum: extNum,
-            city: city,
-            suburb: suburb,
-            zipCode: zipCode,
-            phone: phone
-        },
+        data:JSON.stringify({
+            "name": name,
+            "street": street,
+            "extNum": extNum,
+            "city": city,
+            "suburb": suburb,
+            "zipCode": zipCode,
+            "phone": phone
+        }),
         accepts: 'application/json',
         success: (data, status) => {
             return data;
@@ -88,7 +89,7 @@ const address = (name, street, extNum, city, suburb, zipCode, phone, token) => {
 const getAddress = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/address',
+        url: 'http://localhost:5001/address',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',

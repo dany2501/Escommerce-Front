@@ -51,10 +51,11 @@ const login = (email, password) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/login',
+        url: 'http://localhost:5001/login',
         dataType: 'json',
+        contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*' },
-        data: { password: password, email: email },
+        data:JSON.stringify({ "password": password, "email": email }),
         accepts: 'application/json',
         success: (data, status) => {
             return data;

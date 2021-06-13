@@ -2,11 +2,15 @@ $(document).ready(() => {
     var user = $("#user");
     var email = $("#email");
     var logout = $("#logout");
+    var signup = $("#signup");
     var token = localStorage.getItem('tokenSession');
     var flag = false;
     if (token == null || token.length == 4) {
         flag = false;
+
     } else {
+        signup.css({"display":"none"})
+        logout.text("Cerrar Sesión");
         flag = true;
     }
     getDataClient(token).then((data) => {
@@ -14,8 +18,12 @@ $(document).ready(() => {
         user.append(client.name)
         email.append(client.email)
     });
-    logout.text("Cerrar Sesión");
 
+
+    signup.click(()=>{
+        console.log("Sign up location")
+        window.location.href = './Crearcuenta.html';
+    });
     logout.click(() => {
         if (flag) {
             closeSession(token).then((data) => {
@@ -25,27 +33,27 @@ $(document).ready(() => {
                     user.val("")
                     email.val("")
                     alert("Haz cerrado sesión")
-                    window.location.href="./index.html"
+                    window.location.href = "./index.html"
                 }
             });
         } else {
-            window.location.href= "./login.html"
+            window.location.href = "./login.html"
         }
     });
-    
+
 
 });
 
 const getDataClient = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/login',
+        url: 'http://localhost:5001/login',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
         success: (data, status) => {
 
-        console.log(data)
+            console.log(data)
             return data;
         }
     });
@@ -54,7 +62,7 @@ const getDataClient = (token) => {
 const closeSession = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/logout',
+        url: 'http://localhost:5001/logout',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',

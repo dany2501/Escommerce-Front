@@ -34,6 +34,6 @@ const shippingCard = (toPay) => {
     </div>
         <div class="order-col">
             <div><strong>TOTAL</strong></div>
-            <div><strong class="order-total">$${parseInt(toPay)+90}</strong></div>
+            <div><strong class="order-total">$${parseInt(toPay)+90}.00</strong></div>
         </div>`)
 }

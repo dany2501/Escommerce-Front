@@ -89,7 +89,7 @@ $(document).ready(() => {
 const getCart = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/cart',
+        url: 'http://localhost:5001/cart',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
@@ -103,7 +103,7 @@ const getCart = (token) => {
 const deleteCart = (token) => {
     return $.ajax({
         method: "DELETE",
-        url: 'http://143.244.156.198:5001/cart',
+        url: 'http://localhost:5001/cart',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
@@ -116,10 +116,11 @@ const deleteCart = (token) => {
 const deleteProductCart = (token,productId) => {
     return $.ajax({
         method: "PUT",
-        url: 'http://143.244.156.198:5001/cart',
+        url: 'http://localhost:5001/cart',
+        contentType: 'application/json',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        data:{productId:productId},
+        data:JSON.stringify({"productId":productId}),
         accepts: 'application/json',
         success: (data, status) => {
             return data;
@@ -133,10 +134,11 @@ const deleteProductCart = (token,productId) => {
 const addToCart = (token, productId, qty) => {
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/cart',
+        url: 'http://localhost:5001/cart',
+        contentType: 'application/json',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        data: { productId: productId, qty: qty },
+        data:JSON.stringify( { "productId": productId, "qty": qty }),
         accepts: 'application/json',
         success: (data, status) => {
             return data;

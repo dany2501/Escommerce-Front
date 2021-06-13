@@ -91,10 +91,11 @@ $(document).ready(() => {
 const getProduct = (productId) => {
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/products',
+        url: 'http://localhost:5001/products',
         dataType: 'json',
+        contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*' },
-        data: { productId: productId },
+        data:JSON.stringify({ "productId": productId }),
         accepts: 'application/json',
         success: (data, status) => {
             if (data) {
