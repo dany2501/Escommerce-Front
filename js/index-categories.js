@@ -1,5 +1,4 @@
 $(document).ready(() => {
-    console.log("listo")
 
     var tec = $("#tecnologia");
     var ele = $("#electronica");

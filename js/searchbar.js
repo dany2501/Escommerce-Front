@@ -66,42 +66,18 @@ $(document).ready(() => {
 const printResult = (data) =>{
     if (data.success) {
         var prods = ""
+        var i=0;
         data.products.forEach(element => {
+            i=i+1;
             console.log(element.image)
             prods += cardProduct(element.id, element.name, element.description, element.price, element.sku, element.stock, element.image);
+
+            if(i%3==0){
+                console.log("add");
+                prods+='<div class="clearfix visible-lg visible-md"></div>';
+            }
         });
         container.html(prods)
-        // Products Slick
-        $('.products-slick').each(function () {
-            var $this = $(this),
-                $nav = $this.attr('data-nav');
-
-            $this.slick({
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                autoplay: true,
-                infinite: true,
-                speed: 300,
-                dots: false,
-                arrows: true,
-                appendArrows: $nav ? $nav : false,
-                responsive: [{
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    }
-                },
-                ]
-            });
-        });
     }
 }
 
@@ -136,32 +112,35 @@ const productsByDescription = (name) => {
 const cardProduct = (id,name, description,price,sku,stock,img) => {
     return (
         `<div class="col-md-4 col-xs-6">
-            <div class="product">
-                <div class="product-img">
-                    <img src=${img} alt="">
-                        <div class="product-label">
+        <div class="product">
+            <div class="product-img">
+                <img src=${img} alt="">
+                <div class="product-label">
 
-                            <span class="new">NUEVO</span>
-                        </div>
-									</div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">${name}</a></h3>
-                        <h4 class="product-price">$${price}.00 </h4>
-                        <div class="product-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-btns">
-                <button class="add-to-wishlist" id="Add"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a deseos</span></button>
-                <button class="quick-view" id=see-${id}><i class="fa fa-eye" id=see-${id}></i><span class="tooltipp">ver</span></button>
+                    <span class="new">NUEVO</span>
+                </div>
+            </div>
+            <div class="product-body">
+                <h3 class="product-name"><a href="#">${name}</a></h3>
+                <h4 class="product-price">$${price}.00 </h4>
+                <div class="product-rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="product-btns">
+                    <button class="add-to-wishlist" id="Add"><i class="fa fa-heart-o"></i><span
+                            class="tooltipp">Añadir a deseos</span></button>
+                    <button class="quick-view" id=see-${id}><i class="fa fa-eye"
+                            id=see-${id}></i><span class="tooltipp">ver</span></button>
+                </div>
+            </div>
+            <div class="add-to-cart">
+                <button class="add-to-cart-btn" id=add-${id}><i class="fa fa-shopping-cart"></i>
+                    Añadir al carrito</button>
             </div>
         </div>
-        <div class="add-to-cart">
-            <button class="add-to-cart-btn" id=add-${id}><i class="fa fa-shopping-cart"></i> Añadir al carrito</button>
-        </div>
-                </div>
-            </div>`)
+    </div>`)
 }

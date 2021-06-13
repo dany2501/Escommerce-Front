@@ -2,219 +2,212 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESCOMMERCE</title>
-   <!-- Google font -->
-   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ESCOMMERCE</title>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-   <!-- Bootstrap -->
-   <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
-   <!-- Slick -->
-   <link type="text/css" rel="stylesheet" href="css/slick.css"/>
-   <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
 
-   <!-- nouislider -->
-   <link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
 
-   <!-- Font Awesome Icon -->
-   <link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 
-   <!-- Custom stlylesheet -->
-   <link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
-   
+
 </head>
 
 <body>
 
 
-<style type="text/css">
+	<style type="text/css">
+		html {
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+			text-size-adjust: 100%;
+			line-height: 1.4;
+		}
 
 
-html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    line-height: 1.4;
-}
+		* {
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 400;
+			color: #0a1527;
+			;
+		}
 
 
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+		.seccion-perfil-usuario .perfil-usuario-body,
+		.seccion-perfil-usuario {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: center;
+		}
 
-body {
-    font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  color: #0a1527;;
-}
+		.seccion-perfil-usuario .perfil-usuario-header {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 1.25rem;
+		}
 
-
-.seccion-perfil-usuario .perfil-usuario-body,
-.seccion-perfil-usuario {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-}
-
-.seccion-perfil-usuario .perfil-usuario-header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.25rem;
-}
-
-.seccion-perfil-usuario .perfil-usuario-portada {
-    display: block;
-    position: relative;
-    width: 90%;
-    height: 17rem;
-    background: linear-gradient(45deg, #0a1527, #112e5e);
-    border-radius: 0 0 15px 15px;
-}
-
-
-
-.seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
-    margin-right: 1rem;
-}
-
-.seccion-perfil-usuario .perfil-usuario-foto {
-    display: flex;
-    width: 180px;
-    height: 180px;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #FFFFFF;
-    background-color: #DFE5F2;
-    border-radius: 60%;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    position: absolute;
-    bottom: -40px;
-    left: calc(50% - 90px);
-    z-index: 1;
-}
-
-.seccion-perfil-usuario .perfil-usuario-foto img {
-    width: 100%;
-    position: relative;
-    border-radius: 60%;
-}
-
-.seccion-perfil-usuario .perfil-usuario-foto .boton-foto {
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    border: 0;
-    background-color: #fff;
-    box-shadow: 0 0 12px rgba(22, 19, 216, 0.63);
-    width: 45px;
-    height: 45px;
-    border-radius: 60%;
-    cursor: pointer;
-}
-
-.seccion-perfil-usuario .perfil-usuario-body {
-    width: 70%;
-    position: relative;
-    max-width: 750px;
-}
-
-.seccion-perfil-usuario .perfil-usuario-body .titulo {
-    display: block;
-    width: 100%;
-    font-size: 1.75em;
-    margin-bottom: 0.5rem;
-}
-
-.seccion-perfil-usuario .perfil-usuario-body .texto {
-    color: #848484;
-    font-size: 0.95em;
-}
-
-.seccion-perfil-usuario .perfil-usuario-footer,
-.seccion-perfil-usuario .perfil-usuario-bio {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    background-color: #fff;
-    border-radius: 15px;
-    width: 100%;
-}
-
-.seccion-perfil-usuario .perfil-usuario-footer2,
-.seccion-perfil-usuario .perfil-usuario-bio2 {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-	 color: white; 
-    background-color: #0a1527;
-    border-radius: 15px;
-    width: 100%;
-}
-
-.seccion-perfil-usuario .perfil-usuario-bio {
-    margin-bottom: 1.25rem;
-   
-}
-
-.seccion-perfil-usuario .lista-datos {
-    width: 50%;
-    list-style: none;
-}
-
-.seccion-perfil-usuario .lista-datos li {
-    padding: 5px 0;
-}
-
-.seccion-perfil-usuario .lista-datos li>.icono {
-    margin-right: 1rem;
-    font-size: 1.2rem;
-    vertical-align: middle;
-}
-
-.pedidos {
-  align-items: center;
-  display: flex;
-  height: 100px;
-  justify-content: center;
-  width: 200px;
-  flex-wrap: wrap;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-  background-color: #fff;
-  border-radius: 15px;
-  width: 100%;
-}
-
-.pedidos2 {
-	display: flex;
-    flex-wrap: wrap;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-	 color: white; 
-    background-color: #0a1527;
-    border-radius: 15px;
-    width: 100%;
- 
-}
-
- 
+		.seccion-perfil-usuario .perfil-usuario-portada {
+			display: block;
+			position: relative;
+			width: 90%;
+			height: 17rem;
+			background: linear-gradient(45deg, #0a1527, #112e5e);
+			border-radius: 0 0 15px 15px;
+		}
 
 
 
+		.seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
+			margin-right: 1rem;
+		}
 
-</style>
-<!--html -->
+		.seccion-perfil-usuario .perfil-usuario-foto {
+			display: flex;
+			width: 180px;
+			height: 180px;
+			align-items: center;
+			justify-content: center;
+			border: 3px solid #FFFFFF;
+			background-color: #DFE5F2;
+			border-radius: 60%;
+			box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+			position: absolute;
+			bottom: -40px;
+			left: calc(50% - 90px);
+			z-index: 1;
+		}
+
+		.seccion-perfil-usuario .perfil-usuario-foto img {
+			width: 100%;
+			position: relative;
+			border-radius: 60%;
+		}
+
+		.seccion-perfil-usuario .perfil-usuario-foto .boton-foto {
+			position: absolute;
+			left: -2px;
+			top: -2px;
+			border: 0;
+			background-color: #fff;
+			box-shadow: 0 0 12px rgba(22, 19, 216, 0.63);
+			width: 45px;
+			height: 45px;
+			border-radius: 60%;
+			cursor: pointer;
+		}
+
+		.seccion-perfil-usuario .perfil-usuario-body {
+			width: 70%;
+			position: relative;
+			max-width: 750px;
+		}
+
+		.seccion-perfil-usuario .perfil-usuario-body .titulo {
+			display: block;
+			width: 100%;
+			font-size: 1.75em;
+			margin-bottom: 0.5rem;
+		}
+
+		.seccion-perfil-usuario .perfil-usuario-body .texto {
+			color: #848484;
+			font-size: 0.95em;
+		}
+
+		.seccion-perfil-usuario .perfil-usuario-footer,
+		.seccion-perfil-usuario .perfil-usuario-bio {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 1.5rem 2rem;
+			box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+			background-color: #fff;
+			border-radius: 15px;
+			width: 100%;
+		}
+
+		.seccion-perfil-usuario .perfil-usuario-footer2,
+		.seccion-perfil-usuario .perfil-usuario-bio2 {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 1.5rem 2rem;
+			box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+			color: white;
+			background-color: #0a1527;
+			border-radius: 15px;
+			width: 100%;
+		}
+
+		.seccion-perfil-usuario .perfil-usuario-bio {
+			margin-bottom: 1.25rem;
+
+		}
+
+		.seccion-perfil-usuario .lista-datos {
+			width: 50%;
+			list-style: none;
+		}
+
+		.seccion-perfil-usuario .lista-datos li {
+			padding: 5px 0;
+		}
+
+		.seccion-perfil-usuario .lista-datos li>.icono {
+			margin-right: 1rem;
+			font-size: 1.2rem;
+			vertical-align: middle;
+		}
+
+		.pedidos {
+			align-items: center;
+			display: flex;
+			height: 100px;
+			justify-content: center;
+			width: 200px;
+			flex-wrap: wrap;
+			padding: 1.5rem 2rem;
+			box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+			background-color: #fff;
+			border-radius: 15px;
+			width: 100%;
+		}
+
+		.pedidos2 {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 1.5rem 2rem;
+			box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+			color: white;
+			background-color: #0a1527;
+			border-radius: 15px;
+			width: 100%;
+
+		}
+	</style>
+	<!--html -->
 
 	<!-- HEADER -->
 	<header>
@@ -227,42 +220,44 @@ body {
 					<!-- Header Modal -->
 					<li><a href="#escom" class="fa fa-map-marker" data-toggle="modal"> ESCOM</a></li>
 					<div class="modal fade" id="escom">
-							<div class="modal_dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<h4 class="modal-title">Confirmación											
-										</h4>
-									</div>
-									<!-- Header Body -->
-									<div class="modal-body">
-										<p>
-										
-										Dirección: ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX
-									<br>	Horas: 
-									<br>martes	7:00–9:30
-									<br>miércoles	7:00–9:30
-									<br>jueves	7:00–9:30
-									<br>viernes	7:00–9:30
-									<br>sábado	Cerrado
-									<br>domingo	Cerrado
-									<br>lunes	7:00–9:30
-									<br>Estudiantes: 3,000​ (aproximadamente)</br>
-									<br>Director: Andrés Ortigoza Campos</br>
-									<br>Fundación: 13 de agosto de 1993</br>
-									<br>Decano: Ignacio Ríos de la Torre</br>
-									<br>Tipo: Pública</br>
+						<div class="modal_dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button tyle="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Confirmación
+									</h4>
+								</div>
+								<!-- Header Body -->
+								<div class="modal-body">
+									<p>
+
+										Dirección: ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de
+										México, CDMX
+										<br> Horas:
+										<br>martes 7:00–9:30
+										<br>miércoles 7:00–9:30
+										<br>jueves 7:00–9:30
+										<br>viernes 7:00–9:30
+										<br>sábado Cerrado
+										<br>domingo Cerrado
+										<br>lunes 7:00–9:30
+										<br>Estudiantes: 3,000​ (aproximadamente)</br>
+										<br>Director: Andrés Ortigoza Campos</br>
+										<br>Fundación: 13 de agosto de 1993</br>
+										<br>Decano: Ignacio Ríos de la Torre</br>
+										<br>Tipo: Pública</br>
 										</br>
-										</p>
-									</div>
+									</p>
 								</div>
 							</div>
+						</div>
 					</div>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a  href="loginvendedor.html" href="#"><i class="fa fa-dollar"></i>¿Quieres vender?</a></li>
+					<li><a href="loginvendedor.html" href="#"><i class="fa fa-dollar"></i>¿Quieres vender?</a></li>
 					<li><a href="perfil.html" href="#"><i class="fa fa-user-o"></i>Mi perfil</li></a>
-					
+
 				</ul>
 			</div>
 		</div>
@@ -303,10 +298,10 @@ body {
 					<!-- ACCOUNT -->
 					<div class="col-md-3 clearfix">
 						<div class="header-ctn">
-							
-							
 
-							
+
+
+
 						</div>
 					</div>
 					<!-- /ACCOUNT -->
@@ -341,172 +336,172 @@ body {
 
 
 
-    <section class="seccion-perfil-usuario">
-        <div class="perfil-usuario-header">
-            <div class="perfil-usuario-portada">
-                <div class="perfil-usuario-foto">
-                    <img src="./img/gorraproduct3.jpg" alt="">
-                    
-                </div>
-                
-            </div>
-        </div>
-		<br><br>
-        <div class="perfil-usuario-body">
-            <div class="perfil-usuario-bio">
-			
-                <h3 class="titulo"> usuario 1 </h3>
-				<br>
+	<section class="seccion-perfil-usuario">
+		<div class="perfil-usuario-header">
+			<div class="perfil-usuario-portada">
+				<div class="perfil-usuario-foto">
+					<img src="./img/gorraproduct3.jpg" alt="">
 
-					<ul class="lista-datos">
-						<br>
-						<li><i class="fa fa-angle-right"></i> Correo electrónico:</li>
-						<li><i class="fa fa-angle-right"></i> Historial de pedidos:</li>
-						<li><i class="fa fa-angle-right"></i> Tipo de usuario:</li>
-					   
-						
-					</ul>
-					<ul class="lista-datos">
-						<li><i class="fa fa-angle-right"></i> Número de amonestaciones:</li>
-						<li><i class="icono fa fa-angle-right"></i>Número de devoluciónes:</li>
-						<li><i class="icono fa fa-angle-right"></i>Cantidad de compras o ventas</li>
-						<li><i class="icono fa fa-angle-right"></i>Amonestar</li>
-
-					</ul>
-					
 				</div>
-                
-           	
-         
-            
-<br>
 
+			</div>
+		</div>
+		<br><br>
+		<div class="perfil-usuario-body">
+			<div class="perfil-usuario-bio">
 
+				<h3 class="titulo"> usuario 1 </h3>
 				<br>
-				<div class="pedidos2">
-					<ul class="lista-datos" > <strong> <br><br> Recientemente pedido</strong> </ul>
-					<div class="section">
-						<!-- container -->
-						<div class="container">
-							<!-- row -->
-							<div class="row">
-								<div class="col-md-4 col-xs-6">
-									<div class="section-title">
-										
-										
-										<div class="section-nav">
-											<div id="slick-nav-3" class="products-slick-nav"></div>
-										</div>
-									</div>
-			
-									<div class="products-widget-slick" data-nav="#slick-nav-3">
-										<div>
-											<!-- product widget -->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/monopolyzelda.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Juegos de mesa</p>
-													<h3 class="product-name"><a href="#">Monopoly Zelda</a></h3>
-													<h4 class="product-price">$980.00 </h4>
-												</div>
-											</div>
-											<!-- /product widget -->
-			
-											<!-- product widget -->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/unoclasico.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Juegos de mesa</p>
-													<h3 class="product-name"><a href="#">Uno clásico</a></h3>
-													<h4 class="product-price">$80.00</h4>
-												</div>
-											</div>
-											<!-- /product widget -->
-			
-											<!-- product widget -->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/unohp.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Juegos de mesa</p>
-													<h3 class="product-name"><a href="#">Uno Harry Potter</a></h3>
-													<h4 class="product-price">$180.00</h4>
-												</div>
-											</div>
-											<!-- product widget -->
-										</div>
-			
-										<div>
-											<!-- product widget -->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/voting.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Juegos de mesa</p>
-													<h3 class="product-name"><a href="#">The voting</a></h3>
-													<h4 class="product-price">$240.00</h4>
-												</div>
-											</div>
-											<!-- /product widget -->
-			
-											<!-- product widget -->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/ajedrezrm.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Juegos de mesa</p>
-													<h3 class="product-name"><a href="#">Ajedrez Rick and Morty</a></h3>
-													<h4 class="product-price">$1180.00</h4>
-												</div>
-											</div>
-											<!-- /product widget -->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/calabozosydragones.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Juegos de mesa</p>
-													<h3 class="product-name"><a href="#">Calabozos y Dragones</a></h3>
-													<h4 class="product-price">$760.00</h4>
-												</div>
-											</div>
-											<!-- product widget -->
-			
-											
-											</div>
-											<!-- product widget -->
-			
-											
-										</div>
-									
+
+				<ul class="lista-datos">
+					<br>
+					<li><i class="fa fa-angle-right"></i> Correo electrónico:</li>
+					<li><i class="fa fa-angle-right"></i> Historial de pedidos:</li>
+					<li><i class="fa fa-angle-right"></i> Tipo de usuario:</li>
+
+
+				</ul>
+				<ul class="lista-datos">
+					<li><i class="fa fa-angle-right"></i> Número de amonestaciones:</li>
+					<li><i class="icono fa fa-angle-right"></i>Número de devoluciónes:</li>
+					<li><i class="icono fa fa-angle-right"></i>Cantidad de compras o ventas</li>
+					<li><i class="icono fa fa-angle-right"></i>Amonestar</li>
+
+				</ul>
+
+			</div>
+
+
+
+
+			<br>
+
+
+			<br>
+			<div class="pedidos2">
+				<ul class="lista-datos"> <strong> <br><br> Recientemente pedido</strong> </ul>
+				<div class="section">
+					<!-- container -->
+					<div class="container">
+						<!-- row -->
+						<div class="row">
+							<div class="col-md-4 col-xs-6">
+								<div class="section-title">
+
+
+									<div class="section-nav">
+										<div id="slick-nav-3" class="products-slick-nav"></div>
 									</div>
 								</div>
-			
-								
-			
-								
-							<!-- /row -->
+
+								<div class="products-widget-slick" data-nav="#slick-nav-3">
+									<div>
+										<!-- product widget -->
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/monopolyzelda.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<p class="product-category">Juegos de mesa</p>
+												<h3 class="product-name"><a href="#">Monopoly Zelda</a></h3>
+												<h4 class="product-price">$980.00 </h4>
+											</div>
+										</div>
+										<!-- /product widget -->
+
+										<!-- product widget -->
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/unoclasico.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<p class="product-category">Juegos de mesa</p>
+												<h3 class="product-name"><a href="#">Uno clásico</a></h3>
+												<h4 class="product-price">$80.00</h4>
+											</div>
+										</div>
+										<!-- /product widget -->
+
+										<!-- product widget -->
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/unohp.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<p class="product-category">Juegos de mesa</p>
+												<h3 class="product-name"><a href="#">Uno Harry Potter</a></h3>
+												<h4 class="product-price">$180.00</h4>
+											</div>
+										</div>
+										<!-- product widget -->
+									</div>
+
+									<div>
+										<!-- product widget -->
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/voting.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<p class="product-category">Juegos de mesa</p>
+												<h3 class="product-name"><a href="#">The voting</a></h3>
+												<h4 class="product-price">$240.00</h4>
+											</div>
+										</div>
+										<!-- /product widget -->
+
+										<!-- product widget -->
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/ajedrezrm.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<p class="product-category">Juegos de mesa</p>
+												<h3 class="product-name"><a href="#">Ajedrez Rick and Morty</a></h3>
+												<h4 class="product-price">$1180.00</h4>
+											</div>
+										</div>
+										<!-- /product widget -->
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/calabozosydragones.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<p class="product-category">Juegos de mesa</p>
+												<h3 class="product-name"><a href="#">Calabozos y Dragones</a></h3>
+												<h4 class="product-price">$760.00</h4>
+											</div>
+										</div>
+										<!-- product widget -->
+
+
+									</div>
+									<!-- product widget -->
+
+
+								</div>
+
+							</div>
 						</div>
-						<!-- /container -->
+
+
+
+
+						<!-- /row -->
 					</div>
-
-
-
-
-					
+					<!-- /container -->
 				</div>
+
+
+
+
+
+			</div>
 			<br><br><br>
-            </div>
-        
-    </section>
-    <!--html-->
+		</div>
+
+	</section>
+	<!--html-->
 	<footer id="footer">
 		<!-- top footer -->
 		<div class="section">
@@ -576,13 +571,13 @@ body {
 	</footer>
 	<!-- /FOOTER -->
 
-<!-- jQuery Plugins -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
-<script src="js/main.js"></script>
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
 

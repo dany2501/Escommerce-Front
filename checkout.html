@@ -32,8 +32,8 @@
 	<script src="./js/pedido.js"></script>
 	<script src="./js/accountInfo.js"></script>
 	<script src="./js/address.js"></script>
-	<script src="./js/paymentMethod.js"></script>
 	<script src="./js/order.js"></script>
+	<script src="./js/paymentMethod.js"></script>
 
 
 
@@ -187,7 +187,7 @@
 										<h5 id="subtotal">SUBTOTAL: $0.00</h5>
 									</div>
 									<div class="cart-btns" id="cart_buttons">
-										<a href= "Carrito.html" id="delete">Detalle</a>
+										<a href="Carrito.html">Detalle</a>
 										<a href="checkout.html" hrer href="#">Comprar<i
 												class="fa fa-arrow-circle-right"></i></a>
 									</div>
@@ -246,7 +246,7 @@
 
 				<div class="col-md-7">
 					<!-- Billing Details -->
-					<div class="billing-details">
+					<div class="billing-details" id="address-container">
 						<div class="section-title">
 							<h3 class="title">Dirección de envío</h3>
 						</div>
@@ -273,21 +273,12 @@
 								placeholder="Código postal">
 						</div>
 						<div class="form-group">
-							<input class="input" id="phone" type="tel" maxlength="10" name="Teléfono" placeholder="Teléfono">
+							<input class="input" id="phone" type="tel" maxlength="10" name="Teléfono"
+								placeholder="Teléfono">
 						</div>
 					</div>
-					<!-- /Billing Details -->
-
-
-
-					<!-- Order notes -->
-					<!--<div class="order-notes" id="notes">
-						<textarea class="input" placeholder="Otras indicaciones"></textarea>
-					</div>
-					
-					<!-- Header Modal -->
 					<a class="primary-btn order-submit" data-toggle="modal" id="addAddress">Agregar</a>
-					
+
 					<div class="modal fade" id="agregart">
 						<div class="modal_dialog">
 							<div class="modal-content">
@@ -313,8 +304,75 @@
 							</div>
 						</div>
 					</div>
+					<!--Metodo de pago-->
+					<div class="billing-details" id="payment_method">
+						<div id="titlePOA">
+							<h1>El pago será al momento de la entrega</h1>
+						</div>
+						<div id="payment_detail">
+							<div class="section-title">
+								<h3 class="title">Información de la tarjeta</h3>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" id="cardHolder" name="Nombre de titular"
+									placeholder="Nombre del titular" pattern="[a-z]{1,15}">
+							</div>
+							<div class="form-group">
+								<input class="input" type="number" id="cardNumber" name="Número de la tarjeta"
+									placeholder="Número de tarjeta">
+							</div>
+							<div class="form-group">
+								<input class="input" type="number" id="month" min="1" max="12" name="Vencimiento (mes)"
+									placeholder="Mes de vencimiento">
+							</div>
+							<div class="form-group">
+								<input class="input" type="number" id="year" min="21" maxlength="2"
+									name="Vencimiento (año)" placeholder="Año de vencimiento (YY)">
+							</div>
+							<div class="form-group">
+								<input class="input" type="numer" id="cvv" minlength="3" maxlength="3" name="CVV"
+									placeholder="CVV">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-checkbox">
+							</div>
+							<!-- Header Modal -->
+							<a class="primary-btn order-submit" id="addPayment"
+								data-toggle="modal">Agregar
+								tarjeta</a>
+								<br>
+							<a  class="primary-btn order-submit" id="changePayment"
+								data-toggle="modal">Pago contra entrega</a>
+						</div>
+					</div>
+					<!--Metodo de pago-->
 				</div>
+				<!--Modal-->
+				<div class="modal fade" id="addPaymentModal">
+					<div class="modal_dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button tyle="button" class="close" data-dismiss="modal"
+									aria-hidden="true">&times;</button>
+								<h4 class="modal-title">Confirmación
+								</h4>
+							</div>
 
+							<!-- Header Body -->
+							<div class="modal-body">
+								<p>
+									<br>
+									El método de pago ha sido agreado correctamente
+									</br>
+
+
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Modal-->
 				<!-- Order Details -->
 				<div class="col-md-5 order-details">
 					<div class="section-title text-center">
@@ -329,36 +387,7 @@
 
 						</div>
 						<div class="payment-method">
-							<div class="input-radio">
-								<input type="radio" name="payment" id="pago1">
-								<label for="pago1">
-									<span></span>
-									Tarjeta
-								</label>
-								<div class="caption">
-									<li><a href="Metododepag.html" href="#"><i
-												class="fa fa-cc-mastercard"></i>Crédito</a>
-									</li>
-									<li><a href="Metododepag.html" href="#"><i class="fa fa-cc-visa"></i>Débito</a></li>
-									</li>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="pago2">
-								<label for="pago2">
-									<span></span>
-									Pago contra-entrega
-								</label>
-								<div class="caption">
-									<p>La entrega será realizada en ESCOM IPN, Unidad Profesional Adolfo López Mateos,
-										07320
-										Ciudad de México, CDMX</p>
-									<br>
-									<p>Por favor llevar el monto justo</p></br>
-								</div>
-							</div>
-
-							<div class="input-checkbox">
+							<div class="input-checkbox" id="terms-container">
 								<input type="checkbox" id="terminos">
 								<label for="terminos">
 									<span></span>
@@ -444,7 +473,7 @@
 							</div>
 
 							<!-- Header Modal -->
-							<a class="primary-btn order-submit" id="order" data-toggle="modal">Realizar compra</a>
+							<a class="primary-btn order-submit" id="order" data-toggle="modal">Proceder al pago</a>
 							<div class="modal fade" id="compra">
 								<div class="modal_dialog">
 									<div class="modal-content">
@@ -508,74 +537,75 @@
 			<!-- /NEWSLETTER -->
 
 			<!-- FOOTER -->
-	<footer id="footer">
-		<!-- top footer -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
-							<h3 class="footer-title">Sobre nosotros</h3>
-							<ul class="footer-links">
-								<li><a href="#"><i class="fa fa-map-marker"></i>ESCOM</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i>5555555</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o"></i>ayudaescommerce@gmail.com</a></li>
-							</ul>
-						</div>
-					</div>
+			<footer id="footer">
+				<!-- top footer -->
+				<div class="section">
+					<!-- container -->
+					<div class="container">
+						<!-- row -->
+						<div class="row">
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Sobre nosotros</h3>
+									<ul class="footer-links">
+										<li><a href="#"><i class="fa fa-map-marker"></i>ESCOM</a></li>
+										<li><a href="#"><i class="fa fa-phone"></i>5555555</a></li>
+										<li><a href="#"><i class="fa fa-envelope-o"></i>ayudaescommerce@gmail.com</a>
+										</li>
+									</ul>
+								</div>
+							</div>
 
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
-							<h3 class="footer-title">Categorias</h3>
-							<ul class="footer-links">
-								<li><a href="comida.html" href="#">Comida</a></li>
-								<li><a href="electronica.html" href="#">Electrónica</a></li>
-								<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-								<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-								<li><a href="papeleria.html" href="#">Papelería</a></li>
-								<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-							</ul>
-						</div>
-					</div>
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Categorias</h3>
+									<ul class="footer-links">
+										<li><a href="comida.html" href="#">Comida</a></li>
+										<li><a href="electronica.html" href="#">Electrónica</a></li>
+										<li><a href="tecnologia.html" href="#">Tecnología</a></li>
+										<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
+										<li><a href="papeleria.html" href="#">Papelería</a></li>
+										<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
+									</ul>
+								</div>
+							</div>
 
-					<div class="clearfix visible-xs"></div>
+							<div class="clearfix visible-xs"></div>
 
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
-							<h3 class="footer-title">Información</h3>
-							<ul class="footer-links">
-								<li><a href="#">Sobre nosotros</a></li>
-								<li><a href="#">Contacto</a></li>
-								<li><a href="#">Politicas</a></li>
-								<li><a href="#">Pedidos y devoluciones</a></li>
-								<li><a href="#">Terminós y condiciones</a></li>
-							</ul>
-						</div>
-					</div>
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Información</h3>
+									<ul class="footer-links">
+										<li><a href="#">Sobre nosotros</a></li>
+										<li><a href="#">Contacto</a></li>
+										<li><a href="#">Politicas</a></li>
+										<li><a href="#">Pedidos y devoluciones</a></li>
+										<li><a href="#">Terminós y condiciones</a></li>
+									</ul>
+								</div>
+							</div>
 
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
-							<h3 class="footer-title">Servicio</h3>
-							<ul class="footer-links">
-								<li><a href="#">Mi cuenta</a></li>
-								<li><a href="#">Ver carrito</a></li>
-								<li><a href="#">Lista de deseos</a></li>
-								<li><a href="#">Rastrear</a></li>
-								<li><a href="#">Ayuda</a></li>
-							</ul>
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Servicio</h3>
+									<ul class="footer-links">
+										<li><a href="#">Mi cuenta</a></li>
+										<li><a href="#">Ver carrito</a></li>
+										<li><a href="#">Lista de deseos</a></li>
+										<li><a href="#">Rastrear</a></li>
+										<li><a href="#">Ayuda</a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
+						<!-- /row -->
 					</div>
+					<!-- /container -->
 				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /top footer -->
+				<!-- /top footer -->
 
-	</footer>
-	<!-- /FOOTER -->
+			</footer>
+			<!-- /FOOTER -->
 
 
 			<!-- jQuery Plugins -->

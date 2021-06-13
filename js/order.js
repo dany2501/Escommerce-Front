@@ -1,23 +1,39 @@
 $(document).ready(() => {
     var order = $("#order");
+    var terms = $("#terms-container");
+    var payment_method = $("#payment_method");
+    var address = $("#address-container");
+    var addAddress =$("#addAddress");
     var token = localStorage.getItem('tokenSession')
     var addressId = localStorage.getItem('tokenSession')
+    var flag = false;
+
+
+
+    payment_method.css({"display":"none"});
+    terms.css({"display":"none"});
     order.click(() => {
+        if (flag) {
+            if ($("#terminos").is(":checked")) {
+                if ($("#pago2").is(":checked")) {
+                    if (token != null && addressId != null) {
 
-        if ($("#terminos").is(":checked")) {
-            if ($("#pago2").is(":checked")) {
-                if (token != null && addressId != null) {
+                        createOrder(token, addressId, 2).then((response) => {
 
-                    createOrder(token,addressId,2).then((response) => {
-
-                    });
+                        });
+                    }
+                } else {
+                    alert("Selecciona un método de pago");
                 }
             } else {
-                alert("Selecciona un método de pago");
+                alert("Primero debes aceptar los términos y condiciones");
+                $("#terminos").focus()
             }
-        } else {
-            alert("Primero debes aceptar los términos y condiciones");
-            $("#terminos").focus()
+        }else{
+            addAddress.css({"display":"none"})
+            address.css({"display":"none"})
+            payment_method.css({"display":"block"});
+            order.text("Confirmar orden")
         }
 
 
@@ -36,7 +52,7 @@ const createOrder = (token, addressId, paymentId) => {
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        data:JSON.stringify({ "addressId": addressId, "paymentId": paymentId }),
+        data: JSON.stringify({ "addressId": addressId, "paymentId": paymentId }),
         accepts: 'application/json',
         success: (data, status) => {
             return data;
