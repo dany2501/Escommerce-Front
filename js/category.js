@@ -77,7 +77,7 @@ const getProductsByCategoryId = async (categoryId) => {
     return await $.ajax({
         method: "POST",
         contentType: 'application/json',
-        url: 'http://localhost:5001/products',
+        url: 'http://148.204.59.115:5001/products',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*'},
         data:JSON.stringify({"categoryId": categoryId}),
