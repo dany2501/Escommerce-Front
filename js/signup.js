@@ -77,7 +77,7 @@ $(document).ready(() => {
 const createAccount = (email, password, confirmPass, name, lastName, secondLastName) => {
     return $.ajax({
         method: "POST",
-        url: 'http://148.204.59.115:5001/sign-up',
+        url: 'http://143.244.156.198:5001/sign-up',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*' },

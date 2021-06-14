@@ -92,7 +92,7 @@ const productsByDescription = (name) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://148.204.59.115:5001/products',
+        url: 'http://143.244.156.198:5001/products',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*' },

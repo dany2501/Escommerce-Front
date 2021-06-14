@@ -47,7 +47,7 @@ $(document).ready(() => {
 const closeSession = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://148.204.59.115:5001/logout',
+        url: 'http://143.244.156.198:5001/logout',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
@@ -62,7 +62,7 @@ const closeSession = (token) => {
 const getDataClient = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://148.204.59.115:5001/login',
+        url: 'http://143.244.156.198:5001/login',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
