@@ -28,6 +28,7 @@
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/input.css" />
 	<script src="./js/cart.js"></script>
 	<script src="./js/pedido.js"></script>
 	<script src="./js/accountInfo.js"></script>
@@ -250,6 +251,7 @@
 						<div class="section-title">
 							<h3 class="title">Dirección de envío</h3>
 						</div>
+						<input class="input" type="text" id="addressId" name="id">
 						<div class="form-group">
 							<input class="input" id="name" type="text" name="Nombre" placeholder="Nombre">
 						</div>
@@ -269,11 +271,13 @@
 							<input class="input" id="suburb" type="text" name="Delegación" placeholder="Delegación">
 						</div>
 						<div class="form-group">
-							<input class="input" id="zipCode" type="text" maxlength="5" name="Código postal"
+							<input class="input" id="zipCode" type="number"
+								onKeyDown="if(this.value.length==5) this.value='';" name="Código postal"
 								placeholder="Código postal">
 						</div>
 						<div class="form-group">
-							<input class="input" id="phone" type="tel" maxlength="10" name="Teléfono"
+							<input class="input" id="phone" type="number"
+								onKeyDown="if(this.value.length==10) this.value='';" name="Teléfono"
 								placeholder="Teléfono">
 						</div>
 					</div>
@@ -313,37 +317,56 @@
 							<div class="section-title">
 								<h3 class="title">Información de la tarjeta</h3>
 							</div>
+							<input class="input" type="text" id="paymentId" name="id">
 							<div class="form-group">
 								<input class="input" type="text" id="cardHolder" name="Nombre de titular"
+									onkeypress="return /^[a-zA-Z ]+$/i.test(event.key)" autocomplete="off"
 									placeholder="Nombre del titular" pattern="[a-z]{1,15}">
 							</div>
 							<div class="form-group">
-								<input class="input" type="number" id="cardNumber" name="Número de la tarjeta"
-									placeholder="Número de tarjeta">
+								<input maxlength="16" class="input" type="number" id="cardNumber" onKeyDown="if(this.value.length>16){
+									{alert('Longitud maxima 16 dígitos.'); this.value=''};
+								}
+								" name="Número de la tarjeta" placeholder="Número de tarjeta">
+							</div>
+
+							<div class="form-group">
+								<input maxlength="2" class="input" type="number" id="year" min="21" onKeyDown="if(this.value.length>1) 
+								if(this.value<21){
+
+									{alert('Año invalido. Debe ser mayor que 21'); this.value=''};
+								}else{
+
+									{alert('Vencimiento 2 dígitos Ej. 21'); this.value=''};
+								}
+								" name="Vencimiento (año)" placeholder="Año de vencimiento (YY)">
 							</div>
 							<div class="form-group">
-								<input class="input" type="number" id="month" min="1" max="12" name="Vencimiento (mes)"
-									placeholder="Mes de vencimiento">
+								<input min="1" max="12" class="input" type="number" id="month" onKeyDown="if(this.value.length>1) 
+								if(this.value<21){
+
+									{alert('Año invalido. Debe ser mayor que 21'); this.value=''};
+								}else{
+
+									{alert('Mes 2 dígitos Ej. 21'); this.value=''};
+								}
+								" name="Vencimiento (mes)" placeholder="Mes de vencimiento (MM)">
 							</div>
 							<div class="form-group">
-								<input class="input" type="number" id="year" min="21" maxlength="2"
-									name="Vencimiento (año)" placeholder="Año de vencimiento (YY)">
-							</div>
-							<div class="form-group">
-								<input class="input" type="numer" id="cvv" minlength="3" maxlength="3" name="CVV"
-									placeholder="CVV">
+								<input class="input" minlength="3"
+									onKeyDown="if(this.value.length==3) {alert('CVV Max 3 numeros'); this.value=''};"
+									class="text" type="numer" id="cvv" name="CVV" placeholder="CVV">
+
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="input-checkbox">
 							</div>
 							<!-- Header Modal -->
-							<a class="primary-btn order-submit" id="addPayment"
-								data-toggle="modal">Agregar
-								tarjeta</a>
-								<br>
-							<a  class="primary-btn order-submit" id="changePayment"
-								data-toggle="modal">Pago contra entrega</a>
+							<a class="primary-btn order-submit" id="addPayment" data-toggle="modal">Agregar tarjeta</a>
+							<br>
+							<a class="primary-btn order-submit" id="changePayment" data-toggle="modal">Pago contra
+								entrega</a>
 						</div>
 					</div>
 					<!--Metodo de pago-->
@@ -386,235 +409,234 @@
 						<div class="order-products" id="order_products">
 
 						</div>
-						<div class="payment-method">
-							<div class="input-checkbox" id="terms-container">
-								<input type="checkbox" id="terminos">
-								<label for="terminos">
-									<span></span>
-									He leido y acepto los <a href="#term" data-toggle="modal"> términos y condiciones
-									</a>
-									<div class="modal fade" id="term">
-										<div class="modal_dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button tyle="button" class="close" data-dismiss="modal"
-														aria-hidden="true">&times;</button>
-													<h4 class="modal-title">Términos y condiciones
+						<div class="input-checkbox" id="terms-container">
+							<input type="checkbox" id="terminos">
+							<label for="terminos">
+								<span></span>
+								He leido y acepto los <a href="#term" data-toggle="modal"> términos y condiciones
+								</a>
+								<div class="modal fade" id="term">
+									<div class="modal_dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button tyle="button" class="close" data-dismiss="modal"
+													aria-hidden="true">&times;</button>
+												<h4 class="modal-title">Términos y condiciones
 
 
-													</h4>
-												</div>
-												<div class="modal-body">
-													<p>
-														<br>
-														Aviso legal
+												</h4>
+											</div>
+											<div class="modal-body">
+												<p>
+													<br>
+													Aviso legal
 
-														En la medida máxima permitida por la ley aplicable, excluimos
-														todas
-														las representaciones, garantías y condiciones relacionadas con
-														nuestro sitio web y el uso de este sitio web (incluyendo, sin
-														limitación, cualquier garantía implícita por la ley con respecto
-														a
-														la calidad satisfactoria, idoneidad para el propósito y/o el uso
-														de
-														cuidado y habilidad razonables).Nada en este aviso legal:
+													En la medida máxima permitida por la ley aplicable, excluimos
+													todas
+													las representaciones, garantías y condiciones relacionadas con
+													nuestro sitio web y el uso de este sitio web (incluyendo, sin
+													limitación, cualquier garantía implícita por la ley con respecto
+													a
+													la calidad satisfactoria, idoneidad para el propósito y/o el uso
+													de
+													cuidado y habilidad razonables).Nada en este aviso legal:
 
-														Limita o excluye nuestra o su responsabilidad por muerte o
-														lesiones
-														personales resultantes de negligencia.
-														Limita o excluye nuestra o su responsabilidad por fraude o
-														tergiversación fraudulenta.
-														Limita cualquiera de nuestras o sus responsabilidades de
-														cualquier
-														manera que no esté permitida por la ley aplicable.
-														Excluye cualquiera de nuestras o sus responsabilidades que no
-														pueden
-														ser excluidas bajo la ley aplicable.
-														Las limitaciones y exclusiones de responsabilidad establecidas
-														en
-														esta Sección y en otras partes de este aviso legal:
-														1. están sujetas al párrafo anterior; y
-														2. rigen todas las responsabilidades que surjan bajo la exención
-														de
-														responsabilidad o en relación con el objeto de esta exención de
-														responsabilidad, incluidas las responsabilidades que surjan en
-														contrato, agravio (incluyendo negligencia) y por incumplimiento
-														del
-														deber legal.
+													Limita o excluye nuestra o su responsabilidad por muerte o
+													lesiones
+													personales resultantes de negligencia.
+													Limita o excluye nuestra o su responsabilidad por fraude o
+													tergiversación fraudulenta.
+													Limita cualquiera de nuestras o sus responsabilidades de
+													cualquier
+													manera que no esté permitida por la ley aplicable.
+													Excluye cualquiera de nuestras o sus responsabilidades que no
+													pueden
+													ser excluidas bajo la ley aplicable.
+													Las limitaciones y exclusiones de responsabilidad establecidas
+													en
+													esta Sección y en otras partes de este aviso legal:
+													1. están sujetas al párrafo anterior; y
+													2. rigen todas las responsabilidades que surjan bajo la exención
+													de
+													responsabilidad o en relación con el objeto de esta exención de
+													responsabilidad, incluidas las responsabilidades que surjan en
+													contrato, agravio (incluyendo negligencia) y por incumplimiento
+													del
+													deber legal.
 
-														En la medida en que el sitio web y la información y los
-														servicios en
-														el sitio web se proporcionen de forma gratuita, no seremos
-														responsables de ninguna pérdida o daño de ningún tipo.
-														Cookies
+													En la medida en que el sitio web y la información y los
+													servicios en
+													el sitio web se proporcionen de forma gratuita, no seremos
+													responsables de ninguna pérdida o daño de ningún tipo.
+													Cookies
 
-														Empleamos el uso de cookies. Al utilizar el sitio web de
-														(ESCOMMERCE), usted acepta el uso de cookies de acuerdo con la
-														política de privacidad de (ESCOMMERCE). La mayoría de los
-														modernos
-														sitios web interactivos de hoy en día usan cookies para
-														permitirnos
-														recuperar los detalles del usuario para cada visita.
+													Empleamos el uso de cookies. Al utilizar el sitio web de
+													(ESCOMMERCE), usted acepta el uso de cookies de acuerdo con la
+													política de privacidad de (ESCOMMERCE). La mayoría de los
+													modernos
+													sitios web interactivos de hoy en día usan cookies para
+													permitirnos
+													recuperar los detalles del usuario para cada visita.
 
-														Las cookies se utilizan en algunas áreas de nuestro sitio para
-														habilitar la funcionalidad de esta área y la facilidad de uso
-														para
-														las personas que lo visitan. Algunos de nuestros socios
-														afiliados/publicitarios también pueden usar cookies.
-														</br>
-													</p>
-												</div>
+													Las cookies se utilizan en algunas áreas de nuestro sitio para
+													habilitar la funcionalidad de esta área y la facilidad de uso
+													para
+													las personas que lo visitan. Algunos de nuestros socios
+													afiliados/publicitarios también pueden usar cookies.
+													</br>
+												</p>
 											</div>
 										</div>
 									</div>
+								</div>
 
-								</label>
+							</label>
 
-							</div>
+						</div>
 
-							<!-- Header Modal -->
-							<a class="primary-btn order-submit" id="order" data-toggle="modal">Proceder al pago</a>
-							<div class="modal fade" id="compra">
-								<div class="modal_dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button tyle="button" class="close" data-dismiss="modal"
-												aria-hidden="true">&times;</button>
-											<h4 class="modal-title">CONFIRMACIÓN DE COMPRA
+						<!-- Header Modal -->
+						<a class="primary-btn order-submit" id="order" data-toggle="modal">Proceder al pago</a>
+						<div class="modal fade" id="compra">
+							<div class="modal_dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button tyle="button" class="close" data-dismiss="modal"
+											aria-hidden="true">&times;</button>
+										<h4 class="modal-title">CONFIRMACIÓN DE COMPRA
 
 
-											</h4>
-										</div>
+										</h4>
+									</div>
 
-										<!-- Header Body -->
-										<div class="modal-body">
-											<p>
-												<br>
-												La compra ha sido realizada con éxito
-												</br>
-												<br>
-												Id #34526787
-												</br>
-												<br>
-												Llegada: 25-05-2021
-												</br>
-												<br>
-												Mostrar una identificación oficial al momento de la entrega
-												</br>
-												<br>
-												Para aclaraciones comunicarse al 5555555
-												</br>
+									<!-- Header Body -->
+									<div class="modal-body">
+										<p>
+											<br>
+											La compra ha sido realizada con éxito
+											</br>
+											<br>
+											Id #34526787
+											</br>
+											<br>
+											Llegada: 25-05-2021
+											</br>
+											<br>
+											Mostrar una identificación oficial al momento de la entrega
+											</br>
+											<br>
+											Para aclaraciones comunicarse al 5555555
+											</br>
 
-											</p>
-										</div>
+										</p>
 									</div>
 								</div>
 							</div>
-
-							<br>
-
-
-							</br>
 						</div>
-						<!-- /Order Details -->
-					</div>
-					<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /SECTION -->
 
-			<!-- NEWSLETTER -->
-			<div id="newsletter" class="section">
+						<br>
+
+
+						</br>
+					</div>
+					<!-- /Order Details -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
 				<!-- container -->
 				<div class="container">
 					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Sobre nosotros</h3>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>ESCOM</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>5555555</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>ayudaescommerce@gmail.com</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Categorias</h3>
+								<ul class="footer-links">
+									<li><a href="comida.html" href="#">Comida</a></li>
+									<li><a href="electronica.html" href="#">Electrónica</a></li>
+									<li><a href="tecnologia.html" href="#">Tecnología</a></li>
+									<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
+									<li><a href="papeleria.html" href="#">Papelería</a></li>
+									<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Información</h3>
+								<ul class="footer-links">
+									<li><a href="#">Sobre nosotros</a></li>
+									<li><a href="#">Contacto</a></li>
+									<li><a href="#">Politicas</a></li>
+									<li><a href="#">Pedidos y devoluciones</a></li>
+									<li><a href="#">Terminós y condiciones</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Servicio</h3>
+								<ul class="footer-links">
+									<li><a href="#">Mi cuenta</a></li>
+									<li><a href="#">Ver carrito</a></li>
+									<li><a href="#">Lista de deseos</a></li>
+									<li><a href="#">Rastrear</a></li>
+									<li><a href="#">Ayuda</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
 					<!-- /row -->
 				</div>
 				<!-- /container -->
 			</div>
-			<!-- /NEWSLETTER -->
+			<!-- /top footer -->
 
-			<!-- FOOTER -->
-			<footer id="footer">
-				<!-- top footer -->
-				<div class="section">
-					<!-- container -->
-					<div class="container">
-						<!-- row -->
-						<div class="row">
-							<div class="col-md-3 col-xs-6">
-								<div class="footer">
-									<h3 class="footer-title">Sobre nosotros</h3>
-									<ul class="footer-links">
-										<li><a href="#"><i class="fa fa-map-marker"></i>ESCOM</a></li>
-										<li><a href="#"><i class="fa fa-phone"></i>5555555</a></li>
-										<li><a href="#"><i class="fa fa-envelope-o"></i>ayudaescommerce@gmail.com</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="col-md-3 col-xs-6">
-								<div class="footer">
-									<h3 class="footer-title">Categorias</h3>
-									<ul class="footer-links">
-										<li><a href="comida.html" href="#">Comida</a></li>
-										<li><a href="electronica.html" href="#">Electrónica</a></li>
-										<li><a href="tecnologia.html" href="#">Tecnología</a></li>
-										<li><a href="juegos.html" href="#">Juegos de mesa</a></li>
-										<li><a href="papeleria.html" href="#">Papelería</a></li>
-										<li><a href="IPN.html" href="#">Espiritu IPN</a></li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="clearfix visible-xs"></div>
-
-							<div class="col-md-3 col-xs-6">
-								<div class="footer">
-									<h3 class="footer-title">Información</h3>
-									<ul class="footer-links">
-										<li><a href="#">Sobre nosotros</a></li>
-										<li><a href="#">Contacto</a></li>
-										<li><a href="#">Politicas</a></li>
-										<li><a href="#">Pedidos y devoluciones</a></li>
-										<li><a href="#">Terminós y condiciones</a></li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="col-md-3 col-xs-6">
-								<div class="footer">
-									<h3 class="footer-title">Servicio</h3>
-									<ul class="footer-links">
-										<li><a href="#">Mi cuenta</a></li>
-										<li><a href="#">Ver carrito</a></li>
-										<li><a href="#">Lista de deseos</a></li>
-										<li><a href="#">Rastrear</a></li>
-										<li><a href="#">Ayuda</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /row -->
-					</div>
-					<!-- /container -->
-				</div>
-				<!-- /top footer -->
-
-			</footer>
-			<!-- /FOOTER -->
+		</footer>
+		<!-- /FOOTER -->
 
 
-			<!-- jQuery Plugins -->
-			<script src="js/jquery.min.js"></script>
-			<script src="js/bootstrap.min.js"></script>
-			<script src="js/slick.min.js"></script>
-			<script src="js/nouislider.min.js"></script>
-			<script src="js/jquery.zoom.min.js"></script>
-			<script src="js/main.js"></script>
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
 
 </body>
 

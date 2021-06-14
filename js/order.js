@@ -5,31 +5,38 @@ $(document).ready(() => {
     var address = $("#address-container");
     var addAddress =$("#addAddress");
     var token = localStorage.getItem('tokenSession')
-    var addressId = localStorage.getItem('tokenSession')
+    var terminos = $("#terminos");
     var flag = false;
-
+    var paymentId=$("#paymentId");
+    var addressId = $("#addressId");
 
 
     payment_method.css({"display":"none"});
-    terms.css({"display":"none"});
     order.click(() => {
         if (flag) {
-            if ($("#terminos").is(":checked")) {
-                if ($("#pago2").is(":checked")) {
-                    if (token != null && addressId != null) {
-
-                        createOrder(token, addressId, 2).then((response) => {
-
-                        });
+            if (terminos.is(":checked")) {
+                createOrder(token,addressId.val(),paymentId.val()).then((response)=>{
+                    console.log(response);
+                    if(response != null){
+                        if(response.success){
+                            $("#compra").modal("show");
+                            window.setTimeout(function(){
+                                // Move to a new location or you can do something else
+                                window.location.href = "index.html";
+                        
+                            }, 7000);
+                        }else{
+                            alert(response.error.message);
+                        }
                     }
-                } else {
-                    alert("Selecciona un método de pago");
-                }
+                });
+                //
             } else {
                 alert("Primero debes aceptar los términos y condiciones");
-                $("#terminos").focus()
+                terminos.focus()
             }
         }else{
+            flag=true;
             addAddress.css({"display":"none"})
             address.css({"display":"none"})
             payment_method.css({"display":"block"});
@@ -40,15 +47,17 @@ $(document).ready(() => {
     });
 
 
-    //$("#compra").modal("show")
+    //
 
 });
 
 
 const createOrder = (token, addressId, paymentId) => {
+    console.log(addressId);
+    console.log(paymentId);
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/order',
+        url: 'http://localhost:5001/order',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },

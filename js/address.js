@@ -2,12 +2,16 @@ $(document).ready(() => {
 
     var add = $("#addAddress")
     var token = localStorage.getItem('tokenSession');
+
+    $("#addressId").css({"display":"none"})
     getAddress(token).then((response) => {
         if (response != null) {
 
             if (response.success) {
                 var address = response.address
+                console.log(address);
                 localStorage.setItem('addressId',address.id)
+                $("#addressId").val(address.id);
                 $("#name").val(address.name);
                 $("#lastName").val(address.lastName);
                 $("#street").val(address.street);
@@ -65,7 +69,7 @@ const address = (name, street, extNum, city, suburb, zipCode, phone, token) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/address',
+        url: 'http://localhost:5001/address',
         contentType: 'application/json',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
@@ -89,7 +93,7 @@ const address = (name, street, extNum, city, suburb, zipCode, phone, token) => {
 const getAddress = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/address',
+        url: 'http://localhost:5001/address',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
