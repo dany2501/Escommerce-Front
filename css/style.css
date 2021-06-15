@@ -106,6 +106,22 @@ ul, ol {
   transition: 0.2s all;
 }
 
+.primary-btn3 {
+  display: inline-flex;
+  padding: 12px 30px;
+
+  background-color: #0a1527;;
+  border: none;
+  border-radius: 40px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+
 
 
 .primary-btn {
