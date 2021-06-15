@@ -62,7 +62,7 @@ const createOrder = (token, addressId, paymentId,cartType) => {
     console.log(paymentId);
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/order',
+        url: 'http://143.244.156.198:5001/order',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },

@@ -30,7 +30,7 @@ $(document).ready(() => {
                 var cart = "";
                 var qtyProds = 0;
                 var toPay = 0;
-                addToCart(token, action[1], 1).then((response) => {
+                addToCart(token, action[1], 1,1).then((response) => {
                     if (response.success) {
                         alert("Producto agregado al carrito")
 
@@ -103,7 +103,7 @@ const productsByDescription = (name) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/products',
+        url: 'http://143.244.156.198:5001/products',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*' },
