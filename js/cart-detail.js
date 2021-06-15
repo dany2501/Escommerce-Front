@@ -127,9 +127,11 @@ $(document).ready(() => {
 const card = (id, name, price, stock, categoryId, image) => {
     return (` <!-- product -->
     <div class="product" >
+    <button class="delete" tabindex="0"><i class="fa fa-close"></i></button>
         <div class="product-img">
             <img src=${image} alt="">
         </div>
+       
         <div class="product-body" >
                 <h3 class="product-name">${name}</h3>
             <h3 class="product-name">Cantidad: <div class="input-number">
