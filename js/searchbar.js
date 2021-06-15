@@ -56,6 +56,17 @@ $(document).ready(() => {
                 alert("Para agregar productos al carrito, debes iniciar sesión primero")
             }
 
+        }else if (action[0] === "wish"){
+            addToCart(token, action[1], 1, 2).then((response) => {
+                if (response.success) {
+                    alert("Producto agregado a deseos");
+                    window.location.reload();
+                }else{
+                    alert(response.error.message);
+                }
+
+            });
+
         }
 
     });
@@ -131,7 +142,7 @@ const cardProduct = (id,name, description,price,sku,stock,img) => {
                     <i class="fa fa-star"></i>
                 </div>
                 <div class="product-btns">
-                    <button class="add-to-wishlist" id="Add"><i class="fa fa-heart-o"></i><span
+                    <button class="add-to-wishlist" id=wish-${id}><i class="fa fa-heart-o" id=wish-${id}></i><span
                             class="tooltipp">Añadir a deseos</span></button>
                     <button class="quick-view" id=see-${id}><i class="fa fa-eye"
                             id=see-${id}></i><span class="tooltipp">ver</span></button>

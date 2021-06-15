@@ -1,9 +1,4 @@
-var cart = "";
-var qtyProds = 0;
-var toPay = 0;
-
 $(document).ready(() => {
-
     token = localStorage.getItem('tokenSession');
     productId = localStorage.getItem('productId');
     var cartType = 1;
@@ -26,10 +21,14 @@ $(document).ready(() => {
 
     detail.click(()=>{
         localStorage.setItem('cartType',1);
-        window.location.href ="Carrito.html";
+        window.location.href = "Carrito.html";
     });
 
     getCart(token,cartType).then((response) => {
+
+    var cart = "";
+    var qtyProds = 0;
+    var toPay = 0;
         if (response.success && response.products != null && response.products != 0) {
 
             response.products.forEach(element => {

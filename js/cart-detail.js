@@ -5,7 +5,7 @@ $(document).ready(() => {
     var toPay = 0;
 
     token = localStorage.getItem('tokenSession');
-    var cartType = localStorage.getItem('cartType');
+    var cartType = 1;
     var cartList = $("#cart_list");
     /*var qtyCart = $("#qty");
     var subtotal = $("#subtotal");
@@ -101,6 +101,19 @@ $(document).ready(() => {
         if (action[0] === "see") {
             localStorage.setItem('productId', action[1])
             window.location.href = ("./producto.html")
+        }else if(action[0]==="delete"){
+            deleteProductCart(token,action[1],1).then((response)=>{
+
+                if(response!= null){
+                    if(response.success){
+                        alert("Producto eliminado");
+                        window.location.reload();
+                    }else{
+                        alert(response.error.message);
+                    }
+                }
+
+            });
         }
     });
 
@@ -127,7 +140,7 @@ $(document).ready(() => {
 const card = (id, name, price, stock, categoryId, image) => {
     return (` <!-- product -->
     <div class="product" >
-    <button class="delete"><i class="fa fa-close" id="17"></i></button>
+    <button class="delete" id=delete-${id}><i class="fa fa-close" id=delete-${id}></i></button>
         <div class="product-img">
             <img src=${image} alt="">
         </div>

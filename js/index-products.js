@@ -5,6 +5,11 @@ $(document).ready(() => {
     var subtotal = $("#subtotal");
     var qtyCart = $("#qty");
     var cartList = $("#cart-list");
+    var cartType = localStorage.setItem('cartType',1);
+    var wishList = $("#wish-list");
+    var qtyTotalWish = $("#qty-total-wish");
+    var qtyWish = $("#qty-wish");
+    var subtotalWish = $("#subtotal-wish");
 
     var qtyWish = $("#qty-wish");
     if (token == null || token.length == 4) {
@@ -67,6 +72,7 @@ $(document).ready(() => {
             addToCart(token, action[1], 1, 2).then((response) => {
                 if (response.success) {
                     alert("Producto agregado a deseos");
+                    window.location.reload();
                 }else{
                     alert(response.error.message);
                 }
@@ -119,33 +125,14 @@ $(document).ready(() => {
         }else if (action[0] === "wish"){
             addToCart(token, action[1], 1, 2).then((response) => {
                 if (flag) {
-                    var cart = "";
-                    var qtyProds = 0;
-                    var toPay = 0;
-                    addToCart(token, action[1], 1,1).then((response) => {
-                        if (response.success) {
-                            alert("Producto agregado a deseos")
-    
-                            /*$("#cart_buttons").css({ "display": "block" });
-                            $("#summary").css({ "display": "block" });
-                            response.products.forEach(element => {
-                                qtyProds += element.qty
-                                toPay += parseInt(element.product.price) * parseInt(element.qty)
-                                cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image,element.product.id);
-                            });
-                            /*if (qtyProds > 1) {
-                                qtyTotal.text(qtyProds + " Artículos");
-                            } else {
-                                qtyTotal.text(qtyProds + " Artículo");
-                            }*/
-                            //subtotal.text("Subtotal: $" + toPay + " .00")
-                            qtyWish.text(qtyProds)
-                            //cartList.html(cart);
+                    if(response != null ){
+                        if(response.success){
+                            alert("Producto agregado a deseos");
+                            window.location.reload();
                         }else{
                             alert(response.error.message);
                         }
-    
-                    });
+                    }
                 } else {
                     alert("Para agregar productos al carrito, debes iniciar sesión primero")
                 }

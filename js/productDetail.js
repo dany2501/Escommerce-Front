@@ -1,6 +1,6 @@
 $(document).ready(() => {
-
-    token = localStorage.getItem('tokenSession');
+    var cartType = localStorage.setItem('cartType',1);
+    var token = localStorage.getItem('tokenSession');
     var productName = $("#product_name");
     var productPrice = $("#product_price");
     var productStock = $("#product_stock");
@@ -16,7 +16,7 @@ $(document).ready(() => {
     var desc_prod = $("#desc_prod");
 
     var stock = 0;
-    productId = parseInt(localStorage.getItem('productId'));
+    var productId = parseInt(localStorage.getItem('productId'));
 
     getProduct(productId).then((response) => {
         var product = response.products;
@@ -76,7 +76,22 @@ $(document).ready(() => {
 
     $("#buyNow").click(() => {
         if (flag) {
-            window.location.href = "checkout.html"
+            var q = parseInt(qtyAdd.val());
+            console.log(q)
+            if (q == "" || q==0 || Number.isNaN(q)){
+                alert("Ingresa una cantidad valida");
+                qtyAdd.focus();
+                return;
+            }
+
+            addToCart(token, productId, q,3).then((response)=>{
+                if(response!= null){
+                    if(response.success){
+                        localStorage.setItem('cartType',"3");
+                        window.location.href = "checkout.html"
+                    }
+                }
+            })
         } else {
             alert("Para comprar este producto debes iniciar sesión primero.")
         }

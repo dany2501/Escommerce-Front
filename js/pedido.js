@@ -1,12 +1,13 @@
 $(document).ready(() => {
     var token = localStorage.getItem('tokenSession')
+    var cartType = parseInt(localStorage.getItem('cartType'));
     var product = $("#order_products");
     var toPay = 0;
     var cart = "";
     var pedido = "";
     var cartList = $("#cart-list");
     var qtyCart = $("#qty");
-    getCart(token).then((response) => {
+    getCart(token,cartType).then((response) => {
         response.products.forEach(element => {
             toPay += parseInt(element.product.price) * parseInt(element.qty)
             cart += cardCart(element.product.name, element.product.price, element.qty,element.product.image,element.product.id);
@@ -14,8 +15,6 @@ $(document).ready(() => {
         });
         pedido += shippingCard(toPay)
         product.html(pedido);
-        qtyCart.text(qtyProds)
-        cartList.html(cart);
     });
 });
 

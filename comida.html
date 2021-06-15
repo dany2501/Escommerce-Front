@@ -28,8 +28,18 @@
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/cart.js"></script>
+	<script src="./js/wish.js"></script>
+	<script src="./js/category.js"></script>
 
-
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
 </head>
 
@@ -80,10 +90,10 @@
 					</div>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="productregister.html"><i class="fa fa-dollar"></i>Agregar producto</a></li>
-					<li><a href="deleteproduct.html"><i class="fa fa-dollar"></i>Eliminar/Modificar producto</a></li>
-					<!-- Header Modal -->
-					<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal"> Mi perfil</a></li>
+					<!--<li><a href="productregister.html"><i class="fa fa-dollar"></i>Agregar producto</a></li>
+								<li><a href="deleteproduct.html"><i class="fa fa-dollar"></i>Eliminar/Modificar producto</a></li>
+														<!-- Header Modal -->
+					<li><a href="#deseos" class="fa fa-user-o" data-toggle="modal" id="profile"> Mi perfil</a></li>
 					<div class="modal fade" id="deseos">
 						<div class="modal_dialog">
 							<div class="modal-content">
@@ -99,9 +109,10 @@
 									<p>
 										<img src="./img/usuario.png" alt="">
 										<br>
-										<strong>Usuario: nombre 1</strong>
+										<strong id="user">Usuario: </strong>
 										<br>
-										<strong>Correo: nombre1@alumno.ipn.mx</strong>
+										<strong id="email">Correo: </strong>
+
 										<br>
 										</br>
 									</p>
@@ -109,6 +120,12 @@
 							</div>
 						</div>
 					</div>
+					<li>
+						<p id="logout" style="color: white;"> Iniciar Sesión</p>
+					</li>
+					<li>
+						<p id="signup" style="color: white;"> Crear Cuenta</p>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -135,11 +152,11 @@
 						<div class="header-search">
 							<form>
 								<select class="input-select">
-									<option value="0">Producto: </option>
+									<option value="1">Producto: </option>
 
 								</select>
-								<input class="input" placeholder="Buscar">
-								<button class="search-btn">Buscar</button>
+								<input class="input" placeholder="Buscar" id="search_string">
+								<button class="search-btn" id="search-btn">Buscar</button>
 							</form>
 						</div>
 					</div>
@@ -153,112 +170,52 @@
 								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 									<i class="fa fa-heart-o"></i>
 									<span>Deseos</span>
-									<div class="qty">3</div>
+									<div class="qty" id="qty-wish">0</div>
 								</a>
 								<div class="cart-dropdown">
-									<div class="cart-list">
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/chamarraipn.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">Poli BOMBER</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-											</div>
-
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/gorra.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">GorraB.B</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
+									<div class="cart-list" id="wish-list">
+										<h5 id="no_products_wish">¡Inicia sesión para agregar productos!</h5>
 									</div>
 
-									<div class="product-widget">
-										<div class="product-img">
-											<img src="./img/unoclasico.jpg" alt="">
-										</div>
-										<div class="product-body">
-											<h3 class="product-name">uno clásico</h3>
-											<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-										</div>
-										<button class="delete"><i class="fa fa-close"></i></button>
+									<div class="cart-summary" id="wish-summary">
+										<small id="qty-total-wish">0 Articulos</small>
+										<h5 id="subtotal-wish">SUBTOTAL: $1,340.00</h5>
 									</div>
-
-									<div class="cart-summary">
-										<small>3 Articulos</small>
-										<h5>SUBTOTAL: $1,340.00</h5>
-									</div>
-									<div class="cart-btns">
-										<a href="Wishlist.html">Detalle</a>
-										<a href="" href="#">A carrito<i
-												class="fa fa-arrow-circle-right"></i></a>
+									<div class="cart-btns" id="wish_buttons">
+										<a id="cart_wish">Ver mis deseos</a>
+										<a href="" href="#">Ver mi carrito<i class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
 							</div>
 							<!-- /Wishlist -->
-
-
 							<!-- Cart -->
 							<div class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 									<i class="fa fa-shopping-cart"></i>
 									<span>Ver carrito</span>
-									<div class="qty">3</div>
+									<div class="qty" id="qty">0</div>
 								</a>
 								<div class="cart-dropdown">
-									<div class="cart-list">
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/chamarraipn.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">Poli BOMBER</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/gorra.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">GorraB.B</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
+									<div class="cart-list" id="cart-list">
+										<h5 id="no_products">¡Inicia sesión para agregar productos!</h5>
 									</div>
 
-									<div class="product-widget">
-										<div class="product-img">
-											<img src="./img/unoclasico.jpg" alt="">
-										</div>
-										<div class="product-body">
-											<h3 class="product-name">uno clásico</h3>
-											<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-										</div>
-										<button class="delete"><i class="fa fa-close"></i></button>
+									<div class="cart-summary" id="summary">
+										<small id="qty-total">0 Articulos</small>
+										<h5 id="subtotal">SUBTOTAL: $0.00</h5>
 									</div>
-
-									<div class="cart-summary">
-										<small>3 Articulos</small>
-										<h5>SUBTOTAL: $1,340.00</h5>
-									</div>
-									<div class="cart-btns">
-										<a href="Carrito.html">Detalle</a>
+									<div class="cart-btns" id="cart_buttons">
+										<a id="cart_detail">Detalle</a>
 										<a href="checkout.html" hrer href="#">Comprar<i
 												class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
 							</div>
+							<!-- /Cart -->
+
+							
+						</div>
+					</div>
 							<!-- /ACCOUNT -->
 						</div>
 						<!-- row -->

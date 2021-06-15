@@ -1,6 +1,7 @@
 $(document).ready(() => {
     var order = $("#order");
     var terms = $("#terms-container");
+    var cartType = parseInt(localStorage.getItem('cartType'));
     var payment_method = $("#payment_method");
     var address = $("#address-container");
     var addAddress =$("#addAddress");
@@ -15,13 +16,11 @@ $(document).ready(() => {
     order.click(() => {
         if (flag) {
             if (terminos.is(":checked")) {
-                createOrder(token,addressId.val(),paymentId.val()).then((response)=>{
-                    console.log(response);
+                createOrder(token,addressId.val(),paymentId.val(),cartType).then((response)=>{
                     if(response != null){
                         if(response.success){
                             $("#compra").modal("show");
                             window.setTimeout(function(){
-                                // Move to a new location or you can do something else
                                 window.location.href = "index.html";
                         
                             }, 7000);
@@ -36,11 +35,17 @@ $(document).ready(() => {
                 terminos.focus()
             }
         }else{
-            flag=true;
-            addAddress.css({"display":"none"})
-            address.css({"display":"none"})
-            payment_method.css({"display":"block"});
-            order.text("Confirmar orden")
+            console.log(addressId.val());
+            if(addressId.val() !="" ){
+                flag=true;
+                addAddress.css({"display":"none"})
+                address.css({"display":"none"})
+                payment_method.css({"display":"block"});
+                order.text("Confirmar orden");
+            }else{
+                alert("Primero selecciona un método de envío");
+            }
+
         }
 
 
@@ -52,7 +57,7 @@ $(document).ready(() => {
 });
 
 
-const createOrder = (token, addressId, paymentId) => {
+const createOrder = (token, addressId, paymentId,cartType) => {
     console.log(addressId);
     console.log(paymentId);
     return $.ajax({
@@ -61,7 +66,7 @@ const createOrder = (token, addressId, paymentId) => {
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        data: JSON.stringify({ "addressId": addressId, "paymentId": paymentId }),
+        data: JSON.stringify({ "addressId": addressId, "paymentId": paymentId,"cartType":cartType}),
         accepts: 'application/json',
         success: (data, status) => {
             return data;

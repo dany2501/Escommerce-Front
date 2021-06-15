@@ -6,6 +6,7 @@ $(document).ready(() => {
     var profile = $("#profile");
     var summary = $("#summary");
     var token = localStorage.getItem('tokenSession');
+    var cartType = localStorage.setItem('cartType',1);
     var flag = false;
 
     if (token == null || token.length == 4) {

@@ -155,7 +155,6 @@
 							<form id="form">
 								<select class="input-select">
 									<option value="0">Productos: </option>
-									
 								</select>
 								<input class="input" placeholder="Buscar" id="search_string">
 								<button class="search-btn" id="search-btn">Buscar</button>
@@ -168,63 +167,24 @@
 					<div class="col-md-3 clearfix">
 						<div class="header-ctn">
 							<!-- Wishlist -->
-<<<<<<< HEAD
 							<div class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 									<i class="fa fa-heart-o"></i>
 									<span>Deseos</span>
-									<div class="qty">3</div>
-=======
-							<div  id="cart_wish">
-								<a>
-									<i class="fa fa-heart-o"></i>
-									<span>Deseos</span>
 									<div class="qty" id="qty-wish">0</div>
->>>>>>> 0804ce6 (WishList)
 								</a>
 								<div class="cart-dropdown">
-									<div class="cart-list">
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/chamarraipn.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">Poli BOMBER</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$680.00</h4>
-											</div>
-
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/gorra.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name">GorraB.B</h3>
-												<h4 class="product-price"><span class="qty">1x</span>$580.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
+									<div class="cart-list" id="wish-list">
+										<h5 id="no_products_wish">¡Inicia sesión para agregar productos!</h5>
 									</div>
 
-									<div class="product-widget">
-										<div class="product-img">
-											<img src="./img/unoclasico.jpg" alt="">
-										</div>
-										<div class="product-body">
-											<h3 class="product-name">uno clásico</h3>
-											<h4 class="product-price"><span class="qty">1x</span>$80.00</h4>
-										</div>
-										<button class="delete"><i class="fa fa-close"></i></button>
+									<div class="cart-summary" id="wish-summary">
+										<small id="qty-total-wish">0 Articulos</small>
+										<h5 id="subtotal-wish">SUBTOTAL: $1,340.00</h5>
 									</div>
-
-									<div class="cart-summary">
-										<small>3 Articulos</small>
-										<h5>SUBTOTAL: $1,340.00</h5>
-									</div>
-									<div class="cart-btns">
-										<a href="Wishlist.html">Detalle</a>
-										<a href="" href="#">A carrito<i
+									<div class="cart-btns" id="wish_buttons">
+										<a id="cart_wish">Ver mis deseos</a>
+										<a href="" href="#">Ver mi carrito<i
 												class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
