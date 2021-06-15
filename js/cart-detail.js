@@ -5,7 +5,7 @@ $(document).ready(() => {
     var toPay = 0;
 
     token = localStorage.getItem('tokenSession');
-    productId = localStorage.getItem('productId');
+    var cartType = localStorage.getItem('cartType');
     var cartList = $("#cart_list");
     /*var qtyCart = $("#qty");
     var subtotal = $("#subtotal");
@@ -22,7 +22,7 @@ $(document).ready(() => {
         $("#no_products").text("Parece que no hay nada por aquí. ¡Agrega productos!")
     }
 
-    getCart(token).then((response) => {
+    getCart(token,cartType).then((response) => {
         if (response.success && response.products != null && response.products != 0) {
 
             response.products.forEach(element => {
@@ -59,7 +59,7 @@ $(document).ready(() => {
                 if (e.target.value != "") {
                     if (e.target.value != 0) {
                         if (old != e.target.value) {
-                            addToCart(token, productId, e.target.value).then((response) => {
+                            addToCart(token, productId, e.target.value,cartType).then((response) => {
                                 if (response != null) {
                                     if (response.success) {
                                         window.location.reload();
@@ -77,7 +77,7 @@ $(document).ready(() => {
                             });
                         }
                     }else{
-                        deleteProductCart(token,productId).then((response)=>{
+                        deleteProductCart(token,productId,cartType).then((response)=>{
                             if(response!=null){
                                 if(response.success){
                                     alert("Producto eliminado");
@@ -108,7 +108,7 @@ $(document).ready(() => {
         console.log(e)
         action = e.target
         if (typeof (action.id) === "int" && action.id != "" && action.id != null) {
-            deleteProductCart(token, action.id).then((response) => {
+            deleteProductCart(token, action.id,cartType).then((response) => {
                 console.log(response)
                 if (response != null) {
                     if (response.success) {

@@ -6,11 +6,13 @@ $(document).ready(() => {
 
     token = localStorage.getItem('tokenSession');
     productId = localStorage.getItem('productId');
+    var cartType = 1;
     var cartList = $("#cart-list");
     var qtyCart = $("#qty");
     var subtotal = $("#subtotal");
     var qtyTotal = $("#qty-total");
     var deleteProd = $("#delete");
+    var detail = $("#cart_detail");
 
     if (token == null || token.length == 4) {
         flag = false
@@ -22,7 +24,12 @@ $(document).ready(() => {
         $("#no_products").text("Parece que no hay nada por aquí. ¡Agrega productos!")
     }
 
-    getCart(token).then((response) => {
+    detail.click(()=>{
+        localStorage.setItem('cartType',1);
+        window.location.href ="Carrito.html";
+    });
+
+    getCart(token,cartType).then((response) => {
         if (response.success && response.products != null && response.products != 0) {
 
             response.products.forEach(element => {
@@ -48,7 +55,7 @@ $(document).ready(() => {
     });
 
     deleteProd.click(() => {
-        deleteCart(token).then((response) => {
+        deleteCart(token,cartType).then((response) => {
             if (response.success) {
                 alert("Carrito vaciado!")
                 window.location.reload()
@@ -69,7 +76,7 @@ $(document).ready(() => {
     document.querySelector('#cart-list').addEventListener('click',e =>{
         action = e.target
         if(action.id != "" && action.id != null){
-            deleteProductCart(token,action.id).then((response)=>{
+            deleteProductCart(token,action.id,cartType).then((response)=>{
                 console.log(response)
                 if (response != null){
                     if(response.success){
@@ -86,12 +93,12 @@ $(document).ready(() => {
 });
 
 
-const getCart = (token) => {
+const getCart = (token,cartType) => {
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/cart',
+        url: 'http://localhost:5001/cart',
         dataType: 'json',
-        headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
+        headers: { 'Access-Control-Allow-Origin': '*', 'token': token, "cartType":cartType},
         accepts: 'application/json',
         success: (data, status) => {
             return data;
@@ -100,27 +107,29 @@ const getCart = (token) => {
 }
 
 
-const deleteCart = (token) => {
+const deleteCart = (token,cartType) => {
     return $.ajax({
         method: "DELETE",
-        url: 'http://143.244.156.198:5001/cart',
+        url: 'http://localhost:5001/cart',
+        contentType: 'application/json',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
+        data:JSON.stringify({"cartType":cartType}),
         success: (data, status) => {
             return data;
         }
     });
 }
 
-const deleteProductCart = (token,productId) => {
+const deleteProductCart = (token,productId,cartType) => {
     return $.ajax({
         method: "PUT",
-        url: 'http://143.244.156.198:5001/cart',
+        url: 'http://localhost:5001/cart',
         contentType: 'application/json',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        data:JSON.stringify({"productId":productId}),
+        data:JSON.stringify({"productId":productId,"cartType":cartType}),
         accepts: 'application/json',
         success: (data, status) => {
             return data;
@@ -131,14 +140,14 @@ const deleteProductCart = (token,productId) => {
 
 
 
-const addToCart = (token, productId, qty) => {
+const addToCart = (token, productId, qty,cartType) => {
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/cart',
+        url: 'http://localhost:5001/cart',
         contentType: 'application/json',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
-        data:JSON.stringify( { "productId": productId, "qty": qty }),
+        data:JSON.stringify( { "productId": productId, "qty": qty, "cartType":cartType}),
         accepts: 'application/json',
         success: (data, status) => {
             return data;
