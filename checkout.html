@@ -254,6 +254,9 @@
 			<div class="row">
 
 				<div class="col-md-7">
+					<div id="titleShipping">
+						<h1>La entrega será realizada en ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX</h1>
+					</div>
 					<!-- Billing Details -->
 					<div class="billing-details" id="address-container">
 						<div class="section-title">
@@ -288,8 +291,9 @@
 								onKeyDown="if(this.value.length==10) this.value='';" name="Teléfono"
 								placeholder="Teléfono">
 						</div>
+						<a class="primary-btn2 order-submit" data-toggle="modal" id="addAddress">Agregar</a>
 					</div>
-					<a class="primary-btn2 order-submit" data-toggle="modal" id="addAddress">Agregar</a>
+					
 							<br> <br>
 							<a class="primary-btn order-submit" id="changeShipping" data-toggle="modal">Entrega en ESCOM</a>
 
@@ -524,16 +528,16 @@
 									<div class="modal-body">
 										<p>
 											<br>
-											La compra ha sido realizada con éxito
+											<p id="mensaje"></p>
 											</br>
 											<br>
-											Id #34526787
+											<p id="orderId"></p>
 											</br>
 											<br>
-											Llegada: 25-05-2021
+											<p id="arrival"></p>
 											</br>
 											<br>
-											Mostrar una identificación oficial al momento de la entrega
+											<p id="id_recibido">Mostrar una identificación oficial al momento de la entrega</p>		
 											</br>
 											<br>
 											Para aclaraciones comunicarse al 5555555

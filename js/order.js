@@ -20,12 +20,20 @@ $(document).ready(() => {
                     if(response != null){
                         if(response.success){
                             $("#compra").modal("show");
+                            $("#mensaje").text("Creada exitosamente");
+                            $("#orderId").text(response.orderId);
+                            $("#arrival").text(response.arrivalDate);
+                            
                             window.setTimeout(function(){
                                 window.location.href = "index.html";
                         
-                            }, 7000);
+                            }, 5000);
                         }else{
                             alert(response.error.message);
+                            $("#mensaje").text("Ocurrio un error");
+                            $("#orderId").css({"display":"none"})
+                            $("#arrival").css({"display":"none"})
+                            
                         }
                     }
                 });
@@ -42,6 +50,9 @@ $(document).ready(() => {
                 address.css({"display":"none"})
                 payment_method.css({"display":"block"});
                 order.text("Confirmar orden");
+                $("#changeShipping").css({"display":"none"});
+                $("#titleShipping").css({"display":"none"});
+                
             }else{
                 alert("Primero selecciona un método de envío");
             }
@@ -62,7 +73,7 @@ const createOrder = (token, addressId, paymentId,cartType) => {
     console.log(paymentId);
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/order',
+        url: 'http://localhost:5001/order',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },

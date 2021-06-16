@@ -97,6 +97,7 @@ $(document).ready(() => {
             $("#payment_detail").css({ "display": "none" })
             $("#titlePOA").css({ "display": "block" })
             addPayment.css({ "display": "none" })
+            $("#paymentId").val(0)
             poa.text("Pago con tarjeta")
         }
 
@@ -194,7 +195,7 @@ const savePaymentMethod = (token, cardHolder, cardNumber, month, year, cvv) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/payment',
+        url: 'http://localhost:5001/payment',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
@@ -212,7 +213,7 @@ const getPaymentMethod = (token) => {
 
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/payment',
+        url: 'http://localhost:5001/payment',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
@@ -237,7 +238,7 @@ const updatePaymentMethod = (token, cardHolder, cardNumber, month, year, cvv, id
 
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/payment',
+        url: 'http://localhost:5001/payment',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },

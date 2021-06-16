@@ -24,13 +24,16 @@ $(document).ready(() => {
     logout.click(() => {
         if (flag) {
             closeSession(token).then((data) => {
-                if (data) {
-                    localStorage.removeItem('tokenSession');
-                    user.val("")
-                    email.val("")
-                    alert("Haz cerrado sesión")
-                    window.location.href = "./index.html"
+                if (data!= null) {
+                    if(data.success){
+                        
+                    }
                 }
+                localStorage.removeItem('tokenSession');
+                user.val("")
+                email.val("")
+                alert("Haz cerrado sesión")
+                window.location.href = "./index.html"
             });
         } else {
             window.location.href = "./login.html"
@@ -48,7 +51,7 @@ $(document).ready(() => {
 const closeSession = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/logout',
+        url: 'http://localhost:5001/logout',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',
@@ -63,7 +66,7 @@ const closeSession = (token) => {
 const getDataClient = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://143.244.156.198:5001/login',
+        url: 'http://localhost:5001/login',
         dataType: 'json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
         accepts: 'application/json',

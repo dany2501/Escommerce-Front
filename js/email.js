@@ -12,11 +12,10 @@ $(document).ready(() => {
         flag = false;
     } else {
         flag = true
-        email.css({ "display": "none" })
     }
 
-    if (message != null ) {
-        
+    if (message != null) {
+
         if (flag) {
             alert(message);
         }
@@ -25,22 +24,16 @@ $(document).ready(() => {
 
     button.click(() => {
         c = code.val();
+        e = email.val();
 
-        if (flag) {
-
-            e = email.val();
-        }
-
-        if (c != null && c!="") {
+        if (c != null && c != "") {
             sendCode(token, c, email = e).then((response) => {
                 if (response.success) {
                     alert("Email validado.")
-                    if (flag) {
-                        window.location.href = 'index.html'
-                        localStorage.removeItem('message')
-                    } else {
-                        window.location.href = 'login.html'
-                    }
+
+                    window.location.href = 'login.html'
+                    localStorage.removeItem('message')
+                    window.location.href = 'login.html'
                 } else {
                     alert(response.error.message);
                     switch (response.error.code) {
@@ -72,7 +65,7 @@ $(document).ready(() => {
                 }
 
             })
-        }else{
+        } else {
             alert("Ingresa un código válido");
         }
 
@@ -86,11 +79,11 @@ const sendCode = (token, code, email = null) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://143.244.156.198:5001/email',
+        url: 'http://localhost:5001/email',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', "token": token },
-        data:JSON.stringify({ "code": code, "email": email }),
+        data: JSON.stringify({ "code": code, "email": email }),
         accepts: 'application/json',
         success: (data, status) => {
             return data;
