@@ -124,7 +124,7 @@ ul, ol {
 
 
 
-.primary-btn {
+.primary-btn{
   display: inline-block;
   padding: 12px 30px;
   background-color: #0a1527;;
@@ -138,10 +138,29 @@ ul, ol {
   transition: 0.2s all;
 }
 
-.primary-btn:hover, .primary-btn:focus {
+.primary-btn:hover, .primary-btn:focus, .primary-btn2:hover, .primary-btn2:focus, .primary-btn3:hover,.primary-btn3:focus, .dir:hover,.dir:focus {
   opacity: 0.9;
   color: #FFF;
 }
+
+.dir{
+display: inline-block;
+padding: 6px 10px;
+position: relative;
+bottom: 0px;
+left: 570px;
+bottom:   1;
+background-color: #0a1527;;
+border: none;
+border-radius: 40px;
+color: #FFF;
+text-transform: uppercase;
+font-weight: 700;
+text-align: center;
+-webkit-transition: 0.2s all;
+transition: 0.2s all;
+}
+
 
 /*----------------------------*\
   Inputs
@@ -2192,6 +2211,7 @@ body {
 }
 
 .seccion-perfil-usuario .perfil-usuario-body {
+  
   width: 70%;
   position: relative;
   max-width: 750px;
@@ -2211,6 +2231,7 @@ body {
 
 .seccion-perfil-usuario .perfil-usuario-footer,
 .seccion-perfil-usuario .perfil-usuario-bio {
+  
   display: flex;
   flex-wrap: wrap;
   padding: 1.5rem 2rem;
@@ -2279,6 +2300,7 @@ body {
 }
 
 .direcciones {
+  position: relative;
   display: flex;
   flex-wrap:wrap;
   padding: 1.5rem 2rem;
