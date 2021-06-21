@@ -12,7 +12,6 @@ $(document).ready(() => {
     var addressId = $("#addressId");
     terminos.css({"display":"none"})
 
-
     payment_method.css({"display":"none"});
     order.click(() => {
         if (flag) {
@@ -52,6 +51,7 @@ $(document).ready(() => {
                 order.text("Confirmar orden");
                 $("#changeShipping").css({"display":"none"});
                 $("#titleShipping").css({"display":"none"});
+                $("#payment-container").css({"display":"block"});
                 terminos.css({"display":"block"})
                 
             }else{

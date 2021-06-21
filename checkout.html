@@ -36,6 +36,7 @@
 	<script src="./js/address.js"></script>
 	<script src="./js/order.js"></script>
 	<script src="./js/paymentMethod.js"></script>
+	<script src="./js/paymentList.js"></script>
 	<script src="./js/addressList.js"></script>
 
 
@@ -307,9 +308,11 @@
 						</div>
 						<a class="primary-btn2 order-submit" data-toggle="modal" id="addAddress">Agregar</a>
 					</div>
-					
-							<br> <br>
-							<a class="primary-btn order-submit" id="changeShipping" data-toggle="modal">Entrega en ESCOM</a>
+					<div>
+						<a class="primary-btn order-submit" id="changeShipping" data-toggle="modal">Entrega en ESCOM</a>
+						<a class="primary-btn order-submit" id="addNewAddress" data-toggle="modal">Agregar nueva dirección</a>
+					</div>
+							
 
 					<div class="modal fade" id="agregart">
 						<div class="modal_dialog">
@@ -337,6 +340,22 @@
 						</div>
 					</div>
 					<!--Metodo de pago-->
+
+					<div class="billing-details" id="payment-container">
+						<div class="section-title">
+							<h3 class="title">Métodos de pago</h3>
+
+							<div id="payments">
+
+
+
+							</div>
+
+
+						</div>
+					</div>
+
+
 					<div class="billing-details" id="payment_method">
 						<div id="titlePOA">
 							<h1>El pago será al momento de la entrega</h1>

@@ -6,16 +6,26 @@ $(document).ready(() => {
     getAddress(token).then((response) => {
 
         if (response != null) {
-            if (response.success) {
+            if (response.success && response.address.length!=0) {
+                $("#addresses-container").css({"display":"block"});
+                $("#address-container").css({"display":"none"});
+                $("#addNewAddress").css({"display":"block"});
                 var cont ="";
                 response.address.forEach(element => {
-                    cont +=adrs(element.id,element.name,element.phone,element.street);
+                    var last="";
+                    element.lastName.forEach(e => {
+                        last += " "+e;
+                    });
+                    cont +=adrs(element.id,element.name+last,element.phone,element.street);
+                    $("#addressId").val(element.id);
                 });
                 items.html(cont);
+            }else{
+                $("#address-container").css({"display":"block"});
+                $("#addresses-container").css({"display":"none"});
+                $("#addNewAddress").css({"display":"none"});
             }
         }
-
-        console.log(response);
 
     })
 

@@ -1,19 +1,27 @@
 $(document).ready(()=>{
 
     var token = localStorage.getItem('tokenSession');
-    var container = $("#payments");
+    var container = $("#payment-container");
     var card = "";
+
+    if (token != null && token.length!=4){
+    }else{
+        container.css({"display":"none"})
+    }
+
+
     getList(token).then((response)=>{
         console.log(response);
-
         if (response != null ){
-            if(response.success){
-                console.log(response);
+            if(response.success && response.payment.length!=0){
+                container.css({"display":"none"})
                 response.payment.forEach(element => {
                     card +=payment(element.id,element.name,element.digits,element.month,element.year);
                     
                 });
                 container.html(card);
+            }else{
+                container.css({"display":"none"})
             }
         }
     });
@@ -57,7 +65,7 @@ const payment = (id,name,card,month,year)=>{
         <br><br><br>
 
 
-        <a class="dir" id="selectdir" id=see-${id}> Seleccionar</a>
+        <!--<a class="dir" id="selectdir" id=see-${id}> Seleccionar</a>-->
 
 
     </div>`);
