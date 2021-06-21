@@ -68,8 +68,13 @@ $(document).ready(() => {
                         window.location.reload()
                     } else {
 
+                        if(response.error.code == 1002){
+                            $("#zipCode").val("");
+                            $("#zipCode").focus();
+        
+                        }
                         $("#title").text("Lo sentimos :( ")
-                        $("#msg").text("No se pudo guardar la dirección de envío. Intenta más tarde")
+                        $("#msg").text(response.error.message);
                     }
 
                 } else {

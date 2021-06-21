@@ -125,13 +125,13 @@
 			</div>
 
 			<div class="wrap-input100 validate-input m-b-20" data-validate="Ingresa tu apellido ">
-				<input id="lastName" class="input100" type="text" onkeypress="return /[a-z]/i.test(event.key)"
+				<input id="lastName" class="input100" type="text" onkeypress="return /^[a-zA-Z ]+$/i.test(event.key)"
 					autocomplete="off" name="app" placeholder="Apellido Paterno">
 				<span class="focus-input100"></span>
 			</div>
 
 			<div class="wrap-input100 m-b-20">
-				<input id="secondLastName" class="input100" type="text" onkeypress="return /[a-z]/i.test(event.key)"
+				<input id="secondLastName" class="input100" type="text"  onkeypress="return /^[a-zA-Z ]+$/i.test(event.key)"
 					autocomplete="off" name="apm" placeholder="Apellido Materno (Opcional)">
 				<span class="focus-input100"></span>
 			</div>

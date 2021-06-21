@@ -2,11 +2,17 @@
 $(document).ready(() => {
     var container = $("#product-container")
     var qtyTotal = $("#qty-total");
+    var qtyTotalWish = $("#qty-total-wish");
     var subtotal = $("#subtotal");
+    var subtotalWish = $("#subtotal-wish");
     var qtyCart = $("#qty");
+    var qtyWish = $("#qty-wish");
     var cartList = $("#cart-list");
-    var categoryId = localStorage.getItem('categoryId')
-    var token = localStorage.getItem('tokenSession')
+    var wishList = $("#wish-list");
+    var categoryId = localStorage.getItem('categoryId');
+    var token = localStorage.getItem('tokenSession');
+
+
     if (token == null || token.length == 4) {
         flag = false
 
@@ -28,7 +34,6 @@ $(document).ready(() => {
     });
 
     document.querySelector('#product-container').addEventListener('click', e => {
-        console.log("Click")
         action = e.target.id.split('-')
         if (action[0] === "see") {
             localStorage.setItem('productId', action[1])
@@ -38,31 +43,73 @@ $(document).ready(() => {
                 var cart = "";
                 var qtyProds = 0;
                 var toPay = 0;
-                addToCart(token, action[1], 1,1).then((response) => {
-                    if (response.success) {
-                        alert("Producto agregado al carrito")
+                addToCart(token, action[1], 1, 1).then((response) => {
+                    if (response != null) {
 
-                        $("#cart_buttons").css({ "display": "block" });
-                        $("#summary").css({ "display": "block" });
-                        response.products.forEach(element => {
-                            qtyProds += element.qty
-                            toPay += parseInt(element.product.price) * parseInt(element.qty)
-                            cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image,element.product.id);
-                        });
-                        if (qtyProds > 1) {
-                            qtyTotal.text(qtyProds + " Artículos");
+                        if (response.success) {
+                            alert("Producto agregado al carrito")
+
+                            $("#cart_buttons").css({ "display": "block" });
+                            $("#summary").css({ "display": "block" });
+                            response.products.forEach(element => {
+                                qtyProds += element.qty
+                                toPay += parseInt(element.product.price) * parseInt(element.qty)
+                                cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image, element.product.id);
+                            });
+                            if (qtyProds > 1) {
+                                qtyTotal.text(qtyProds + " Artículos");
+                            } else {
+                                qtyTotal.text(qtyProds + " Artículo");
+                            }
+                            subtotal.text("Subtotal: $" + toPay + " .00")
+                            qtyCart.text(qtyProds)
+                            cartList.html(cart);
                         } else {
-                            qtyTotal.text(qtyProds + " Artículo");
+                            alert(response.error.message);
                         }
-                        subtotal.text("Subtotal: $" + toPay + " .00")
-                        qtyCart.text(qtyProds)
-                        cartList.html(cart);
+                    } else {
+                        alert("Ocurrió un error.");
                     }
 
                 });
             } else {
                 alert("Para agregar productos al carrito, debes iniciar sesión primero")
             }
+
+        } else if (action[0] == "wish") {
+
+            addToCart(token, action[1], 1, 2).then((response) => {
+                if (response != null) {
+                    var cart = "";
+                    var qtyProds = 0;
+                    var toPay = 0;
+                    if (response.success) {
+                        alert("Producto agregado a deseos")
+
+                        $("#wish_buttons").css({ "display": "block" });
+                        $("#wish-summary").css({ "display": "block" });
+                        response.products.forEach(element => {
+                            qtyProds += element.qty
+                            toPay += parseInt(element.product.price) * parseInt(element.qty)
+                            cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image, element.product.id);
+                        });
+                        if (qtyProds > 1) {
+                            qtyTotalWish.text(qtyProds + " Artículos");
+                        } else {
+                            qtyTotalWish.text(qtyProds + " Artículo");
+                        }
+                        subtotalWish.text("Subtotal: $" + toPay + " .00")
+                        qtyWish.text(qtyProds)
+                        wishList.html(cart);
+                    } else {
+                        alert(response.error.message);
+                    }
+                } else {
+                    alert("Ocurrió un error.");
+                }
+
+            });
+
 
         }
 
@@ -79,8 +126,8 @@ const getProductsByCategoryId = async (categoryId) => {
         contentType: 'application/json',
         url: 'http://localhost:5001/products',
         dataType: 'json',
-        headers: { 'Access-Control-Allow-Origin': '*'},
-        data:JSON.stringify({"categoryId": categoryId}),
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        data: JSON.stringify({ "categoryId": categoryId }),
         accepts: 'application/json',
         success: (data, status) => {
             if (data) {
@@ -90,7 +137,7 @@ const getProductsByCategoryId = async (categoryId) => {
     });
 }
 
-const cardProduct = (id,name, description,price,sku,stock,img) => {
+const cardProduct = (id, name, description, price, sku, stock, img) => {
     return (
         `<div class="col-md-4 col-xs-6">
             <div class="product">
@@ -112,7 +159,7 @@ const cardProduct = (id,name, description,price,sku,stock,img) => {
                             <i class="fa fa-star"></i>
                         </div>
                         <div class="product-btns">
-                <button class="add-to-wishlist" id="Add"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a deseos</span></button>
+                <button class="add-to-wishlist" id="wish-${id}"><i class="fa fa-heart-o"  id="wish-${id}"></i><span class="tooltipp">Añadir a deseos</span></button>
                 <button class="quick-view" id=see-${id}><i class="fa fa-eye" id=see-${id}></i><span class="tooltipp">ver</span></button>
             </div>
         </div>

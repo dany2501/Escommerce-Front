@@ -10,6 +10,7 @@ $(document).ready(() => {
     var flag = false;
     var paymentId=$("#paymentId");
     var addressId = $("#addressId");
+    terminos.css({"display":"none"})
 
 
     payment_method.css({"display":"none"});
@@ -21,11 +22,11 @@ $(document).ready(() => {
                         if(response.success){
                             $("#compra").modal("show");
                             $("#mensaje").text("Creada exitosamente");
-                            $("#orderId").text(response.orderId);
-                            $("#arrival").text(response.arrivalDate);
+                            $("#orderId").text("Id de seguimiento: "+response.orderId);
+                            $("#arrival").text("Fecha estimada de llegada "+response.arrivalDate);
                             
                             window.setTimeout(function(){
-                                window.location.href = "index.html";
+                                window.location.href = "historial.html";
                         
                             }, 5000);
                         }else{
@@ -43,7 +44,6 @@ $(document).ready(() => {
                 terminos.focus()
             }
         }else{
-            console.log(addressId.val());
             if(addressId.val() !="" ){
                 flag=true;
                 addAddress.css({"display":"none"})
@@ -52,6 +52,7 @@ $(document).ready(() => {
                 order.text("Confirmar orden");
                 $("#changeShipping").css({"display":"none"});
                 $("#titleShipping").css({"display":"none"});
+                terminos.css({"display":"block"})
                 
             }else{
                 alert("Primero selecciona un método de envío");

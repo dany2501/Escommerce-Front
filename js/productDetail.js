@@ -67,7 +67,7 @@ $(document).ready(() => {
                 });
             } else {
                 $("#title").text("Error");
-                $("#copy").text("Hubo un error al agregar el producto al carrito. Stock insuficiente")
+                $("#copy").text("Hubo un error al agregar el producto al carrito. Ingresa una cantidad válida");
             }
         }
 

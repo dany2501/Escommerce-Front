@@ -19,41 +19,41 @@ $(document).ready(() => {
         if (response != null) {
             console.log(response);
             if (response.success) {
-                $("#paymentId").val(response.payment.id)
+                $("#paymentId").val(response.payment[0].id)
                 hasPayment = true;
-                cardHolder.val(response.payment.name);
+                cardHolder.val(response.payment[0].name);
                 cardNumber.get(0).type = 'text';
                 month.get(0).type = 'text';
                 year.get(0).type = 'text';
-                cardNumber.val("XXXX-XXXX-XXXX-" + response.payment.digits);
+                cardNumber.val("XXXX-XXXX-XXXX-" + response.payment[0].digits);
                 month.val("MM");
                 year.val("YY");
                 cvv.val("CVV");
                 addPayment.text("Modificar tarjeta")
                 cardNumber.click(() => {
                     cardNumber.get(0).type = 'number';
-                    cardNumber.val(response.payment.number);
+                    cardNumber.val(response.payment[0].number);
 
                 });
                 year.click(() => {
                     year.get(0).type = 'number';
-                    year.val(response.payment.year);
+                    year.val(response.payment[0].year);
 
                 });
                 month.click(() => {
                     month.get(0).type = 'number';
-                    month.val(parseInt(response.payment.month));
+                    month.val(parseInt(response.payment[0].month));
 
                 });
                 cvv.click(() => {
                     cvv.get(0).type = 'number';
-                    cvv.val(parseInt(response.payment.cvv));
+                    cvv.val(parseInt(response.payment[0].cvv));
 
                 });
                 cardNumber.blur(() => {
                     if (!hasChanges) {
                         cardNumber.get(0).type = 'text';
-                        cardNumber.val("XXXX-XXXX-XXXX-" + response.payment.digits);
+                        cardNumber.val("XXXX-XXXX-XXXX-" + response.payment[0].digits);
                     }
                 });
                 year.blur(() => {

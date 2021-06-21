@@ -33,6 +33,8 @@ $(document).ready(() => {
             cartList.html(cart);
             setStyle();
         } else {
+            $("#title_cart").html("Parece que no hay nada por aquí. <a href='index.html'>¡Agrega productos!</a>")
+            $("#changePayment").css({"display":"none"})
             $("#summary").css({ "display": "none" });
             $("#cart_buttons").css({ "display": "none" });
         }
@@ -153,7 +155,6 @@ const card = (id, name, price, stock, categoryId, image) => {
 
             <h4 class="product-price">$${price}.00</h4>
             <div class="product-btns">
-                <button class="add-to-wishlist" id="Add"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a deseos</span></button>
                 <button class="quick-view" id=see-${id}><i class="fa fa-eye" id=see-${id}></i><span class="tooltipp">ver</span></button>
             </div>
         </div>

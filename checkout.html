@@ -36,6 +36,7 @@
 	<script src="./js/address.js"></script>
 	<script src="./js/order.js"></script>
 	<script src="./js/paymentMethod.js"></script>
+	<script src="./js/addressList.js"></script>
 
 
 
@@ -232,7 +233,7 @@
 			<!-- row -->
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="breadcrumb-header">INGRESA TUS DATOS</h3>
+					<h3 class="breadcrumb-header" id="copy">MÉTODO DE PAGO</h3>
 					<ul class="breadcrumb-tree">
 						<br>
 					</ul></br>
@@ -258,6 +259,19 @@
 						<h1>La entrega será realizada en ESCOM IPN, Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX</h1>
 					</div>
 					<!-- Billing Details -->
+					<div class="billing-details" id="addresses-container">
+						<div class="section-title">
+							<h3 class="title">Direcciónes de envío</h3>
+
+							<div id="items">
+
+
+
+							</div>
+
+
+						</div>
+					</div>
 					<div class="billing-details" id="address-container">
 						<div class="section-title">
 							<h3 class="title">Dirección de envío</h3>
@@ -283,12 +297,12 @@
 						</div>
 						<div class="form-group">
 							<input class="input" id="zipCode" type="number"
-								onKeyDown="if(this.value.length==5) this.value='';" name="Código postal"
+								onKeyDown="if(this.value.length==5) {alert('Longitud máxima 5 dígitos');this.value='';}" name="Código postal"
 								placeholder="Código postal">
 						</div>
 						<div class="form-group">
 							<input class="input" id="phone" type="number"
-								onKeyDown="if(this.value.length==10) this.value='';" name="Teléfono"
+								onKeyDown="if(this.value.length==10) {alert('Longitud máxima 10 dígitos.');this.value='';}" name="Teléfono"
 								placeholder="Teléfono">
 						</div>
 						<a class="primary-btn2 order-submit" data-toggle="modal" id="addAddress">Agregar</a>
@@ -339,7 +353,7 @@
 							</div>
 							<div class="form-group">
 								<input maxlength="16" class="input" type="number" id="cardNumber" onKeyDown="if(this.value.length>16){
-									{alert('Longitud maxima 16 dígitos.'); this.value=''};
+									{this.value='';alert('Longitud maxima 16 dígitos.'); this.value=''};
 								}
 								" name="Número de la tarjeta" placeholder="Número de tarjeta">
 							</div>
@@ -348,27 +362,27 @@
 								<input maxlength="2" class="input" type="number" id="year" min="21" onKeyDown="if(this.value.length>1) 
 								if(this.value<21){
 
-									{alert('Año invalido. Debe ser mayor que 21'); this.value=''};
+									{this.value='';alert('Año invalido. Debe ser mayor igual que 21'); this.value=''};
 								}else{
 
-									{alert('Vencimiento 2 dígitos Ej. 21'); this.value=''};
+									{this.value='';alert('Vencimiento 2 dígitos Ej. 21'); this.value=''};
 								}
 								" name="Vencimiento (año)" placeholder="Año de vencimiento (YY)">
 							</div>
 							<div class="form-group">
 								<input min="1" max="12" class="input" type="number" id="month" onKeyDown="if(this.value.length>1) 
-								if(this.value<21){
+								if(this.value>12){
 
-									{alert('Año invalido. Debe ser mayor que 21'); this.value=''};
+									{this.value='';alert('Mes invalido'); this.value=''};
 								}else{
 
-									{alert('Mes 2 dígitos Ej. 21'); this.value=''};
+									{this.value='';alert('Mes 2 dígitos Ej. 21'); this.value=''};
 								}
 								" name="Vencimiento (mes)" placeholder="Mes de vencimiento (MM)">
 							</div>
 							<div class="form-group">
 								<input class="input" minlength="3"
-									onKeyDown="if(this.value.length==3) {alert('CVV Max 3 numeros'); this.value=''};"
+									onKeyDown="if(this.value.length==3) {this.value='';alert('CVV Max 3 numeros'); this.value=''};"
 									class="text" type="numer" id="cvv" name="CVV" placeholder="CVV">
 
 							</div>
