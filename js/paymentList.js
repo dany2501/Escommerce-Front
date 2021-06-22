@@ -109,7 +109,9 @@ const payment = (id, name, card, month, year) => {
 
     return (`
     <div class="direcciones">
-    <label><input type="radio"></label>
+    <div style="">
+        <label><input type="radio"></label>
+    </div>
     <button class="delete2" id=delete-${id}><i class="fa fa-close" id=delete-${id}></i></button>
         <h3 class="titulo">Tarjeta</h3>
         <br>

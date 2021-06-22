@@ -46,7 +46,6 @@ const adrs = (id, name, phone, street) => {
     <div class="direcciones" style="display:flex; justify-content:space-between; ">   
         <br>
 
-    <label><input type="radio"></label>
         <ul class="lista-datos">
             <li><i class="fa fa-angle-right"></i>${name}</li>
             <li><i class="fa fa-angle-right"></i> Telefono: ${phone}</li>
