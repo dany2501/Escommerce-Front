@@ -17,66 +17,8 @@ $(document).ready(() => {
 
     getPaymentMethod(token).then((response) => {
         if (response != null) {
-            console.log(response);
-            if (response.success) {
-                $("#paymentId").val(response.payment[0].id)
-                hasPayment = true;
-                cardHolder.val(response.payment[0].name);
-                cardNumber.get(0).type = 'text';
-                month.get(0).type = 'text';
-                year.get(0).type = 'text';
-                cardNumber.val("XXXX-XXXX-XXXX-" + response.payment[0].digits);
-                month.val("MM");
-                year.val("YY");
-                cvv.val("CVV");
-                addPayment.text("Modificar tarjeta")
-                cardNumber.click(() => {
-                    cardNumber.get(0).type = 'number';
-                    cardNumber.val(response.payment[0].number);
-
-                });
-                year.click(() => {
-                    year.get(0).type = 'number';
-                    year.val(response.payment[0].year);
-
-                });
-                month.click(() => {
-                    month.get(0).type = 'number';
-                    month.val(parseInt(response.payment[0].month));
-
-                });
-                cvv.click(() => {
-                    cvv.get(0).type = 'number';
-                    cvv.val(parseInt(response.payment[0].cvv));
-
-                });
-                cardNumber.blur(() => {
-                    if (!hasChanges) {
-                        cardNumber.get(0).type = 'text';
-                        cardNumber.val("XXXX-XXXX-XXXX-" + response.payment[0].digits);
-                    }
-                });
-                year.blur(() => {
-                    if (!hasChanges) {
-                        year.get(0).type = 'text';
-                        year.val("YY");
-                    }
-                });
-                month.blur(() => {
-                    if (!hasChanges) {
-                        month.get(0).type = 'text';
-                        month.val("MM");
-                    }
-                });
-                cvv.blur(() => {
-                    if (!hasChanges) {
-                        cvv.get(0).type = 'text';
-                        cvv.val("CVV");
-                    }
-
-                });
-
-
+            if (response.success && response.payment.length!=0) {
+                
             }
         }
 
@@ -139,15 +81,8 @@ $(document).ready(() => {
                     updatePaymentMethod(token, cH, cN, m, y, ccv).then((response) => {
                         if (response != null) {
                             if (response.success) {
-                                console.log(response)
-                                $("#addPaymentModal").modal('show');
-                                cardNumber.get(0).type = 'text';
-                                cardNumber.val("XXXX-XXXX-XXXX-" + response.digits)
-                                cvv.css({ "display": "none" })
-                                cvv.css({ "display": "none" })
-                                addPayment.css({ "display": "none" })
-                                year.css({ "display": "none" })
-                                month.css({ "display": "none" })
+                                alert("Método de pago agregado");
+                                window.location.reload();
                             } else {
                                 alert(response.error.message);
                             }
@@ -157,15 +92,8 @@ $(document).ready(() => {
                     savePaymentMethod(token, cH, cN, m, y, ccv).then((response) => {
                         if (response != null) {
                             if (response.success) {
-                                console.log(response)
-                                $("#addPaymentModal").modal('show');
-                                cardNumber.get(0).type = 'text';
-                                cardNumber.val("XXXX-XXXX-XXXX-" + response.digits)
-                                cvv.css({ "display": "none" })
-                                cvv.css({ "display": "none" })
-                                addPayment.css({ "display": "none" })
-                                year.css({ "display": "none" })
-                                month.css({ "display": "none" })
+                                alert("Método de pago agregado");
+                                window.location.reload();
                             } else {
                                 alert(response.error.message);
                             }
@@ -185,7 +113,7 @@ $(document).ready(() => {
 
 const savePaymentMethod = (token, cardHolder, cardNumber, month, year, cvv) => {
 
-    payment = {
+    var payment = {
         "cardHolder": cardHolder,
         "cardNumber": cardNumber,
         "month": month,
@@ -227,7 +155,7 @@ const getPaymentMethod = (token) => {
 
 const updatePaymentMethod = (token, cardHolder, cardNumber, month, year, cvv, id) => {
 
-    payment = {
+    var payment = {
         "id": id,
         "cardHolder": cardHolder,
         "cardNumber": cardNumber,
