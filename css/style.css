@@ -1141,6 +1141,21 @@ textarea.input {
 }
 
 
+.delete2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  text-align: center;
+  font-size: 10px;
+  padding: 0;
+  background: #1e1f29;
+  border: none;
+  color: #FFF;
+}
+
+
 
 .products-slick .slick-list {
   padding-bottom: 60px;

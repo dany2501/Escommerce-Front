@@ -102,7 +102,7 @@ const payment = (id, name, card, month, year) => {
     <div class="direcciones" style="display:flex; justify-content:space-between; flex-direction:row;">
         <br>
 
-        <button class="delete" id=delete-${id}><i class="fa fa-close" id=delete-${id}></i></button>
+        <button class="delete2" id=delete-${id}><i class="fa fa-close" id=delete-${id}></i></button>
         <div style="flex-direction:row">
             <ul class="lista-datos" >
                 <li><i class="fa fa-angle-right"></i> Titular: <b>${name}</b></li>
