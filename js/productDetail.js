@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    var cartType = localStorage.setItem('cartType',1);
+    var cartType = localStorage.setItem('cartType', 1);
     var token = localStorage.getItem('tokenSession');
     var productName = $("#product_name");
     var productPrice = $("#product_price");
@@ -9,6 +9,7 @@ $(document).ready(() => {
     var img = $("#img");
     var img2 = $("#img2");
     var addTo = $("#add-to-cart");
+    var addToWish = $("#add-to-wish");
     var qtyAdd = $("#qty-picker");
     var subtotal = $("#subtotal");
     var qtyTotal = $("#qty-total");
@@ -45,12 +46,12 @@ $(document).ready(() => {
                 var cart = "";
                 var qtyProds = 0;
                 var toPay = 0;
-                addToCart(token, productId, qty,1).then((response) => {
+                addToCart(token, productId, qty, 1).then((response) => {
                     if (response.success) {
                         response.products.forEach(element => {
                             qtyProds += element.qty
                             toPay += parseInt(element.product.price) * parseInt(element.qty)
-                            cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image,element.product.id);
+                            cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image, element.product.id);
                         });
                         if (qtyProds > 1) {
                             qtyTotal.text(qtyProds + " Artículos");
@@ -69,6 +70,45 @@ $(document).ready(() => {
                 $("#title").text("Error");
                 $("#copy").text("Hubo un error al agregar el producto al carrito. Ingresa una cantidad válida");
             }
+        }else{
+            alert("Para agregar productos al carrito, debes iniciar sesión primero")
+        }
+
+    });
+    
+    addToWish.click(() => {
+        if (flag) {
+            var qty = parseInt(qtyAdd.val())
+            if (qty > 0 && qty <= stock) {
+                var cart = "";
+                var qtyProds = 0;
+                var toPay = 0;
+                addToCart(token, productId, qty, 2).then((response) => {
+                    if (response.success) {
+                        response.products.forEach(element => {
+                            qtyProds += element.qty
+                            toPay += parseInt(element.product.price) * parseInt(element.qty)
+                            cart += cardCart(element.product.name, element.product.price, element.qty, element.product.image, element.product.id);
+                        });
+                        if (qtyProds > 1) {
+                            $("#qty-total-wish").text(qtyProds + " Artículos");
+                        } else {
+                            $("#qty-total-wish").text(qtyProds + " Artículo");
+                        }
+                        $("#subtotal-wish").text("Subtotal: $" + toPay + ".00")
+                        $("#qty-wish").text(qtyProds)
+                        $("#wish-list").html(cart);
+                        $("#wish_buttons").css({ "display": "block" })
+                        $("#title_wish").text("Confirmación");
+                        $("#copy_wish").text("Se ha agregado correctamente al carrito. Gracias por ser cool y hacerte notar.")
+                    }
+                });
+            } else {
+                $("#title_wish").text("Error");
+                $("#copy_wish").text("Hubo un error al agregar el producto al carrito. Ingresa una cantidad válida");
+            }
+        }else{
+            alert("Para agregar productos a deseos, debes iniciar sesión primero")
         }
 
     });
@@ -78,16 +118,16 @@ $(document).ready(() => {
         if (flag) {
             var q = parseInt(qtyAdd.val());
             console.log(q)
-            if (q == "" || q==0 || Number.isNaN(q)){
+            if (q == "" || q == 0 || Number.isNaN(q)) {
                 alert("Ingresa una cantidad valida");
                 qtyAdd.focus();
                 return;
             }
 
-            addToCart(token, productId, q,3).then((response)=>{
-                if(response!= null){
-                    if(response.success){
-                        localStorage.setItem('cartType',"3");
+            addToCart(token, productId, q, 3).then((response) => {
+                if (response != null) {
+                    if (response.success) {
+                        localStorage.setItem('cartType', "3");
                         window.location.href = "checkout.html"
                     }
                 }
@@ -106,11 +146,11 @@ $(document).ready(() => {
 const getProduct = (productId) => {
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/products',
+        url: 'http://143.244.156.198:5001/products',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*' },
-        data:JSON.stringify({ "productId": productId }),
+        data: JSON.stringify({ "productId": productId }),
         accepts: 'application/json',
         success: (data, status) => {
             if (data) {

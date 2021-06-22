@@ -5,7 +5,6 @@ $(document).ready(() => {
     var card = "";
     var choose = $("#choose");
     var flag = false;
-    var paymentId = $("#paymentId");
 
     if (token != null && token.length != 4) {
     } else {
@@ -19,13 +18,12 @@ $(document).ready(() => {
 
                 if (response != null) {
                     if (response.success) {
+                        alert("Tarjeta eliminada");
                         window.location.reload();
                     }
                 }
 
             });
-        }else if (action[0] === "payment"){
-            paymentId.val(action[1]);
         }
     });
 
@@ -35,11 +33,12 @@ $(document).ready(() => {
             flag = false;
             choose.text("Agregar nueva tarjeta");
             $("#payments").css({ "display": "block" });
-            //$("#payment_method").css({ "display": "none" });
+            $("#payment_method").css({ "display": "none" });
         } else {
             flag = true;
             choose.text("Ver lista");
-            //$("#payment_method").css({ "display": "block" });
+            $("#payment_method").css({ "display": "block" });
+            $("#payment_detail").css({ "display": "block" });
             $("#payments").css({ "display": "none" });
         }
 
@@ -50,7 +49,9 @@ $(document).ready(() => {
         if (response != null) {
             if (response.success && response.payment.length != 0) {
                 hasCards = true;
-                response.payment.forEach(element => {
+                response.payment.forEach(element => {                    
+                    $("#payment_detail").css({ "display": "none" });
+                    $("#addPayment").css({ "display": "none" });
                     card += payment(element.id, element.name, element.digits, element.month, element.year);
                 });
                 container.html(card);
@@ -98,25 +99,23 @@ const deletePayment = (token, paymentId) => {
 const payment = (id, name, card, month, year) => {
 
     return (`
-    <div class="direcciones" style="display:flex; justify-content:space-between;">
-
-        <label><input type="radio" name="payment" id=payment-${id}></label>
+    <div class="direcciones" style="display:flex; justify-content:space-between; flex-direction:row;">
         <br>
-        <ul class="lista-datos">
-            <li><i class="fa fa-angle-right"></i> Titular: ${name}</li>
-            <li><i class="fa fa-angle-right"></i> Número de tarjeta: XXXX-XXXX-XXXX-${card}</li>
-        </ul>
-        <ul class="lista-datos">
-            <li><i class="icono fa fa-angle-right"></i>Mes de vencimiento: ${month}</li>
-            <li><i class="icono fa fa-angle-right"></i>Año de vencimiento: ${year}</li>
 
-        </ul>
+        <button class="delete" id=delete-${id}><i class="fa fa-close" id=delete-${id}></i></button>
+        <div style="flex-direction:row">
+            <ul class="lista-datos" >
+                <li><i class="fa fa-angle-right"></i> Titular: <b>${name}</b></li>
+                <li><i class="fa fa-angle-right"></i> Número de tarjeta: <b>XXXX-XXXX-XXXX-${card}</b></li>
+            </ul>
+        </div>
+        <div style="flex-direction:row">
+            <ul class="lista-datos">
+                <li><i class="icono fa fa-angle-right"></i>Mes vencimiento: <b>${month}</b></li>
+                <li><i class="icono fa fa-angle-right"></i>Año vencimiento: <b>${year}</b></li>
+            </ul>
+        </div>
         <br><br><br>
-
-
         <!--<a class="dir" id="selectdir" id=see-${id}> Seleccionar</a>-->
-        
-
-
     </div><br><br>`);
 }

@@ -31,7 +31,7 @@ $(document).ready(() => {
 const getList = (token) => {
     return $.ajax({
         method: "GET",
-        url: 'http://localhost:5001/order',
+        url: 'http://143.244.156.198:5001/order',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
@@ -62,9 +62,6 @@ const order = (id, date, qty, amount) => {
 
         </ul>
         <br><br><br>
-
-        
-        <a class="dir" id="selectdir" > Seleccionar</a>
 
 
     </div> <br>`);

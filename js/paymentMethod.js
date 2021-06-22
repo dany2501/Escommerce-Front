@@ -13,29 +13,22 @@ $(document).ready(() => {
 
     $("#titlePOA").css({ "display": "none" });
 
-
-
-    getPaymentMethod(token).then((response) => {
-        if (response != null) {
-            if (response.success && response.payment.length!=0) {
-                
-            }
-        }
-
-    });
-    document.addEventListener('keypress', e => {
-        hasChanges = true;
-    })
     poa.click(() => {
 
         if (flag) {
             flag = false;
-            $("#payment_detail").css({ "display": "block" })
+            $("#payment-container").css({"display":"block"});
+            $("#payment_detail").css({ "display": "block" });
+
             $("#titlePOA").css({ "display": "none" })
-            poa.text("Pago contra entrega")
-            addPayment.css({ "display": "block" })
+            poa.text("Pago contra entrega");
+            addPayment.css({ "display": "block" });
         } else {
+            addCardEvent=false;
             flag = true;
+
+            $("#titlePOA").css({ "display": "block" });
+            $("#payment-container").css({"display":"none"});
             $("#payment_detail").css({ "display": "none" })
             $("#titlePOA").css({ "display": "block" })
             addPayment.css({ "display": "none" })
@@ -46,66 +39,72 @@ $(document).ready(() => {
     })
 
     addPayment.click(() => {
-        if (!flag) {
-            cH = cardHolder.val();
-            cN = cardNumber.val();
-            m = month.val();
-            y = year.val();
-            ccv = cvv.val();
-
-            if (cN.length != 16 && typeof (cN) != "int") {
-                alert("Número de tarjeta inválido");
-                cardNumber.val("");
-                cardNumber.focus();
-                return;
-            }
-            if (m > 12) {
-                alert("Ingresa un mes de expiración válid");
-                month.val("");
-                month.focus();
-                return;
-            }
-            if (y <= 21 && m <= 06) {
-                alert("Tarjeta expirada");
-                year.val("");
-                month.val("");
-                year.focus();
-                cvv.val("");
-                return;
-            }
-
-
-            if (cH != "" && cN != "" && m != "" && y != "" && ccv != "") {
-
-                if (hasChanges) {
-                    updatePaymentMethod(token, cH, cN, m, y, ccv).then((response) => {
-                        if (response != null) {
-                            if (response.success) {
-                                alert("Método de pago agregado");
-                                window.location.reload();
-                            } else {
-                                alert(response.error.message);
-                            }
-                        }
-                    });
-                } else {
-                    savePaymentMethod(token, cH, cN, m, y, ccv).then((response) => {
-                        if (response != null) {
-                            if (response.success) {
-                                alert("Método de pago agregado");
-                                window.location.reload();
-                            } else {
-                                alert(response.error.message);
-                            }
-                        }
-                    });
+        if (addCardEvent) {
+            if (!flag ){
+                cH = cardHolder.val();
+                cN = cardNumber.val();
+                m = month.val();
+                y = year.val();
+                ccv = cvv.val();
+    
+                if (cN.length != 16 && typeof (cN) != "int") {
+                    alert("Número de tarjeta inválido");
+                    cardNumber.val("");
+                    cardNumber.focus();
+                    return;
                 }
-                
+                if (m > 12) {
+                    alert("Ingresa un mes de expiración válid");
+                    month.val("");
+                    month.focus();
+                    return;
+                }
+                if (y <= 21 && m <= 06) {
+                    alert("Tarjeta expirada");
+                    year.val("");
+                    month.val("");
+                    year.focus();
+                    cvv.val("");
+                    return;
+                }
+    
+    
+                if (cH != "" && cN != "" && m != "" && y != "" && ccv != "") {
+    
+                    if (hasChanges) {
+                        updatePaymentMethod(token, cH, cN, m, y, ccv).then((response) => {
+                            if (response != null) {
+                                if (response.success) {
+                                    alert("Método de pago agregado");
+                                    window.location.reload();
+                                } else {
+                                    alert(response.error.message);
+                                }
+                            }
+                        });
+                    } else {
+                        savePaymentMethod(token, cH, cN, m, y, ccv).then((response) => {
+                            if (response != null) {
+                                if (response.success) {
+                                    alert("Método de pago agregado");
+                                    window.location.reload();
+                                } else {
+                                    alert(response.error.message);
+                                }
+                            }
+                        });
+                    }
+                }
+                else {
+                    alert("Ingresa datos válidos")
+                }
+    
             }
-            else {
-                alert("Ingresa datos válidos")
-            }
-
+            
+        }else{
+                addCardEvent=true;
+                $("#payment-container").css({ "display": "none" });
+                $("#payment_method").css({ "display": "block" });
         }
     });
 
@@ -123,7 +122,7 @@ const savePaymentMethod = (token, cardHolder, cardNumber, month, year, cvv) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/payment',
+        url: 'http://143.244.156.198:5001/payment',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
@@ -141,7 +140,7 @@ const getPaymentMethod = (token) => {
 
     return $.ajax({
         method: "GET",
-        url: 'http://localhost:5001/payment',
+        url: 'http://143.244.156.198:5001/payment',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },
@@ -166,7 +165,7 @@ const updatePaymentMethod = (token, cardHolder, cardNumber, month, year, cvv, id
 
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/payment',
+        url: 'http://143.244.156.198:5001/payment',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', 'token': token },

@@ -264,26 +264,6 @@
 						<br>
 						<br>
 							<div id="items">
-<<<<<<< HEAD
-							    <div class="direcciones" style="display:flex; justify-content:space-between; ">   
-									<br>
-									<ul class="lista-datos">
-										<li><i class="fa fa-angle-right"></i>${name}</li>
-										<li><i class="fa fa-angle-right"></i> Telefono: ${phone}</li>
-									</ul>
-									<ul class="lista-datos">
-										<li><i class="icono fa fa-angle-right"></i>Calle : ${street}</li>
-										<li><i class="icono fa fa-angle-right"></i>Año de vencimiento: ${street}</li>
-							
-									</ul>
-									<br><br><br>
-							
-							
-								</div>`);
-
-
-=======
->>>>>>> a860750805d585aef69de681402885c042cc14b2
 							</div>
 
 
@@ -293,8 +273,6 @@
 						<div class="section-title">
 							<h3 class="title">Dirección de envío</h3>
 						</div>
-
-
 						<input class="input" type="text" id="addressId" name="id">
 						<div class="form-group">
 							<input class="input" id="name" type="text" name="Nombre" placeholder="Nombre">
@@ -324,7 +302,7 @@
 								onKeyDown="if(this.value.length==10) {alert('Longitud máxima 10 dígitos.');this.value='';}" name="Teléfono"
 								placeholder="Teléfono">
 						</div>
-						<a class="primary-btn2 order-submit" data-toggle="modal" id="addAddress">Agregar</a>
+						<a class="primary-btn2 order-submit" data-toggle="modal" id="addAddress">Agregar dirección</a>
 					</div>
 					<div>
 
@@ -373,10 +351,10 @@
 					</div>
 
 
+					<div id="titlePOA">
+						<h1>El pago será al momento de la entrega</h1>
+					</div>
 					<div class="billing-details" id="payment_method">
-						<div id="titlePOA">
-							<h1>El pago será al momento de la entrega</h1>
-						</div>
 						<div id="payment_detail">
 							<div class="section-title">
 								<h3 class="title">Información de la tarjeta</h3>
@@ -423,17 +401,18 @@
 
 							</div>
 						</div>
-						<div class="form-group">
-							<div class="input-checkbox">
-							</div>
-							<!-- Header Modal -->
-							<a class="primary-btn2 order-submit" id="addPayment" data-toggle="modal">Agregar tarjeta</a>
-
-
-							<br> <br>
-							<a class="primary-btn order-submit" id="changePayment" data-toggle="modal">Pago contra
-								entrega</a>
+						
+					</div>
+					<div class="form-group" id="payment_buttons">
+						<div class="input-checkbox">
 						</div>
+						<!-- Header Modal -->
+						<a class="primary-btn2 order-submit" id="addPayment" data-toggle="modal">Agregar tarjeta</a>
+
+
+						<br> <br>
+						<a class="primary-btn order-submit" id="changePayment" data-toggle="modal">Pago contra
+							entrega</a>
 					</div>
 					<!--Metodo de pago-->
 				</div>
@@ -681,6 +660,7 @@
 									<li><a href="#">Ver carrito</a></li>
 									<li><a href="#">Lista de deseos</a></li>
 									<li><a href="#">Rastrear</a></li>
+									<li><a href="#">Ayuda</a></li>
 									<li><a href="devolucion.html">Devolucion</a></li>
 								<li><a href="devolucion.html">Reembolso</a></li>
 								</ul>

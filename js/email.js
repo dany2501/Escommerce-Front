@@ -79,7 +79,7 @@ const sendCode = (token, code, email = null) => {
 
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/email',
+        url: 'http://143.244.156.198:5001/email',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*', "token": token },

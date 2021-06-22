@@ -41,7 +41,7 @@ $(document).ready(() => {
                                             email.val("")
                                             break;
                                         case 4003:
-                                            window.location.reload()
+                                            //window.location.reload()
                                             email.val("")
                                             password.val("")
                                             confirmPass.val("")
@@ -77,7 +77,7 @@ $(document).ready(() => {
 const createAccount = (email, password, confirmPass, name, lastName, secondLastName) => {
     return $.ajax({
         method: "POST",
-        url: 'http://localhost:5001/sign-up',
+        url: 'http://143.244.156.198:5001/sign-up',
         dataType: 'json',
         contentType: 'application/json',
         headers: { 'Access-Control-Allow-Origin': '*' },

@@ -32,12 +32,12 @@ const productCard = (name, price, qty) => {
 }
 
 const shippingCard = (toPay) => {
-    return (`<div class="order-col">
+    return (`<div class="order-col" id="shipping_price">
         <div>Costo de envío</div>
         <div>$90.00</div>
     </div>
         <div class="order-col">
             <div><strong>TOTAL</strong></div>
-            <div><strong class="order-total">$${parseInt(toPay) + 90}.00</strong></div>
+            <div><strong class="order-total" id="price_to_pay">$${parseInt(toPay) + 90}.00</strong></div>
         </div>`)
 }
