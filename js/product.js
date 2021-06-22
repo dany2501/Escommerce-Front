@@ -2,6 +2,7 @@ $(document).ready(() => {
     var user = $("#user");
     var email = $("#email");
     var logout = $("#logout");
+    var signup = $("#signup");
     var flag = false;
     token = localStorage.getItem('tokenSession');
     productId = parseInt(localStorage.getItem('productId'));
@@ -9,6 +10,7 @@ $(document).ready(() => {
     if (token == null || token.length == 4) {
         flag = false
     } else {
+        signup.css({"display":"none"})
         flag = true
         getDataClient(token).then((data) => {
             console.log(data)

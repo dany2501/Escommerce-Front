@@ -13,6 +13,8 @@ $(document).ready(() => {
     terminos.css({"display":"none"})
 
     payment_method.css({"display":"none"});
+    $("#payment-container").css({"display":"none"});
+    
     order.click(() => {
         if (flag) {
             if (terminos.is(":checked")) {
@@ -26,14 +28,12 @@ $(document).ready(() => {
                             
                             window.setTimeout(function(){
                                 window.location.href = "historial.html";
-                        
                             }, 5000);
                         }else{
                             alert(response.error.message);
                             $("#mensaje").text("Ocurrio un error");
                             $("#orderId").css({"display":"none"})
                             $("#arrival").css({"display":"none"})
-                            
                         }
                     }
                 });
@@ -47,13 +47,17 @@ $(document).ready(() => {
                 flag=true;
                 addAddress.css({"display":"none"})
                 address.css({"display":"none"})
-                payment_method.css({"display":"block"});
+                if(!true){
+                $("#payment-container").css({"display":"block"});
+                }else{
+                    payment_method.css({"display":"block"});
+                }
                 order.text("Confirmar orden");
                 $("#changeShipping").css({"display":"none"});
                 $("#titleShipping").css({"display":"none"});
-                $("#payment-container").css({"display":"block"});
                 terminos.css({"display":"block"})
-                
+                $("#addresses-container").css({"display":"none"});
+                $("#addNewAddress").css({"display":"none"});
             }else{
                 alert("Primero selecciona un método de envío");
             }

@@ -32,6 +32,7 @@
 	<script src="./js/cart.js"></script>
 	<script src="./js/wish.js"></script>
 	<script src="./js/paymentList.js"></script>
+	<script src="./js/paymentMethod.js"></script>
 
 
 
@@ -256,7 +257,7 @@
 				<!-- section title -->
 				<div class="col-md-12">
 					<div class="section-title">
-						<h3 class="title">Tus métodos de pago:</h3>
+						<h3 class="title" id="title">Tus métodos de pago:</h3>
 
 						<br><br>
 
@@ -265,7 +266,72 @@
 
 							<br><br>
 							<div class="perfil-usuario-body" id="payments">
-							
+
+							</div>
+
+							<div class="billing-details" id="payment_method">
+								<div id="payment_detail">
+									<div class="section-title">
+										<h3 class="title">Información de la tarjeta</h3>
+									</div>
+									<br>
+									<input class="input" type="text" id="paymentId" name="id" style="display: none;">
+									<div class="form-group">
+										<input class="input" type="text" id="cardHolder" name="Nombre de titular"
+											onkeypress="return /^[a-zA-Z ]+$/i.test(event.key)" autocomplete="off"
+											placeholder="Nombre del titular" pattern="[a-z]{1,15}">
+									</div>
+									<div class="form-group">
+										<input maxlength="16" class="input" type="number" id="cardNumber" onKeyDown="if(this.value.length>16){
+											{this.value='';alert('Longitud maxima 16 dígitos.'); this.value=''};
+										}
+										" name="Número de la tarjeta" placeholder="Número de tarjeta">
+									</div>
+
+									<div class="form-group">
+										<input maxlength="2" class="input" type="number" id="year" min="21" onKeyDown="if(this.value.length>1) 
+										if(this.value<21){
+		
+											{this.value='';alert('Año invalido. Debe ser mayor igual que 21'); this.value=''};
+										}else{
+		
+											{this.value='';alert('Vencimiento 2 dígitos Ej. 21'); this.value=''};
+										}
+										" name="Vencimiento (año)" placeholder="Año de vencimiento (YY)">
+									</div>
+									<div class="form-group">
+										<input min="1" max="12" class="input" type="number" id="month" onKeyDown="if(this.value.length>1) 
+										if(this.value>12){
+		
+											{this.value='';alert('Mes invalido'); this.value=''};
+										}else{
+		
+											{this.value='';alert('Mes 2 dígitos Ej. 21'); this.value=''};
+										}
+										" name="Vencimiento (mes)" placeholder="Mes de vencimiento (MM)">
+									</div>
+									<div class="form-group">
+										<input class="input" minlength="3"
+											onKeyDown="if(this.value.length==3) {this.value='';alert('CVV Max 3 numeros'); this.value=''};"
+											class="text" type="numer" id="cvv" name="CVV" placeholder="CVV">
+
+									</div>
+								</div>
+								<div class="form-group">
+									<br>
+									<!-- Header Modal -->
+									<a class="primary-btn2 order-submit" id="addPayment" data-toggle="modal">Agregar
+										tarjeta</a>
+									<br>
+								</div>
+							</div>
+							<div class="form-group">
+								<br>
+								<!-- Header Modal -->
+								<a class="primary-btn2 order-submit" id="choose" data-toggle="modal">Agregar nueva tarjeta</a>
+
+
+								<br>
 							</div>
 							<br>
 						</section>
